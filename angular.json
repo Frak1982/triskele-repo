@@ -30,11 +30,6 @@
                 "glob": "contact-form.html",
                 "input": "src/assets",
                 "output": "/"
-              },
-              {
-                "glob": "triskele-logo.jpg",
-                "input": "src/assets/images",
-                "output": "/favicon.ico"
               }
             ],
             "styles": [
