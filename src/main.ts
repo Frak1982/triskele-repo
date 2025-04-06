@@ -1,6 +1,36 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { routes } from './app/app-routing.module';
+import { TriskeleComponent } from './app/triskele.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { importProvidersFrom } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+// Console log per debug
+console.log('Avvio dell\'applicazione...');
+
+bootstrapApplication(TriskeleComponent, {
+  providers: [
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled'
+      })
+    ),
+    provideAnimations(),
+    provideHttpClient(withInterceptorsFromDi()),
+    importProvidersFrom(
+      ReactiveFormsModule,
+      TranslateModule.forRoot({
+        defaultLanguage: 'it'
+      })
+    )
+  ]
+}).then(() => {
+  console.log('Applicazione avviata con successo');
+}).catch(err => {
+  console.error('Errore durante l\'avvio dell\'applicazione:', err);
+});

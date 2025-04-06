@@ -1,1 +1,1978 @@
-/* You can add global styles to this file, and also import other style files */
+/* ====================
+   IMPORTAZIONE FONTS
+   ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* ====================
+   VARIABILI GLOBALI
+   ==================== */
+:root {
+  --primary-color: #e6c15a;
+  --primary-dark: #d6b14a;
+  --secondary-color: #222;
+  --text-color: #333;
+  --text-light: #aaa;
+  --bg-color: #fff;
+  --bg-light: #fffaf5;
+  --border-radius: 8px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* ====================
+   RESET E BASE
+   ==================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  padding-top: 80px; /* Altezza dell'header */
+  display: block !important; /* Forza la visualizzazione del corpo */
+  background-color: var(--bg-color);
+  min-height: 100%;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ====================
+   UTILITÀ
+   ==================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Titolo di sezione comune */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  color: var(--text-color);
+  position: relative;
+  font-family: var(--font-title);
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 15px auto 0;
+}
+
+/* Bottoni comuni */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-rounded {
+  border-radius: 30px;
+  padding: 15px 30px;
+}
+
+/* Animazioni comuni */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
+
+/* ====================
+   LAYOUT GRID
+   ==================== */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ====================
+   MEDIA QUERIES GENERALI
+   ==================== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+  html {
+    font-size: 15px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  html {
+    font-size: 14px;
+  }
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====================
+   COMPONENTE HEADER
+   ==================== */
+/* Rendi l'header fisso in cima alla pagina */
+header {
+  position: fixed; /* Fissa l'header in cima */
+  top: 0;
+  left: 0;
+  width: 100%; /* L'header occupa tutta la larghezza della pagina */
+  z-index: 1050; /* Si assicura che l'header rimanga sopra il menu */
+  background-color: white; /* Sfondo per evitare trasparenze */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra per separare l'header dal contenuto */
+}
+
+/* Per evitare il movimento del titolo quando si espande il menu */
+.navbar-toggler {
+  display: inline-block; /* Assicura che il bottone del menu abbia una larghezza fissa */
+}
+
+.navbar-collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra per il menu */
+  z-index: 1060; /* Si assicura che il menu sia sopra il contenuto */
+}
+
+.navbar-collapse.show {
+  display: block;
+}
+
+/* Mantieni la larghezza dell'header costante */
+.navbar {
+  width: 100%; /* Rendi il menu largo quanto l'header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header principale */
+app-header header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: var(--primary-color);
+  padding: 20px 0;
+}
+
+app-header header.scrolled {
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px 0;
+}
+
+app-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+app-header .logo a {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+app-header .logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+/* Selettore di lingua */
+app-header .language-dropdown {
+  position: relative;
+  z-index: 1100; /* Valore elevato per sovrapporre a tutto */
+  margin-left: 50px; /* Aumentato da 30px a 50px per creare più spazio */
+}
+
+app-header .lang-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid #fff; /* Bordo più evidente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Ombra più evidente */
+}
+
+app-header .lang-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Stili per le bandiere */
+app-header .flag-it, app-header .flag.flag-it {
+  background: linear-gradient(to right, #009246 33%, #fff 33%, #fff 66%, #ce2b37 66%);
+}
+
+app-header .flag-fr, app-header .flag.flag-fr {
+  background: linear-gradient(to right, #0055a4 33%, #fff 33%, #fff 66%, #ef4135 66%);
+}
+
+app-header .flag-en, app-header .flag.flag-en {
+  background: #012169 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(%23a)"><path d="M0 0v30h60V0z" fill="%23012169"/><path d="M0 0l60 30m0-30L0 30" stroke="%23fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(%23b)" stroke="%23C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="%23fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="%23C8102E" stroke-width="6"/></g></svg>') center/cover no-repeat;
+}
+
+app-header .lang-menu {
+  position: absolute; /* Posizione assoluta */
+  top: 40px; /* Posiziona sotto il bottone del cambio lingua */
+  background-color: var(--bg-color); /* Usa la variabile per il colore di sfondo */
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra molto evidente */
+  width: 150px;
+  padding: 10px 0;
+  opacity: 1; /* Assicurati che l'opacità sia 1 */
+  visibility: hidden;
+  z-index: 1200; /* Valore ancora più elevato */
+}
+
+app-header .lang-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+app-header .lang-menu button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+app-header .lang-menu button:hover {
+  background-color: #f5f5f5;
+}
+
+app-header .lang-menu button.active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+app-header .flag {
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+/* Navigazione */
+app-header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+app-header nav li {
+  margin-left: 30px;
+}
+
+app-header nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+app-header nav a:hover, app-header nav a.active {
+  color: #0066cc;
+}
+
+/* Menu mobile */
+app-header .mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+app-header .mobile-menu-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: var(--transition);
+}
+
+/* Media query per versione mobile */
+@media (max-width: 768px) {
+  app-header header {
+    position: fixed; /* Mantiene l'header fisso anche su mobile */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* Overlay di sfondo opaco quando il menu è espanso */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 990; /* Sotto il menu mobile ma sopra il resto del contenuto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Permette di cliccare attraverso se invisibile */
+  }
+
+  body.menu-expanded::after {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Blocca i click quando l'overlay è visibile */
+  }
+
+  app-header .mobile-menu-btn {
+    display: block !important; /* Assicura che il bottone sia visibile */
+    position: absolute;
+    right: 15px; /* Più vicino al bordo */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    z-index: 1001;
+    padding: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  app-header .mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000; /* Nero solido per visibilità */
+    margin: 5px 0;
+    transition: var(--transition);
+  }
+
+  app-header nav {
+    position: static;
+  }
+
+  app-header nav ul {
+    position: fixed; /* Fisso invece di absolute */
+    flex-direction: column;
+    background-color: #222; /* Cambiato da bianco a #222 come nella hero section */
+    top: 80px; /* Posizionato esattamente sotto l'header */
+    left: 0;
+    width: 100%;
+    padding: 25px 20px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transform: translateY(-100%); /* Inizialmente fuori dallo schermo */
+    transition: transform 0.3s ease;
+    z-index: 999; /* Minore dell'header */
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    visibility: hidden; /* Nascosto inizialmente */
+  }
+
+  app-header nav ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url('/src/assets/images/triskele-logo.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75% auto; /* Ridotto da 105% a 75% per rendere l'immagine più piccola */
+    background-blend-mode: luminosity;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  app-header nav ul.active {
+    transform: translateY(0); /* Visibile quando attivo */
+    visibility: visible;
+  }
+
+  app-header nav li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  app-header nav li a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    color: white; /* Cambiato il colore del testo per migliorare la leggibilità su sfondo scuro */
+  }
+
+  app-header nav a:hover, app-header nav a.active {
+    color: var(--primary-color); /* Cambiato il colore al passaggio del mouse per coerenza */
+  }
+
+  /* Selettore lingua nel menu mobile */
+  app-header nav ul .language-dropdown {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrato invece che a destra */
+    margin: 10px 0;
+    right: auto;
+    top: auto;
+  }
+
+  app-header .lang-btn {
+    margin: 0;
+  }
+
+  app-header .lang-menu {
+    position: absolute; /* Non fisso, ma relativo al dropdown */
+    top: -300%; /* Direttamente sotto il pulsante */
+    left: 70%; /* Centrato */
+    transform: translateX(-50%);
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: 2px solid var(--primary-color);
+    z-index: 1200;
+    text-align: left;
+  }
+
+  app-header .lang-menu.active {
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ====================
+   COMPONENTE MENU
+   ==================== */
+app-menu .menu-page {
+  background-color: var(--bg-light);
+  min-height: 100%;
+  overflow: hidden;
+  color: #4a5568;
+}
+
+app-menu .menu-header {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background: #222; /* Sfondo scuro uniforme come nell'hero */
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+app-menu .menu-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Utilizzo solo della parte circolare centrale del logo */
+  background-image: url('/src/assets/images/triskele-logo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 59% auto; /* Ridotto del 30% rispetto a 84% */
+  background-blend-mode: luminosity;
+  opacity: 0.3; /* Stessa opacità dell'hero */
+  z-index: 1;
+}
+
+app-menu .menu-header .container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px; /* Limitiamo la larghezza per mantenere la coerenza con hero */
+}
+
+app-menu .menu-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-family: var(--font-title);
+}
+
+app-menu .menu-header p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+app-menu .menu-tabs {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+}
+
+app-menu .tabs {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 15px 0;
+}
+
+app-menu .tabs button {
+  background: none;
+  border: none;
+  padding: 10px 25px;
+  margin: 0 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 30px;
+}
+
+app-menu .tabs button.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+app-menu .tabs button:hover:not(.active) {
+  background-color: #f5f5f5;
+}
+
+app-menu .menu-content {
+  padding: 60px 0;
+}
+
+app-menu .category-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--text-color);
+  font-family: var(--font-title);
+  text-align: center;
+  position: relative;
+}
+
+app-menu .category-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 15px auto 0;
+}
+
+app-menu .menu-section {
+  margin-bottom: 60px;
+}
+
+app-menu .menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+app-menu .menu-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s;
+}
+
+app-menu .menu-item:hover {
+  transform: translateY(-5px);
+}
+
+app-menu .menu-item-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+app-menu .menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+app-menu .menu-item:hover .menu-item-image img {
+  transform: scale(1.1);
+}
+
+app-menu .featured {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+app-menu .menu-item-info {
+  padding: 25px;
+}
+
+app-menu .menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+app-menu .menu-item-header h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+app-menu .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+app-menu .description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+app-menu .add-to-order {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+app-menu .add-to-order:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+app-menu .cta-section {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+}
+
+app-menu .cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-family: var(--font-title);
+}
+
+app-menu .cta-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+app-menu .cta-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+app-menu .cta-btn:hover {
+  background-color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+  app-menu .menu-header h1 {
+    font-size: 2.5rem;
+  }
+
+  app-menu .menu-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  app-menu .tabs {
+    justify-content: flex-start;
+    padding: 15px 10px;
+  }
+
+  app-menu .tabs button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  app-menu .menu-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====================
+   COMPONENTE HERO
+   ==================== */
+app-hero .hero-container {
+  position: relative;
+  height: 80vh; /* Ridotto da 100vh a 80vh (riduzione del 20%) */
+  min-height: 480px; /* Ridotto da 600px a 480px (riduzione del 20%) */
+  display: flex;
+  align-items: center;
+  background: #222; /* Sfondo scuro uniforme */
+  color: white;
+  margin-top: -80px; /* Compensare l'header fisso */
+}
+
+app-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Utilizzo solo della parte circolare centrale del logo */
+  background-image: url('/src/assets/images/triskele-logo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 105% auto; /* Ripristinato al valore originale per far prendere tutto lo spazio */
+  background-blend-mode: luminosity; /* Cambiato per un effetto più artistico */
+  opacity: 0.3; /* Ridotta leggermente l'opacità */
+}
+
+app-hero .hero-content {
+  max-width: 600px;
+  animation: slideUp 1s ease-in-out;
+  position: relative; /* Assicura che il contenuto sia sopra l'overlay */
+  z-index: 10; /* Valore z-index alto per mettere il contenuto in primo piano */
+}
+
+app-hero .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+app-hero .hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+app-hero .hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+app-hero .hero-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+app-hero .primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+app-hero .primary:hover {
+  background-color: white;
+  transform: translateY(-3px);
+}
+
+app-hero .secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+app-hero .secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  app-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  app-hero .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  app-hero .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  app-hero .hero-btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  app-hero .hero-container {
+    min-height: 500px;
+  }
+
+  app-hero .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* ====================
+   COMPONENTE FEATURED PRODUCTS
+   ==================== */
+app-featured-products .container {
+  padding: 80px 20px;
+}
+
+app-featured-products .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+app-featured-products .product-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+app-featured-products .product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+app-featured-products .product-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+app-featured-products .product-details {
+  padding: 10px;
+}
+
+app-featured-products .product-name {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+app-featured-products .product-description {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+app-featured-products .product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+app-featured-products .product-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+app-featured-products .product-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+app-featured-products .view-all {
+  text-align: center;
+  margin-top: 30px;
+}
+
+app-featured-products .view-all-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+app-featured-products .view-all-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  app-featured-products .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  app-featured-products .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====================
+   COMPONENTE FOOTER
+   ==================== */
+app-footer .footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 60px 0 20px;
+}
+
+app-footer .footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+app-footer .footer-title {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+app-footer .footer-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+app-footer .footer-description {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+app-footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+app-footer .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+app-footer .social-icon:hover {
+  background-color: var(--primary-color);
+}
+
+app-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+app-footer .footer-links li {
+  margin-bottom: 10px;
+}
+
+app-footer .footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+app-footer .footer-links a:hover {
+  color: var(--primary-color);
+}
+
+app-footer .contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+app-footer .contact-info li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+app-footer .contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+app-footer .map-container {
+  margin-bottom: 50px;
+}
+
+app-footer .google-map {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+app-footer .google-map iframe {
+  display: block;
+}
+
+app-footer .footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+app-footer .copyright {
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+app-footer .footer-bottom-links {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+  app-footer .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====================
+   COMPONENTE ABOUT
+   ==================== */
+app-about .about-page {
+  background-color: var(--bg-light);
+  min-height: 100%;
+  overflow: hidden;
+  color: #4a5568;
+}
+
+app-about .menu-header {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background: #222; /* Sfondo scuro uniforme come nell'hero */
+  color: white;
+  text-align: center;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+app-about .menu-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Utilizzo solo della parte circolare centrale del logo */
+  background-image: url('/src/assets/images/triskele-logo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 59% auto; /* Ridotto del 30% rispetto a 84% */
+  background-blend-mode: luminosity;
+  opacity: 0.3; /* Stessa opacità dell'hero */
+  z-index: 1;
+}
+
+app-about .menu-header .container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  max-width: 800px; /* Limitiamo la larghezza per mantenere la coerenza con hero */
+}
+
+app-about .menu-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-family: var(--font-title);
+}
+
+app-about .menu-header p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Accent Line */
+app-about .accent-line {
+  height: 3px;
+  width: 60px;
+  background-color: #ed8936;
+  display: block;
+}
+
+/* Section Title */
+app-about .section-title-container {
+  margin-bottom: 1rem;
+}
+
+/* Image Styling */
+app-about .img-frame {
+  position: relative;
+  border: 10px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  transform: rotate(2deg);
+}
+
+app-about .img-frame:hover {
+  transform: rotate(0deg) translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+app-about .img-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background-color: #ed8936;
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Value Cards */
+app-about .value-card {
+  background-color: white;
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+}
+
+app-about .value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #ed8936;
+}
+
+app-about .icon-container {
+  width: 90px;
+  height: 90px;
+  background-color: #feebc8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #ed8936;
+  font-size: 2.5rem;
+  transition: var(--transition);
+}
+
+app-about .value-card:hover .icon-container {
+  background-color: #ed8936;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Team Cards */
+app-about .team-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+app-about .team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+app-about .team-card:hover .team-overlay {
+  opacity: 0.2;
+}
+
+app-about .img-container {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7fafc;
+}
+
+app-about .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+app-about .team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ed8936;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: multiply;
+}
+
+app-about .content {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 4px solid #ed8936;
+}
+
+/* CTA Section */
+app-about .cta-section {
+  background: linear-gradient(135deg, #ed8936 0%, #f6ad55 100%);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(237, 137, 54, 0.3);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+app-about .cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+app-about .cta-section a {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Buttons */
+app-about .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  margin-left: 1rem;
+}
+
+app-about .btn-white {
+  background-color: white;
+  color: #ed8936;
+}
+
+app-about .btn-white:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+app-about .btn-outline-white {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+app-about .btn-outline-white:hover {
+  background-color: white;
+  color: #ed8936;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  app-about .menu-header {
+    padding: 70px 0;
+  }
+
+  app-about .menu-header h1 {
+    font-size: 2.5rem;
+  }
+
+  app-about .img-container {
+    height: 250px;
+  }
+
+  app-about .accent-line {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  app-about .team-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  app-about .img-accent {
+    width: 80px;
+    height: 80px;
+    bottom: -15px;
+    right: -15px;
+  }
+}
+
+/* ====================
+   COMPONENTE CONTACT
+   ==================== */
+app-contact .contact-page {
+  background-color: var(--bg-light);
+  min-height: 100%;
+  color: #4a5568;
+}
+
+app-contact .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Menu Header Style (stesso stile della pagina menu e about) */
+app-contact .menu-header {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background: #222; /* Sfondo scuro uniforme come nell'hero */
+  color: white;
+  text-align: center;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+app-contact .menu-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Utilizzo solo della parte circolare centrale del logo */
+  background-image: url('/src/assets/images/triskele-logo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 59% auto; /* Ridotto del 30% rispetto a 84% */
+  background-blend-mode: luminosity;
+  opacity: 0.3; /* Stessa opacità dell'hero */
+  z-index: 1;
+}
+
+app-contact .menu-header .container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  max-width: 800px; /* Limitiamo la larghezza per mantenere la coerenza con hero */
+}
+
+app-contact .menu-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-family: var(--font-title);
+}
+
+app-contact .menu-header p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Accent Line */
+app-contact .accent-line {
+  height: 3px;
+  width: 60px;
+  background-color: #ed8936;
+  display: block;
+}
+
+/* Section Title */
+app-contact .section-title-container {
+  margin-bottom: 1rem;
+}
+
+/* Form Styles */
+app-contact .form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+app-contact .form-group {
+  margin-bottom: 1.5rem;
+}
+
+app-contact .form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+app-contact .form-input, app-contact .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+app-contact .form-input:focus, app-contact .form-textarea:focus, app-contact .form-checkbox:focus {
+  outline: none;
+  border-color: #ed8936;
+  box-shadow: 0 0 0 3px rgba(237, 137, 54, 0.2);
+  background-color: white;
+}
+
+app-contact .form-input::placeholder, app-contact .form-textarea::placeholder {
+  color: #a0aec0;
+}
+
+app-contact .form-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  color: #ed8936;
+}
+
+app-contact .privacy-check {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+app-contact .privacy-label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-left: 0.75rem;
+  line-height: 1.4;
+}
+
+app-contact .privacy-link {
+  color: #ed8936;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+app-contact .privacy-link:hover {
+  text-decoration: underline;
+}
+
+app-contact .error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+app-contact .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+app-contact .submit-btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background-color: #ed8936;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+app-contact .submit-btn:hover:not(:disabled) {
+  background-color: #dd7722;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+app-contact .submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+app-contact .success-message {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #c6f6d5;
+  color: #276749;
+  border-radius: 8px;
+  border-left: 4px solid #38a169;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+app-contact .success-message:before {
+  content: "✓";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #38a169;
+  color: white;
+  border-radius: 50%;
+  margin-right: 12px;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+/* Contact Info Styles */
+app-contact .info-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+app-contact .info-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+app-contact .info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #feebc8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ed8936;
+  font-size: 1.25rem;
+}
+
+app-contact .info-content {
+  margin-left: 1rem;
+  flex-grow: 1;
+}
+
+app-contact .hours-table {
+  margin-top: 0.5rem;
+}
+
+app-contact .hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+app-contact .hours-row:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  app-contact .menu-header {
+    padding: 70px 0;
+  }
+
+  app-contact .menu-header h1 {
+    font-size: 2.5rem;
+  }
+
+  app-contact .info-card {
+    margin-top: 2rem;
+  }
+}
+
+/* ====================
+   COMPONENTE HOME
+   ==================== */
+app-home section {
+  padding: 80px 0;
+}
+
+app-home .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+app-home .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #333;
+  font-family: var(--font-title);
+}
+
+app-home .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+app-home .feature-card {
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  text-align: center;
+  background-color: white;
+}
+
+app-home .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+app-home .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+app-home .feature-card h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+app-home .feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+app-home .cta {
+  background-color: var(--secondary-color);
+  text-align: center;
+  color: white;
+  padding: 100px 0;
+}
+
+app-home .cta h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-family: var(--font-title);
+}
+
+app-home .cta p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+app-home .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+app-home .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+app-home .primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+app-home .primary:hover {
+  background-color: white;
+  transform: translateY(-3px);
+}
+
+app-home .secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+app-home .secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  app-home section {
+    padding: 60px 0;
+  }
+
+  app-home .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  app-home .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Uniformiamo anche le media query per tutte le intestazioni */
+@media (max-width: 768px) {
+  app-menu .menu-header h1,
+  app-about .menu-header h1,
+  app-contact .menu-header h1,
+  app-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  app-menu .menu-header p,
+  app-about .menu-header p,
+  app-contact .menu-header p,
+  app-hero .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  app-menu .menu-header,
+  app-about .menu-header,
+  app-contact .menu-header {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  app-menu .menu-header h1,
+  app-about .menu-header h1,
+  app-contact .menu-header h1,
+  app-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  app-menu .menu-header p,
+  app-about .menu-header p,
+  app-contact .menu-header p,
+  app-hero .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
