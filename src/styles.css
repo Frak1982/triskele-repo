@@ -1,9 +1,8 @@
 /* ====================
    IMPORTAZIONE FONTS
    ==================== */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Migra&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 /* ====================
    VARIABILI GLOBALI
    ==================== */
@@ -17,8 +16,8 @@
   --border-radius: 8px;
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
-  --font-title: "Migra", serif;
-  --font-body: "Migra", serif;
+  --font-title: "Playfair Display", serif;
+  --font-body: "Playfair Display", serif;
 }
 
 /* ====================
