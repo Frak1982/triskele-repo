@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 
 interface MenuItem {
   id: number;
@@ -15,7 +16,7 @@ interface MenuItem {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule],
+  imports: [CommonModule, RouterLink, TranslateModule,ScrollToTopDirective],
   template: `
     <div class="menu-page">
       <div class="menu-header">
@@ -32,6 +33,7 @@ interface MenuItem {
               <button
                 [class.active]="selectedCategory === category"
                 (click)="selectCategory(category)"
+                scrollToTop
               >
                 {{ getCategoryLabel(category) | translate }}
               </button>
@@ -192,7 +194,7 @@ interface MenuItem {
         </div>
       </div>
 
-      <div class="cta-section">
+      <!-- <div class="cta-section">
         <div class="container">
           <h2>{{ 'MENU_PAGE.CTA_TITLE' | translate }}</h2>
           <p>{{ 'MENU_PAGE.CTA_SUBTITLE' | translate }}</p>
@@ -200,7 +202,7 @@ interface MenuItem {
             'MENU_PAGE.ORDER_BUTTON' | translate
           }}</a>
         </div>
-      </div>
+      </div> -->
     </div>
   `,
   styles: []
@@ -224,7 +226,7 @@ export class MenuComponent {
       id: 1,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
       price: 7.5,
-      image: '/src/assets/images/arancini.jpg',
+      image: '/assets/images/arancini.jpg',
       featured: true,
       category: 'tavolaCalda',
     },
@@ -232,28 +234,28 @@ export class MenuComponent {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
       price: 6.0,
-      image: '/src/assets/images/focacce.jpg',
+      image: '/assets/images/focacce.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_FRITTA',
       price: 8.5,
-      image: '/src/assets/images/siciliana.jpg',
+      image: '/assets/images/siciliana.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
       price: 8.5,
-      image: '/src/assets/images/pizza-in-teglia.png',
+      image: '/assets/images/pizza-in-teglia.png',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
       price: 8.5,
-      image: '/src/assets/images/cartocciata.jpg',
+      image: '/assets/images/cartocciata.jpg',
       category: 'tavolaCalda',
     },
     // Primi Piatti
@@ -261,7 +263,7 @@ export class MenuComponent {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
       price: 12.5,
-      image: '/src/assets/images/lasagne-alla-bolognese.jpg',
+      image: '/assets/images/lasagne-alla-bolognese.jpg',
       featured: true,
       category: 'primi',
     },
@@ -270,14 +272,14 @@ export class MenuComponent {
       id: 7,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
       price: 10.5,
-      image: '/src/assets/images/cannoli.webp',
+      image: '/assets/images/cannoli.webp',
       category: 'dolci',
     },
     {
       id: 8,
       translationKey: 'MENU_ITEMS.DOLCI.TIRAMISU',
       price: 14.5,
-      image: '/src/assets/images/tiramisu.jpg',
+      image: '/assets/images/tiramisu.jpg',
       category: 'dolci',
     },
     // Bevande
@@ -285,7 +287,7 @@ export class MenuComponent {
       id: 10,
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
       price: 5.5,
-      image: '/src/assets/images/caffe.jpg',
+      image: '/assets/images/caffe.jpg',
       featured: true,
       category: 'bevande',
     },

@@ -24,7 +24,7 @@ interface Product {
           <div class="product-card">
             <div class="product-image" style="height: 200px; width: 100%;">
               <img
-                [src]="'/src/assets/images/' + product.image"
+                [src]="'/assets/images/' + product.image"
                 [alt]="getProductName(product)"
                 class="product-img"
                 style="width: 100%; height: 100%; object-fit: cover;"

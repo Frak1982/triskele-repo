@@ -39,11 +39,10 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
           <div class="md:w-1/2">
             <div class="img-frame">
               <img
-                src="/src/assets/images/team.jpg"
+                src="/assets/images/team.jpg"
                 alt="{{ 'ABOUT.IMAGE_ALT' | translate }}"
                 class="w-full h-auto object-cover rounded-md"
               />
-              <div class="img-accent"></div>
             </div>
           </div>
         </div>
@@ -95,7 +94,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             <div class="team-card">
               <div class="img-container">
                 <img
-                  src="/src/assets/images/chef.jpg"
+                  src="/assets/images/chef.jpg"
                   alt="{{ 'ABOUT.CHEF_ALT' | translate }}"
                   class="w-full h-full object-cover"
                 />
@@ -112,7 +111,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             <div class="team-card">
               <div class="img-container">
                 <img
-                  src="/src/assets/images/manager.jpg"
+                  src="/assets/images/manager.jpg"
                   alt="{{ 'ABOUT.MANAGER_ALT' | translate }}"
                   class="w-full h-full object-cover"
                 />
@@ -131,21 +130,21 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 
         <!-- CTA section -->
         <div class="cta-section">
-          <h2 class="text-4xl font-bold mb-6 text-white">{{ 'ABOUT.CTA_TITLE' | translate }}</h2>
-          <p class="text-xl text-white mb-8 max-w-3xl mx-auto opacity-90">
+          <h2 class="text-4xl font-bold mb-6">{{ 'ABOUT.CTA_TITLE' | translate }}</h2>
+          <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
             {{ 'ABOUT.CTA_SUBTITLE' | translate }}
           </p>
           <div class="flex flex-wrap justify-center gap-6">
             <a
               [routerLink]="['/menu']"
-              class="btn btn-white"
+              class="btn"
               scrollToTop
             >
               {{ 'ABOUT.EXPLORE_MENU' | translate }}
             </a>
             <a
               [routerLink]="['/contact']"
-              class="btn btn-outline-white"
+              class="btn"
               scrollToTop
             >
               {{ 'ABOUT.CONTACT_US' | translate }}

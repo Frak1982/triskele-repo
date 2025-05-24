@@ -33,7 +33,7 @@ import { ScrollService } from './services/scroll.service';
 })
 export class TriskeleComponent implements OnInit {
   title = 'Triskele - Site Showcase';
-  currentLang: 'it' | 'fr' | 'en' = 'it';
+  currentLang: 'fr' | 'it' | 'en' = 'fr';
 
   constructor(
     private translate: TranslateService,
@@ -42,21 +42,21 @@ export class TriskeleComponent implements OnInit {
 
   ngOnInit() {
     // Inizializza la lingua predefinita
-    this.translate.setDefaultLang('it');
-    this.translate.use('it');
+    this.translate.setDefaultLang('fr');
+    this.translate.use('fr');
 
     // Imposta le traduzioni statiche (funziona correttamente)
-    this.setStaticTranslations('it');
+    this.setStaticTranslations('fr');
   }
 
-  useLanguage(language: 'it' | 'fr' | 'en'): void {
+  useLanguage(language: 'fr' | 'it' | 'en'): void {
     this.currentLang = language;
     this.setStaticTranslations(language);
     // Forza lo scroll in alto quando cambia la lingua
     this.scrollService.scrollToTop();
   }
 
-  setStaticTranslations(lang: 'it' | 'fr' | 'en'): void {
+  setStaticTranslations(lang: 'fr' | 'it' | 'en'): void {
     // Imposta manualmente le traduzioni
     this.translate.setTranslation(lang, TRANSLATIONS[lang]);
     this.translate.use(lang);

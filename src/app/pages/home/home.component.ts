@@ -1,10 +1,10 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
-import { HeroComponent } from "../../components/hero/hero.component";
-import { FeaturedProductsComponent } from "../../components/featured-products/featured-products.component";
-import { TestimonialsComponent } from "../../components/testimonials/testimonials.component";
-import { TranslateModule } from "@ngx-translate/core";
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { HeroComponent } from '../../components/hero/hero.component';
+import { FeaturedProductsComponent } from '../../components/featured-products/featured-products.component';
+import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -15,14 +15,20 @@ import { TranslateModule } from "@ngx-translate/core";
     HeroComponent,
     FeaturedProductsComponent,
     // TestimonialsComponent,
-    TranslateModule
+    TranslateModule,
   ],
   template: `
-    <section class="hero">
+    <section>
       <app-hero></app-hero>
     </section>
 
-    <section class="features">
+    <section>
+      <div class="sub-hero-container justify-content-center d-flex align-items-center">
+        <h1 class="sub-hero-title">{{ 'SUB-HERO.TITLE' | translate }}</h1>
+      </div>
+    </section>
+
+    <!-- <section class="features">
       <div class="container">
         <h2 class="section-title">{{ 'HOME.SERVICES_TITLE' | translate }}</h2>
         <div class="features-grid">
@@ -43,7 +49,7 @@ import { TranslateModule } from "@ngx-translate/core";
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="featured">
       <app-featured-products></app-featured-products>
@@ -56,14 +62,17 @@ import { TranslateModule } from "@ngx-translate/core";
     <section class="cta">
       <div class="container">
         <h2>Gusta l'Italia a Rennes</h2>
-        <p>Vieni a trovarci o ordina i nostri autentici piatti italiani da asporto.</p>
+        <!-- <p>
+          Vieni a trovarci o ordina i nostri autentici piatti italiani da
+          asporto.
+        </p>
         <div class="cta-buttons">
           <a routerLink="/menu" class="btn primary">Vedi il Menu</a>
           <a routerLink="/contact" class="btn secondary">Contattaci</a>
-        </div>
+        </div> -->
       </div>
     </section>
   `,
-  styles: []
+  styles: [],
 })
 export class HomeComponent {}

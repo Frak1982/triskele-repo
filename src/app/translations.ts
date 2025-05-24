@@ -25,18 +25,22 @@ export const TRANSLATIONS = {
       "MONDAY_FRIDAY": "Lunedì-Venerdì",
       "SATURDAY": "Sabato",
       "SUNDAY": "Domenica",
-      "HOURS_MON_FRI": "12:00 - 23:00",
-      "HOURS_SAT": "12:00 - 00:00",
-      "HOURS_SUN": "12:00 - 22:00",
+      "HOURS_MON_FRI": "08:00 - 17:00",
+      "HOURS_SAT": "Chiuso",
+      "HOURS_SUN": "Chiuso",
       "COPYRIGHT": "Triskele Ristorante. Tutti i diritti riservati.",
       "MADE_WITH_LOVE": "Fatto con ❤️ in Italia",
-      "OUR_LOCATION": "La nostra posizione"
+      "OUR_LOCATION": "La nostra posizione",
+      "SOCIAL": "Social"
     },
     "HERO": {
-      "TITLE": "Benvenuti a Triskele",
-      "SUBTITLE": "Autentica Gastronomia Italiana nel cuore di Rennes",
+      "TITLE": "Buongiorno! Noi siamo TRISKELE, Gastronomia italo-siciliana",
+      "SUBTITLE": "Ci siamo appena trasferiti nel quartiere di Place St. Germaine e vi accoglieremo come vecchi amici, con grandi sorrisi e profumi autentici. Siciliana da generazioni, sono cresciuto con i sapori della mia terra, grazie all'esperienza culinaria di mia madre. Avendo sempre amato il buon cibo e i buoni prodotti, desidero condividere i profumi e i sapori della mia terra con quante più persone possibile. Offro dolcetti che si possono mangiare con una mano ma che contengono un'esplosione di sapori autentici. Chiudendo gli occhi, puoi sentirti come se fossi in Italia. Benvenuti a TRISKELE",
       "MENU_BUTTON": "Scopri il Menu",
       "ABOUT_BUTTON": "Chi Siamo"
+    },
+    "SUB-HERO": {
+      "TITLE": "L'Italia in un boccone",
     },
     "FEATURED": {
       "TITLE": "Le Nostre Specialità",
@@ -222,18 +226,22 @@ export const TRANSLATIONS = {
       "MONDAY_FRIDAY": "Monday-Friday",
       "SATURDAY": "Saturday",
       "SUNDAY": "Sunday",
-      "HOURS_MON_FRI": "12:00 - 23:00",
-      "HOURS_SAT": "12:00 - 00:00",
-      "HOURS_SUN": "12:00 - 22:00",
+      "HOURS_MON_FRI": "08:00 - 17:00",
+      "HOURS_SAT": "Closed",
+      "HOURS_SUN": "Closed",
       "COPYRIGHT": "Triskele Restaurant. All rights reserved.",
       "MADE_WITH_LOVE": "Made with ❤️ in Italy",
-      "OUR_LOCATION": "Our location"
+      "OUR_LOCATION": "Our location",
+      "SOCIAL": "Social"
     },
     "HERO": {
-      "TITLE": "Welcome to Triskele",
-      "SUBTITLE": "Authentic Italian Gastronomy in the heart of Rennes",
+      "TITLE": "Hello! We are TRISKELE, Italo-Sicilian gastronomy",
+      "SUBTITLE": "We have just moved to the Place St. Germaine neighborhood and we will welcome you like old friends, with wide smiles and authentic aromas. Sicilian for generations, I grew up with the flavors of my land, thanks to my mother's culinary experience. Always a lover of good food and good products, I want to transmit the aromas and flavors of my land to as many people as possible. I offer delicacies that can be eaten with one hand but contain an explosion of authentic flavors. By closing your eyes, you can feel like you are in Italy. Welcome to TRISKELE",
       "MENU_BUTTON": "Discover Menu",
       "ABOUT_BUTTON": "About Us"
+    },
+    "SUB-HERO": {
+      "TITLE": "Italy in one bite",
     },
     "FEATURED": {
       "TITLE": "Our Specialties",
@@ -398,7 +406,7 @@ export const TRANSLATIONS = {
   fr: {
     "HEADER": {
       "HOME": "Accueil",
-      "MENU": "Menu",
+      "MENU": "Cart",
       "ABOUT": "À Propos",
       "CONTACT": "Contact",
       "ORDER": "Commander"
@@ -408,7 +416,7 @@ export const TRANSLATIONS = {
       "LINKS": "Liens",
       "HOME": "Accueil",
       "ABOUT": "À Propos",
-      "MENU": "Menu",
+      "MENU": "Cart",
       "CONTACT": "Contact",
       "ORDER": "Commander",
       "CONTACT_US": "Contactez-nous",
@@ -419,23 +427,27 @@ export const TRANSLATIONS = {
       "MONDAY_FRIDAY": "Lundi-Vendredi",
       "SATURDAY": "Samedi",
       "SUNDAY": "Dimanche",
-      "HOURS_MON_FRI": "12:00 - 23:00",
-      "HOURS_SAT": "12:00 - 00:00",
-      "HOURS_SUN": "12:00 - 22:00",
+      "HOURS_MON_FRI": "08:00 - 17:00",
+      "HOURS_SAT": "Fermé",
+      "HOURS_SUN": "Fermé",
       "COPYRIGHT": "Restaurant Triskele. Tous droits réservés.",
       "MADE_WITH_LOVE": "Fait avec ❤️ en Italie",
-      "OUR_LOCATION": "Notre emplacement"
+      "OUR_LOCATION": "Notre emplacement",
+      "SOCIAL": "Sociale"
     },
     "HERO": {
-      "TITLE": "Bienvenue à Triskele",
-      "SUBTITLE": "Gastronomie Italienne Authentique au cœur de Rennes",
-      "MENU_BUTTON": "Découvrir le Menu",
+      "TITLE": "Bonjour! Nous sommes TRISKELE, gastronomie italo-sicilienne",
+      "SUBTITLE": "Nous venons de nous installer dans le quartier de Place St. Germaine et nous vous accueillieron comme de vieux amis, avec de larges sourires et des parfumes authentiques. Sicilien depuis des générations, j'ai grandi avec les saveurs de ma terre, grâce à l'expérience culinaire de ma mère. Amoureux depuis toujours de la bonne cuisine et des bons produits, je souhaite transmettre les parfums et les saveurs de ma terre au plus grand nombre. Je propose des gourmandises qui se mangent d'une main mais renferment une explosion de saveurs authentiques. En fermant les yeux, vous pouvez vous sentir en Italie. Bienvenue chez TRISKELE",
+      "MENU_BUTTON": "Découvrir le Cart",
       "ABOUT_BUTTON": "À Propos de Nous"
+    },
+    "SUB-HERO": {
+      "TITLE": "l’Italie en une bouchée",
     },
     "FEATURED": {
       "TITLE": "Nos Spécialités",
-      "VIEW_MENU": "Voir dans le Menu",
-      "VIEW_ALL": "Voir tout le Menu"
+      "VIEW_MENU": "Voir dans le Cart",
+      "VIEW_ALL": "Voir tout le Cart"
     },
     "HOME": {
       "SERVICES_TITLE": "Nos Services",
@@ -470,7 +482,7 @@ export const TRANSLATIONS = {
       "MANAGER_DESC": "Roberta s'assure que chaque client vive une expérience inoubliable chez Triskele.",
       "CTA_TITLE": "Venez Nous Voir",
       "CTA_SUBTITLE": "Découvrez les saveurs authentiques de l'Italie au centre de Rennes",
-      "EXPLORE_MENU": "Explorer le Menu",
+      "EXPLORE_MENU": "Explorer le Cart",
       "CONTACT_US": "Contactez-Nous"
     },
     "CONTACT": {
@@ -531,7 +543,7 @@ export const TRANSLATIONS = {
       "CONTINUE": "Continuer la Commande"
     },
     "MENU_PAGE": {
-      "TITLE": "Notre Menu",
+      "TITLE": "Notre Cart",
       "SUBTITLE": "Découvrez les saveurs authentiques de la tradition italienne",
       "CATEGORIES": {
         "TAVOLA_CALDA": "Plats Chauds",

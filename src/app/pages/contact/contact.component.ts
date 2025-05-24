@@ -30,7 +30,6 @@ import { TranslateModule } from '@ngx-translate/core';
             <div class="form-container">
               <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" name="contact" method="POST" class="space-y-6" netlify data-netlify="true">
                 <input type="hidden" name="form-name" value="contact">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div class="form-group">
                     <label for="name" class="form-label">
                       {{ 'CONTACT.NAME_LABEL' | translate }}
@@ -49,7 +48,6 @@ import { TranslateModule } from '@ngx-translate/core';
                       </div>
                     }
                   </div>
-
                   <div class="form-group">
                     <label for="email" class="form-label">
                       {{ 'CONTACT.EMAIL_LABEL' | translate }}
@@ -68,8 +66,6 @@ import { TranslateModule } from '@ngx-translate/core';
                       </div>
                     }
                   </div>
-                </div>
-
                 <div class="form-group">
                   <label for="phone" class="form-label">
                     {{ 'CONTACT.PHONE_LABEL' | translate }}

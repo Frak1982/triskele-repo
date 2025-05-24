@@ -19,6 +19,10 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             <p class="footer-description">
               {{ 'FOOTER.DESCRIPTION' | translate }}
             </p>
+          </div>
+
+          <div class="footer-column social">
+            <h3 class="footer-title">{{ 'FOOTER.SOCIAL' | translate }}</h3>
             <div class="social-icons">
               <a href="#" class="social-icon" aria-label="Facebook">
                 <i class="icon-facebook">f</i>
@@ -35,7 +39,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             </div>
           </div>
 
-          <div class="footer-column links">
+          <!-- <div class="footer-column links">
             <h3 class="footer-title">{{ 'FOOTER.LINKS' | translate }}</h3>
             <ul class="footer-links">
               <li><a routerLink="/" scrollToTop>{{ 'FOOTER.HOME' | translate }}</a></li>
@@ -44,7 +48,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               <li><a routerLink="/contact" scrollToTop>{{ 'FOOTER.CONTACT' | translate }}</a></li>
               <li><a routerLink="/order" scrollToTop>{{ 'FOOTER.ORDER' | translate }}</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="footer-column contact">
             <h3 class="footer-title">{{ 'FOOTER.CONTACT_US' | translate }}</h3>
