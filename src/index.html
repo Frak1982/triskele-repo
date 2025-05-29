@@ -5,7 +5,7 @@
   <title>Triskele - Autentica Gastronomia Italiana a Rennes</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/jpeg" href="/src/assets/images/triskele-logo.jpg">
+  <link rel="icon" type="image/jpeg" href="/assets/images/triskele.jpg">
 
   <!-- Font mancanti (importante per lo stile) -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
     .spinner {
       width: 40px;
       height: 40px;
-      border: 4px solid #e6c15a;
+      border: 4px solid #deb16d;
       border-top: 4px solid transparent;
       border-radius: 50%;
       animation: spin 1s linear infinite;
@@ -71,14 +71,48 @@
 <body class="mat-typography">
   <!-- Spinner di caricamento -->
   <div class="app-loading" id="app-loading">
-    <img src="/assets/images/triskele-logo.jpg" alt="Triskele Logo">
+    <img src="/assets/images/triskele.svg" alt="Triskele Logo">
     <h1>Triskele</h1>
-    <p>Autentica Gastronomia Italiana</p>
+    <p id="loading-text">Autentica Gastronomia Italiana</p>
     <div class="spinner"></div>
   </div>
 
   <!-- Tag app-root -->
   <app-root></app-root>
+
+  <!-- Script per gestire le traduzioni nel loader -->
+  <script>
+    // Traduzioni per il loader
+    const LOADER_TRANSLATIONS = {
+      'LOADING.DESCRIPTION': {
+        it: 'Autentica Gastronomia Italiana',
+        fr: 'Authentique Gastronomie Italienne',
+        en: 'Authentic Italian Gastronomy'
+      }
+    };
+
+    // Funzione per ottenere la lingua preferita del browser
+    function getBrowserLanguage() {
+      const lang = navigator.language || navigator.userLanguage;
+      return lang.startsWith('fr') ? 'fr' :
+             lang.startsWith('it') ? 'it' : 'en';
+    }
+
+    // Funzione per tradurre il testo del loader
+    function translateLoader() {
+      const loadingText = document.getElementById('loading-text');
+      if (!loadingText) return;
+
+      const lang = getBrowserLanguage();
+      const translation = LOADER_TRANSLATIONS['LOADING.DESCRIPTION'][lang] ||
+                         LOADER_TRANSLATIONS['LOADING.DESCRIPTION']['fr'];
+
+      loadingText.textContent = translation;
+    }
+
+    // Applica la traduzione immediatamente
+    translateLoader();
+  </script>
 
   <!-- Script per nascondere il loader quando l'app è pronta -->
   <script>

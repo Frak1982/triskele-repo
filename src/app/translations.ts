@@ -2,6 +2,9 @@
 
 export const TRANSLATIONS = {
   it: {
+    "LOADING": {
+      "DESCRIPTION": "Autentica Gastronomia Italiana"
+    },
     "HEADER": {
       "HOME": "Home",
       "MENU": "Menu",
@@ -203,6 +206,9 @@ export const TRANSLATIONS = {
     }
   },
   en: {
+    "LOADING": {
+      "DESCRIPTION": "Authentic Italian Gastronomy"
+    },
     "HEADER": {
       "HOME": "Home",
       "MENU": "Menu",
@@ -404,6 +410,9 @@ export const TRANSLATIONS = {
     }
   },
   fr: {
+    "LOADING": {
+      "DESCRIPTION": "Cuisine Italienne Authentique"
+    },
     "HEADER": {
       "HOME": "Accueil",
       "MENU": "Cart",

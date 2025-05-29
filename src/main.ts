@@ -25,12 +25,12 @@ bootstrapApplication(TriskeleComponent, {
     importProvidersFrom(
       ReactiveFormsModule,
       TranslateModule.forRoot({
-        defaultLanguage: 'it'
+        defaultLanguage: 'fr'
       })
     )
   ]
 }).then(() => {
-  console.log('Applicazione avviata con successo');
+  console.log('ok');
 }).catch(err => {
-  console.error('Errore durante l\'avvio dell\'applicazione:', err);
+  console.error('error: ', err);
 });

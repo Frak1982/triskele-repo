@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 
@@ -16,7 +15,7 @@ interface MenuItem {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslateModule,ScrollToTopDirective],
+  imports: [CommonModule, TranslateModule,ScrollToTopDirective],
   template: `
     <div class="menu-page">
       <div class="menu-header">
@@ -234,7 +233,7 @@ export class MenuComponent {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
       price: 6.0,
-      image: '/assets/images/focacce.jpg',
+      image: '/assets/images/focaccia.jpg',
       category: 'tavolaCalda',
     },
     {
@@ -248,14 +247,14 @@ export class MenuComponent {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
       price: 8.5,
-      image: '/assets/images/pizza-in-teglia.png',
+      image: '/assets/images/pizzateglia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
       price: 8.5,
-      image: '/assets/images/cartocciata.jpg',
+      image: '/assets/images/pizzaportafoglio.jpg',
       category: 'tavolaCalda',
     },
     // Primi Piatti
@@ -263,7 +262,7 @@ export class MenuComponent {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
       price: 12.5,
-      image: '/assets/images/lasagne-alla-bolognese.jpg',
+      image: '/assets/images/lasagnabolo.jpg',
       featured: true,
       category: 'primi',
     },
@@ -272,7 +271,7 @@ export class MenuComponent {
       id: 7,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
       price: 10.5,
-      image: '/assets/images/cannoli.webp',
+      image: '/assets/images/cannoli1.jpg',
       category: 'dolci',
     },
     {

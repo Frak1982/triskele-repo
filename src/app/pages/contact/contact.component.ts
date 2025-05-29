@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { FormGroup, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

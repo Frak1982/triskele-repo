@@ -25,7 +25,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
       <div class="container">
         <div class="logo">
           <a routerLink="/" scrollToTop>
-            <img src="/assets/images/triskele-svg.svg" alt="Triskele Logo" />
+            <img src="/assets/images/triskele.svg" alt="Triskele Logo" />
             <span class="header-title">Triskele</span>
           </a>
         </div>

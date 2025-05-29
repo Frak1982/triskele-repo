@@ -257,7 +257,7 @@ export class OrderComponent implements OnInit {
       name: 'Arancini',
       description: 'Palline di riso ripiene di ragù, piselli e formaggio.',
       price: 7.5,
-      image: '/src/assets/images/arancini.jpg',
+      image: '/assets/images/arancini.jpg',
       category: 'tavola calda',
     },
     {
@@ -265,7 +265,7 @@ export class OrderComponent implements OnInit {
       name: 'Pizza in teglia',
       description: 'Pizza in teglia con pomodoro, mozzarella e basilico.',
       price: 6.0,
-          image: '/src/assets/images/pizza-in-teglia.png',
+          image: '/src/assets/images/pizzateglia.jpg',
       category: 'tavola calda',
     },
     {
@@ -273,7 +273,7 @@ export class OrderComponent implements OnInit {
       name: 'Pizza a portafoglio',
       description: 'Pizza a portafoglio con pomodoro, mozzarella e basilico.',
       price: 12.5,
-      image: '/src/assets/images/cartocciata.jpg',
+      image: '/assets/images/pizzaportafoglio.jpg',
       category: 'tavola calda',
     },
     {
@@ -281,7 +281,7 @@ export class OrderComponent implements OnInit {
       name: 'Pizza fritta',
       description: 'Pizza fritta con pomodoro, mozzarella e basilico.',
       price: 11.0,
-      image: '/src/assets/images/siciliana.jpg',
+      image: '/assets/images/siciliana.jpg',
       category: 'tavola calda',
     },
     {
@@ -289,7 +289,7 @@ export class OrderComponent implements OnInit {
       name: 'Focacce',
       description: 'Focacce con pomodoro, mozzarella e basilico.',
       price: 10.5,
-      image: '/src/assets/images/focacce.jpg',
+      image: '/assets/images/focaccia.jpg',
       category: 'tavola calda',
     },
     // Primi
@@ -298,7 +298,7 @@ export class OrderComponent implements OnInit {
       name: 'Lasagne alla Bolognese',
       description: 'Lasagne alla Bolognese con ragù e besciamella.',
       price: 10.5,
-      image: '/src/assets/images/lasagne-alla-bolognese.jpg',
+      image: '/assets/images/lasagnebolo.jpg',
       category: 'primi',
     },
     // Dolci
@@ -307,7 +307,7 @@ export class OrderComponent implements OnInit {
       name: 'Cannoli Siciliani',
       description: 'Croccanti cilindri con ripieno di ricotta dolce.',
       price: 5.5,
-      image: '/src/assets/images/cannoli.webp',
+      image: '/assets/images/cannoli1.jpg',
       category: 'dolci',
     },
     {
@@ -315,7 +315,7 @@ export class OrderComponent implements OnInit {
       name: 'Tiramisù',
       description: 'Il classico dolce italiano con caffè e mascarpone.',
       price: 6.0,
-      image: '/src/assets/images/tiramisu.jpg',
+      image: '/assets/images/tiramisu.jpg',
       category: 'dolci',
     },
     // Bevande
@@ -324,7 +324,7 @@ export class OrderComponent implements OnInit {
       name: 'Caffè',
       description: 'Caffè',
       price: 2.0,
-      image: '/src/assets/images/caffe.jpg ',
+      image: '/assets/images/caffè.jpg ',
       category: 'bevande',
     },
   ];

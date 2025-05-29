@@ -15,7 +15,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
           <div class="col-md-5 d-flex flex-column align-items-center">
             <h1 class="hero-title">{{ 'HERO.TITLE' | translate }}</h1>
             <img
-              src="assets/images/triskele-svg.svg"
+              src="assets/images/triskele.svg"
               alt="Triskele Logo"
               class="hero-logo"
             />

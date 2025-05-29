@@ -55,7 +55,7 @@ export class FeaturedProductsComponent {
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
       price: 9.9,
       category: 'primi',
-      image: 'lasagne-alla-bolognese.jpg',
+      image: 'lasagnabolo.jpg',
     },
     {
       id: 2,
@@ -69,7 +69,7 @@ export class FeaturedProductsComponent {
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
       price: 4.5,
       category: 'dolce',
-      image: 'cannoli.webp',
+      image: 'cannoli1.jpg',
     },
   ];
 

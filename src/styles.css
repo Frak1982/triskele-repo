@@ -1,16 +1,16 @@
 /* ====================
    IMPORTAZIONE FONTS
    ==================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 /* ====================
    VARIABILI GLOBALI
    ==================== */
 :root {
-  --primary-color: #ad8540;
+  --primary-color: #deb16d;
   --secondary-color: #1f2b21;
   --text-color: #1f2b21;
-  --text-light: #ad8540;
+  --text-light: #deb16d;
   --bg-color: #fff;
   --bg-light: #fffaf5;
   --border-radius: 8px;
@@ -541,8 +541,8 @@ app-header header .header-title {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-image: url("/src/assets/images/triskele-logo.jpg");
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    background-image: url("/assets/images/triskele.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 75% auto; /* Ridotto da 105% a 75% per rendere l'immagine più piccola */
@@ -637,7 +637,7 @@ app-menu .menu-header::before {
   width: 100%;
   height: 100%;
   /* Utilizzo solo della parte circolare centrale del logo */
-  background-image: url("/assets/images/pizza-in-teglia.png");
+  background-image: url("/assets/images/pizzateglia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -906,7 +906,7 @@ app-hero .overlay {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   /* Utilizzo solo della parte circolare centrale del logo */
-  background-image: url("/src/assets/images/triskele-logo.jpg");
+  background-image: url("/assets/images/triskele.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 105% auto; /* Ripristinato al valore originale per far prendere tutto lo spazio */
@@ -976,8 +976,8 @@ app-hero .hero-logo {
   max-width: 250px;
   height: auto;
   margin-top: 1rem;
-  filter: brightness(0) saturate(100%) invert(52%) sepia(45%) saturate(454%)
-    hue-rotate(353deg) brightness(95%) contrast(88%);
+  filter: brightness(0) saturate(100%) invert(79%) sepia(48%) saturate(464%)
+    hue-rotate(345deg) brightness(91%) contrast(90%);
 }
 
 @media (max-width: 768px) {
@@ -1499,7 +1499,6 @@ app-about .btn {
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
 }
-
 
 app-about .btn:hover {
   background-color: var(--secondary-color);
@@ -2037,7 +2036,7 @@ body {
    SUB HERO CONTAINER
    ==================== */
 .sub-hero-container {
-  background-image: url("assets/images/pizza-in-teglia.png");
+  background-image: url("/assets/images/pizzateglia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

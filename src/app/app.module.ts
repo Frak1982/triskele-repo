@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'it'
+      defaultLanguage: 'fr'
     })
   ],
   providers: []

@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { FeaturedProductsComponent } from '../../components/featured-products/featured-products.component';
-import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -11,7 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink,
     HeroComponent,
     FeaturedProductsComponent,
     // TestimonialsComponent,
@@ -23,7 +20,9 @@ import { TranslateModule } from '@ngx-translate/core';
     </section>
 
     <section>
-      <div class="sub-hero-container justify-content-center d-flex align-items-center">
+      <div
+        class="sub-hero-container justify-content-center d-flex align-items-center"
+      >
         <h1 class="sub-hero-title">{{ 'SUB-HERO.TITLE' | translate }}</h1>
       </div>
     </section>
