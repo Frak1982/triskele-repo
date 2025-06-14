@@ -1141,6 +1141,8 @@ app-footer .footer-title {
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
+  align-items: center !important;
+  flex-direction: column !important;
 }
 
 app-footer .footer-title:after {

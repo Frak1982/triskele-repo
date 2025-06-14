@@ -47,6 +47,9 @@ interface MenuItem {
             <div class="menu-section">
               <h2 class="category-title">
                 {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA' | translate }}
+                <h3>
+                  {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA_SUBTITLE' | translate }}
+                </h3>
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('tavolaCalda'); track item.id) {
@@ -65,7 +68,7 @@ interface MenuItem {
                       <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
                       <p class="menu-item-description">{{ getItemDescription(item) }}</p>
                       <div class="menu-item-price">
-                        €{{ item.price.toFixed(2) }}
+                      {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
                     <!-- <div class="menu-item-action">
@@ -83,6 +86,9 @@ interface MenuItem {
             <div class="menu-section">
               <h2 class="category-title">
                 {{ 'MENU_PAGE.CATEGORIES.PRIMI' | translate }}
+                <h3>
+                  {{ 'MENU_PAGE.CATEGORIES.PRIMI_SUBTITLE' | translate }}
+                </h3>
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('primi'); track item.id) {
@@ -101,7 +107,7 @@ interface MenuItem {
                       <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
                       <p class="menu-item-description">{{ getItemDescription(item) }}</p>
                       <div class="menu-item-price">
-                        €{{ item.price.toFixed(2) }}
+                      €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
                     <!-- <div class="menu-item-action">
@@ -119,6 +125,9 @@ interface MenuItem {
             <div class="menu-section">
               <h2 class="category-title">
                 {{ 'MENU_PAGE.CATEGORIES.DOLCI' | translate }}
+                <h3>
+                  {{ 'MENU_PAGE.CATEGORIES.DOLCI_SUBTITLE' | translate }}
+                </h3>
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('dolci'); track item.id) {
@@ -137,7 +146,7 @@ interface MenuItem {
                       <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
                       <p class="menu-item-description">{{ getItemDescription(item) }}</p>
                       <div class="menu-item-price">
-                        €{{ item.price.toFixed(2) }}
+                      €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
                     <!-- <div class="menu-item-action">
@@ -155,6 +164,9 @@ interface MenuItem {
             <div class="menu-section">
               <h2 class="category-title">
                 {{ 'MENU_PAGE.CATEGORIES.BEVANDE' | translate }}
+                <h3>
+                  {{ 'MENU_PAGE.CATEGORIES.BEVANDE_SUBTITLE' | translate }}
+                </h3>
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('bevande'); track item.id) {
@@ -224,7 +236,7 @@ export class MenuComponent {
     {
       id: 1,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
-      price: 7.5,
+      price: 4.50,
       image: '/assets/images/arancini.jpg',
       featured: true,
       category: 'tavolaCalda',
@@ -232,28 +244,28 @@ export class MenuComponent {
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
-      price: 6.0,
+      price: 7.00,
       image: '/assets/images/focaccia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_FRITTA',
-      price: 8.5,
-      image: '/assets/images/siciliana.jpg',
+      price: 6.50,
+      image: '/assets/images/pizzafritta1.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
-      price: 8.5,
+      price: 5.50,
       image: '/assets/images/pizzateglia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
-      price: 8.5,
+      price: 6.50,
       image: '/assets/images/pizzaportafoglio.jpg',
       category: 'tavolaCalda',
     },
@@ -261,31 +273,54 @@ export class MenuComponent {
     {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
-      price: 12.5,
+      price: 9,
       image: '/assets/images/lasagnabolo.jpg',
+      featured: true,
+      category: 'primi',
+    },
+    {
+      id: 7,
+      translationKey: 'MENU_ITEMS.PRIMI.LASAGNE_VEGANE',
+      price: 9,
+      image: '/assets/images/lasagnavege.jpg',
+      featured: true,
+      category: 'primi',
+    },
+    {
+      id: 8,
+      translationKey: 'MENU_ITEMS.PRIMI.PARMIGIANA',
+      price: 8,
+      image: '/assets/images/parmigiana.jpg',
       featured: true,
       category: 'primi',
     },
     // Dolci
     {
-      id: 7,
+      id: 9,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
-      price: 10.5,
+      price: 5,
       image: '/assets/images/cannoli1.jpg',
       category: 'dolci',
     },
     {
-      id: 8,
+      id: 10,
       translationKey: 'MENU_ITEMS.DOLCI.TIRAMISU',
-      price: 14.5,
+      price:4.50,
       image: '/assets/images/tiramisu.jpg',
+      category: 'dolci',
+    },
+    {
+      id: 11,
+      translationKey: 'MENU_ITEMS.DOLCI.GRAFFE',
+      price: 3.50,
+      image: '/assets/images/graffe.jpg',
       category: 'dolci',
     },
     // Bevande
     {
-      id: 10,
+      id: 12,
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
-      price: 5.5,
+      price: 1.50,
       image: '/assets/images/caffe.jpg',
       featured: true,
       category: 'bevande',

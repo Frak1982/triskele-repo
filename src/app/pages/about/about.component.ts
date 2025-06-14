@@ -58,6 +58,15 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               <div class="icon-container">
                 <i class="fas fa-award"></i>
               </div>
+              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.AUTHENTICITY_TITLE' | translate }}</h3>
+              <p class="text-gray-600">
+                {{ 'ABOUT.AUTHENTICITY_DESC' | translate }}
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="icon-container">
+                <i class="fas fa-award"></i>
+              </div>
               <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.QUALITY_TITLE' | translate }}</h3>
               <p class="text-gray-600">
                 {{ 'ABOUT.QUALITY_DESC' | translate }}
@@ -67,18 +76,27 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               <div class="icon-container">
                 <i class="fas fa-utensils"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.TRADITION_TITLE' | translate }}</h3>
+              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.GENEROSITY_TITLE' | translate }}</h3>
               <p class="text-gray-600">
-                {{ 'ABOUT.TRADITION_DESC' | translate }}
+                {{ 'ABOUT.GENEROSITY_DESC' | translate }}
               </p>
             </div>
             <div class="value-card">
               <div class="icon-container">
                 <i class="fas fa-heart"></i>
               </div>
-              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.HOSPITALITY_TITLE' | translate }}</h3>
+              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.CONVIVIALITY_TITLE' | translate }}</h3>
               <p class="text-gray-600">
-                {{ 'ABOUT.HOSPITALITY_DESC' | translate }}
+                {{ 'ABOUT.CONVIVIALITY_DESC' | translate }}
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="icon-container">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary-800">{{ 'ABOUT.TRANSMISSION_TITLE' | translate }}</h3>
+              <p class="text-gray-600">
+                {{ 'ABOUT.TRANSMISSION_DESC' | translate }}
               </p>
             </div>
           </div>
@@ -101,7 +119,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
                 <div class="team-overlay"></div>
               </div>
               <div class="content">
-                <h3 class="text-2xl font-bold text-primary-800">Alessandro</h3>
+                <h3 class="text-2xl font-bold text-primary-800">{{ 'ABOUT.CHEF_TITLE' | translate }}</h3>
                 <p class="text-primary-500 mb-4 font-medium">{{ 'ABOUT.CHEF_POSITION' | translate }}</p>
                 <p class="text-gray-600">
                   {{ 'ABOUT.CHEF_DESC' | translate }}

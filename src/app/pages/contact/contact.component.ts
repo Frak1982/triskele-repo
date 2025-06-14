@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule, RouterLink],
   template: `
     <div class="contact-page">
       <!-- Menu Header Style (stesso stile della pagina menu) -->
@@ -22,49 +28,61 @@ import { TranslateModule } from '@ngx-translate/core';
           <!-- Form Section -->
           <div class="lg:w-2/3">
             <div class="section-title-container">
-              <h2 class="text-2xl font-bold mb-2 text-primary-900">{{ 'CONTACT.FORM_TITLE' | translate }}</h2>
+              <h2 class="text-2xl font-bold mb-2 text-primary-900">
+                {{ 'CONTACT.FORM_TITLE' | translate }}
+              </h2>
               <div class="accent-line mb-8"></div>
             </div>
 
             <div class="form-container">
-              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" name="contact" method="POST" class="space-y-6" netlify data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
-                  <div class="form-group">
-                    <label for="name" class="form-label">
-                      {{ 'CONTACT.NAME_LABEL' | translate }}
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      formControlName="name"
-                      class="form-input"
-                      [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
-                    />
-                    @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
-                      <div class="error-message">
-                        {{ 'CONTACT.NAME_ERROR' | translate }}
-                      </div>
-                    }
+              <form
+                [formGroup]="contactForm"
+                (ngSubmit)="onSubmit()"
+                name="contact"
+                method="POST"
+                class="space-y-6"
+                netlify
+                data-netlify="true"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <div class="form-group">
+                  <label for="name" class="form-label">
+                    {{ 'CONTACT.NAME_LABEL' | translate }}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    formControlName="name"
+                    class="form-input"
+                    [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate"
+                  />
+                  @if (contactForm.get('name')?.invalid &&
+                  contactForm.get('name')?.touched) {
+                  <div class="error-message">
+                    {{ 'CONTACT.NAME_ERROR' | translate }}
                   </div>
-                  <div class="form-group">
-                    <label for="email" class="form-label">
-                      {{ 'CONTACT.EMAIL_LABEL' | translate }}
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      formControlName="email"
-                      class="form-input"
-                      [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
-                    />
-                    @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
-                      <div class="error-message">
-                        {{ 'CONTACT.EMAIL_ERROR' | translate }}
-                      </div>
-                    }
+                  }
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    {{ 'CONTACT.EMAIL_LABEL' | translate }}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    formControlName="email"
+                    class="form-input"
+                    [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate"
+                  />
+                  @if (contactForm.get('email')?.invalid &&
+                  contactForm.get('email')?.touched) {
+                  <div class="error-message">
+                    {{ 'CONTACT.EMAIL_ERROR' | translate }}
                   </div>
+                  }
+                </div>
                 <div class="form-group">
                   <label for="phone" class="form-label">
                     {{ 'CONTACT.PHONE_LABEL' | translate }}
@@ -91,10 +109,11 @@ import { TranslateModule } from '@ngx-translate/core';
                     class="form-input"
                     [placeholder]="'CONTACT.SUBJECT_PLACEHOLDER' | translate"
                   />
-                  @if (contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched) {
-                    <div class="error-message">
-                      {{ 'CONTACT.SUBJECT_ERROR' | translate }}
-                    </div>
+                  @if (contactForm.get('subject')?.invalid &&
+                  contactForm.get('subject')?.touched) {
+                  <div class="error-message">
+                    {{ 'CONTACT.SUBJECT_ERROR' | translate }}
+                  </div>
                   }
                 </div>
 
@@ -110,10 +129,11 @@ import { TranslateModule } from '@ngx-translate/core';
                     class="form-textarea"
                     [placeholder]="'CONTACT.MESSAGE_PLACEHOLDER' | translate"
                   ></textarea>
-                  @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
-                    <div class="error-message">
-                      {{ 'CONTACT.MESSAGE_ERROR' | translate }}
-                    </div>
+                  @if (contactForm.get('message')?.invalid &&
+                  contactForm.get('message')?.touched) {
+                  <div class="error-message">
+                    {{ 'CONTACT.MESSAGE_ERROR' | translate }}
+                  </div>
                   }
                 </div>
 
@@ -126,13 +146,17 @@ import { TranslateModule } from '@ngx-translate/core';
                     class="form-checkbox"
                   />
                   <label for="privacy" class="privacy-label">
-                    {{ 'CONTACT.PRIVACY_LABEL' | translate }} <a href="/privacy-policy" class="privacy-link">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
+                    {{ 'CONTACT.PRIVACY_LABEL' | translate }}
+                    <a routerLink="/privacy-policy" class="privacy-link">{{
+                      'CONTACT.PRIVACY_LINK' | translate
+                    }}</a>
                   </label>
                 </div>
-                @if (contactForm.get('privacy')?.invalid && contactForm.get('privacy')?.touched) {
-                  <div class="error-message mb-4">
-                    {{ 'CONTACT.PRIVACY_ERROR' | translate }}
-                  </div>
+                @if (contactForm.get('privacy')?.invalid &&
+                contactForm.get('privacy')?.touched) {
+                <div class="error-message mb-4">
+                  {{ 'CONTACT.PRIVACY_ERROR' | translate }}
+                </div>
                 }
 
                 <div class="form-actions">
@@ -142,9 +166,9 @@ import { TranslateModule } from '@ngx-translate/core';
                     class="submit-btn"
                   >
                     @if (isSubmitting) {
-                      <span>{{ 'CONTACT.SENDING' | translate }}</span>
+                    <span>{{ 'CONTACT.SENDING' | translate }}</span>
                     } @else {
-                      <span>{{ 'CONTACT.SEND' | translate }}</span>
+                    <span>{{ 'CONTACT.SEND' | translate }}</span>
                     }
                   </button>
                 </div>
@@ -152,9 +176,9 @@ import { TranslateModule } from '@ngx-translate/core';
             </div>
 
             @if (submitted) {
-              <div class="success-message">
-                {{ 'CONTACT.SUCCESS_MESSAGE' | translate }}
-              </div>
+            <div class="success-message">
+              {{ 'CONTACT.SUCCESS_MESSAGE' | translate }}
+            </div>
             }
           </div>
 
@@ -162,7 +186,9 @@ import { TranslateModule } from '@ngx-translate/core';
           <div class="lg:w-1/3">
             <div class="info-card">
               <div class="section-title-container">
-                <h2 class="text-2xl font-bold mb-2 text-primary-900">{{ 'CONTACT.INFO_TITLE' | translate }}</h2>
+                <h2 class="text-2xl font-bold mb-2 text-primary-900">
+                  {{ 'CONTACT.INFO_TITLE' | translate }}
+                </h2>
                 <div class="accent-line mb-8"></div>
               </div>
 
@@ -172,8 +198,12 @@ import { TranslateModule } from '@ngx-translate/core';
                     <i class="fas fa-map-marker-alt"></i>
                   </div>
                   <div class="info-content">
-                    <h3 class="text-lg font-medium">{{ 'CONTACT.ADDRESS_TITLE' | translate }}</h3>
-                    <p class="text-gray-600">{{ 'CONTACT.ADDRESS' | translate }}</p>
+                    <h3 class="text-lg font-medium">
+                      {{ 'CONTACT.ADDRESS_TITLE' | translate }}
+                    </h3>
+                    <p class="text-gray-600">
+                      {{ 'CONTACT.ADDRESS' | translate }}
+                    </p>
                   </div>
                 </div>
 
@@ -182,8 +212,12 @@ import { TranslateModule } from '@ngx-translate/core';
                     <i class="fas fa-phone-alt"></i>
                   </div>
                   <div class="info-content">
-                    <h3 class="text-lg font-medium">{{ 'CONTACT.PHONE_TITLE' | translate }}</h3>
-                    <p class="text-gray-600">{{ 'CONTACT.PHONE_NUMBER' | translate }}</p>
+                    <h3 class="text-lg font-medium">
+                      {{ 'CONTACT.PHONE_TITLE' | translate }}
+                    </h3>
+                    <p class="text-gray-600">
+                      {{ 'CONTACT.PHONE_NUMBER' | translate }}
+                    </p>
                   </div>
                 </div>
 
@@ -192,8 +226,12 @@ import { TranslateModule } from '@ngx-translate/core';
                     <i class="fas fa-envelope"></i>
                   </div>
                   <div class="info-content">
-                    <h3 class="text-lg font-medium">{{ 'CONTACT.EMAIL_TITLE' | translate }}</h3>
-                    <p class="text-gray-600">{{ 'CONTACT.EMAIL_ADDRESS' | translate }}</p>
+                    <h3 class="text-lg font-medium">
+                      {{ 'CONTACT.EMAIL_TITLE' | translate }}
+                    </h3>
+                    <p class="text-gray-600">
+                      {{ 'CONTACT.EMAIL_ADDRESS' | translate }}
+                    </p>
                   </div>
                 </div>
 
@@ -202,7 +240,9 @@ import { TranslateModule } from '@ngx-translate/core';
                     <i class="fas fa-clock"></i>
                   </div>
                   <div class="info-content">
-                    <h3 class="text-lg font-medium">{{ 'CONTACT.HOURS_TITLE' | translate }}</h3>
+                    <h3 class="text-lg font-medium">
+                      {{ 'CONTACT.HOURS_TITLE' | translate }}
+                    </h3>
                     <div class="hours-table">
                       <p class="hours-row">
                         <span>{{ 'CONTACT.MONDAY_FRIDAY' | translate }}:</span>
@@ -226,7 +266,7 @@ import { TranslateModule } from '@ngx-translate/core';
       </div>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class ContactComponent {
   contactForm = new FormGroup({
@@ -235,7 +275,7 @@ export class ContactComponent {
     phone: new FormControl(''),
     subject: new FormControl('', [Validators.required]),
     message: new FormControl('', [Validators.required]),
-    privacy: new FormControl(false, [Validators.requiredTrue])
+    privacy: new FormControl(false, [Validators.requiredTrue]),
   });
 
   isSubmitting = false;
@@ -249,22 +289,24 @@ export class ContactComponent {
     this.isSubmitting = true;
 
     // Invia il form a Netlify
-    const form = document.querySelector('form[name="contact"]') as HTMLFormElement;
+    const form = document.querySelector(
+      'form[name="contact"]'
+    ) as HTMLFormElement;
     const formData = new FormData(form);
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as any).toString()
+      body: new URLSearchParams(formData as any).toString(),
     })
-    .then(() => {
-      this.isSubmitting = false;
-      this.submitted = true;
-      this.contactForm.reset();
-    })
-    .catch(error => {
-      console.error('Errore durante l\'invio del form:', error);
-      this.isSubmitting = false;
-    });
+      .then(() => {
+        this.isSubmitting = false;
+        this.submitted = true;
+        this.contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("Errore durante l'invio del form:", error);
+        this.isSubmitting = false;
+      });
   }
 }
