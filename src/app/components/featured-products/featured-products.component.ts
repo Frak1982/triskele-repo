@@ -7,7 +7,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 interface Product {
   id: number;
   translationKey: string;
-  price: number;
+  // price: number;
   category: string;
   image: string;
 }
@@ -19,32 +19,90 @@ interface Product {
   template: `
     <div class="container">
       <h2 class="section-title">{{ 'FEATURED.TITLE' | translate }}</h2>
-      <div class="products-grid">
-        @for (product of featuredProducts; track product.id) {
-          <div class="product-card">
-            <div class="product-image" style="height: 200px; width: 100%;">
-              <img
-                [src]="'/assets/images/' + product.image"
-                [alt]="getProductName(product)"
-                class="product-img"
-                style="width: 100%; height: 100%; object-fit: cover;"
-              />
-            </div>
-            <div class="product-details">
-              <h3 class="product-name">{{ getProductName(product) }}</h3>
-              <p class="product-description">{{ getProductDescription(product) }}</p>
-              <div class="product-price">€{{ product.price.toFixed(2) }}</div>
-              <a routerLink="/menu" class="product-btn" scrollToTop>{{ 'FEATURED.VIEW_MENU' | translate }}</a>
-            </div>
+      <div class="carousel-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+        <button class="carousel-arrow left" (click)="prev()" aria-label="Precedente">&#8592;</button>
+        <div class="product-card carousel-card">
+          <div class="product-image">
+            <img
+              [src]="'/assets/images/' + currentProduct.image"
+              [alt]="getProductName(currentProduct)"
+              class="product-img"
+            />
           </div>
-        }
+          <div class="product-details">
+            <h3 class="product-name">{{ getProductName(currentProduct) }}</h3>
+            <p class="product-description">{{ getProductDescription(currentProduct) }}</p>
+            <a routerLink="/menu" class="product-btn" scrollToTop>{{ 'FEATURED.VIEW_MENU' | translate }}</a>
+          </div>
+        </div>
+        <button class="carousel-arrow right" (click)="next()" aria-label="Successivo">&#8594;</button>
+      </div>
+      <div class="carousel-dots">
+        <span *ngFor="let p of featuredProducts; let i = index" class="dot" [class.active]="i === currentIndex" (click)="goTo(i)"></span>
       </div>
       <div class="view-all">
-        <a routerLink="/menu" class="view-all-btn" scrollToTop>{{ 'FEATURED.VIEW_ALL' | translate }}</a>
+        <a href="/assets/menu.pdf" class="view-all-btn" download="Triskele-Menu.pdf">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
       </div>
     </div>
   `,
-  styles: []
+  styles: [`
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .carousel-arrow {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--primary-color, #333);
+      padding: 0 10px;
+      z-index: 2;
+      transition: color 0.2s;
+    }
+    .carousel-arrow:hover {
+      color: var(--secondary-color, #e67e22);
+    }
+    .carousel-card {
+      min-width: 280px;
+      width: 400px;
+      height: 700px;
+      width: 100%;
+      margin: 0 10px;
+      box-shadow: var(--box-shadow, 0 2px 8px rgba(0,0,0,0.08));
+      border-radius: var(--border-radius, 16px);
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+      gap: 8px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .dot.active {
+      background: var(--primary-color, #333);
+    }
+    .product-image {
+      height: 400px
+    }
+    img {
+      object-fit: cover;
+      height: 400px;
+      width: 400px;
+    }
+  `]
 })
 export class FeaturedProductsComponent {
   constructor(private translateService: TranslateService) {}
@@ -53,25 +111,30 @@ export class FeaturedProductsComponent {
     {
       id: 1,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
-      price: 9.9,
       category: 'primi',
       image: 'lasagnabolo.jpg',
     },
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
-      price: 7.5,
       category: 'tavola calda',
       image: 'arancini.jpg',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
-      price: 4.5,
       category: 'dolce',
       image: 'cannoli1.jpg',
     },
   ];
+
+  currentIndex = 0;
+  touchStartX = 0;
+  touchEndX = 0;
+
+  get currentProduct(): Product {
+    return this.featuredProducts[this.currentIndex];
+  }
 
   getProductName(product: Product): string {
     return this.translateService.instant(`${product.translationKey}.NAME`);
@@ -79,5 +142,37 @@ export class FeaturedProductsComponent {
 
   getProductDescription(product: Product): string {
     return this.translateService.instant(`${product.translationKey}.DESCRIPTION`);
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.featuredProducts.length) % this.featuredProducts.length;
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.featuredProducts.length;
+  }
+
+  goTo(index: number) {
+    this.currentIndex = index;
+  }
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipe();
+  }
+
+  handleSwipe() {
+    const delta = this.touchEndX - this.touchStartX;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) {
+        this.prev();
+      } else {
+        this.next();
+      }
+    }
   }
 }

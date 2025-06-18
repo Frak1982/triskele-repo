@@ -13,8 +13,7 @@ export const TRANSLATIONS = {
       ORDER: 'Ordina Online',
     },
     FOOTER: {
-      DESCRIPTION: `Chiudi gli occhi… sei in Italia.
-Da TRISKELE si cucina con il cuore e si delizia con sapori autentici, fatti in casa e generosi.`,
+      DESCRIPTION: `Chiudi gli occhi… sei in Italia.Da TRISKELE si cucina con il cuore e si delizia con sapori autentici, fatti in casa e generosi.`,
       LINKS: 'Collegamenti',
       HOME: 'Home',
       ABOUT: 'Chi Siamo',
@@ -23,7 +22,7 @@ Da TRISKELE si cucina con il cuore e si delizia con sapori autentici, fatti in c
       ORDER: 'Ordina Online',
       CONTACT_US: 'Contatti',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
-      PHONE: 'xxxxxxxx',
+      PHONE: '06 72 78 06 22',
       EMAIL: 'triskelegastronomie@gmail.com',
       OPENING_HOURS: 'Orari',
       MONDAY_FRIDAY: 'Dal lunedì al venerdì',
@@ -35,81 +34,61 @@ Da TRISKELE si cucina con il cuore e si delizia con sapori autentici, fatti in c
       COPYRIGHT: 'Triskele Ristorante. Tutti i diritti riservati.',
       MADE_WITH_LOVE: 'Fatto con ❤️ in Italia',
       OUR_LOCATION: 'La nostra posizione',
-      OUR_LOCATION_SUBTITLE: `Metro B (Saint Germain); Fermata Place Pasteur (12, C2, C3, C5, N5); Fermata Musée Beaux Arts (C4, C6, 67, N4).`,
+      OUR_LOCATION_SUBTITLE1: `Metro B (Saint Germain)`,
+      OUR_LOCATION_SUBTITLE2: `Fermata Place Pasteur`,
+      OUR_LOCATION_SUBTITLE3: `Fermata Musée Beaux Arts (C4, C6, 67, N4)`,
       SOCIAL: 'Social',
     },
     HERO: {
       TITLE: 'Buongiorno! Noi siamo TRISKELE, Gastronomia italo-siciliana',
-      SUBTITLE: `Abbiamo posato le nostre valigie e le nostre pentole accanto a Place Saint-Germain, e qui vi accogliamo come a casa: con sorrisi sinceri, profumi che risvegliano i ricordi e sapori che raccontano una storia.
-Siciliano da generazioni, sono cresciuto con il profumo del basilico, della salsa di pomodoro che sobbolle e del pane caldo che si condivideva in famiglia la domenica.
-Grazie a mia madre, vera memoria culinaria della nostra casa, ho imparato che cucinare non significa solo nutrire… ma trasmettere.
-Desidero trasmettere i profumi e i sapori della mia terra al maggior numero di persone possibile. Propongo delizie che si mangiano con una mano, ma che racchiudono un'esplosione di sapori autentici.
-Chiudendo gli occhi, vi sembrerà di essere in Italia. Benvenuti da TRISKELE, l’Italia in un morso.
-Venite a scoprire le nostre specialità italo-siciliane fatte in casa. Qui si cucina con il cuore… e si sente.`,
+      SUBTITLE: `Qui cuciniamo con il cuore e vi accogliamo come a casa.Delizie siciliane e italiane da gustare con una mano, profumi che risvegliano i ricordi e sapori che raccontano una storia.`,
       MENU_BUTTON: 'Scopri il Menu',
       ABOUT_BUTTON: 'Chi Siamo',
     },
-    'SUB-HERO': {
+    SUBHERO: {
       TITLE: "Benvenuti da TRISKELE, l'Italia in un morso.",
     },
     FEATURED: {
       TITLE: 'Le Nostre Specialità',
       VIEW_MENU: 'Vedi nel Menu',
-      VIEW_ALL: 'Vedi tutto il Menu',
+      VIEW_ALL: 'Scarica menu',
     },
     HOME: {
       SERVICES_TITLE: 'I Nostri Servizi',
       AUTHENTIC_CUISINE_TITLE: 'Cucina Autentica',
-      AUTHENTIC_CUISINE_DESC:
-        'Piatti tradizionali preparati secondo le ricette originali italiane.',
+      AUTHENTIC_CUISINE_DESC:'Piatti tradizionali preparati secondo le ricette originali italiane.',
       DELIVERY_TITLE: 'Solo Asporto',
-      DELIVERY_DESC:
-        'Ordina e ritira in negozio i tuoi piatti preferiti preparati al momento.',
+      DELIVERY_DESC:'Ordina e ritira in negozio i tuoi piatti preferiti preparati al momento.',
       FRESH_PASTA_TITLE: 'Pasta Fresca',
-      FRESH_PASTA_DESC:
-        'La nostra pasta è preparata fresca ogni giorno per garantire la massima qualità.',
+      FRESH_PASTA_DESC:'La nostra pasta è preparata fresca ogni giorno per garantire la massima qualità.',
     },
     ABOUT: {
       TITLE: 'La Nostra Storia',
       SUBTITLE: "Triskele, un angolo d'Italia nel cuore di Rennes",
       WHO_WE_ARE: 'Chi Siamo',
-      PARAGRAPH_1: `Triskele è, prima di tutto, una storia di passione e sapori.
-Nata dall’amore per la cucina italiana autentica e dal desiderio di condividere le ricette di famiglia tramandate di generazione in generazione, la nostra casa celebra la ricchezza delle tradizioni culinarie italiane.`,
+      PARAGRAPH_1: `Triskele è, prima di tutto, una storia di passione e sapori.Nata dall’amore per la cucina italiana autentica e dal desiderio di condividere le ricette di famiglia tramandate di generazione in generazione, la nostra casa celebra la ricchezza delle tradizioni culinarie italiane.`,
       PARAGRAPH_2: `Situato nel cuore di Rennes, Triskele vi invita a vivere un’esperienza gustosa, calda e conviviale. Qui, ogni piatto racconta una storia, preparata con prodotti freschi, ingredienti di qualità e specialità importate direttamente dall’Italia.`,
-      PARAGRAPH_3: `La nostra missione?
-Farvi viaggiare attraverso i profumi e i sapori del Sud, senza lasciare Rennes. Offrire un pezzo d’Italia da portare via, come se foste a casa nostra, in Sicilia.`,
+      PARAGRAPH_3: `La nostra missione?Farvi viaggiare attraverso i profumi e i sapori del Sud, senza lasciare Rennes. Offrire un pezzo d’Italia da portare via, come se foste a casa nostra, in Sicilia.`,
       IMAGE_ALT: 'Il Team di Triskele',
       VALUES_TITLE: 'I Nostri Valori',
       AUTHENTICITY_TITLE: 'Autenticità',
-      AUTHENTICITY_DESC:
-        'Selezioniamo i migliori ingredienti, prediligendo prodotti freschi e di stagione.',
+      AUTHENTICITY_DESC:'Selezioniamo i migliori ingredienti, prediligendo prodotti freschi e di stagione.',
       QUALITY_TITLE: 'Qualità',
-      QUALITY_DESC: `Ingredienti freschi, importati direttamente dall’Italia o scelti da produttori di fiducia.
-Nessun compromesso: qui si cucina come a casa.
-`,
+      QUALITY_DESC: `Ingredienti freschi, importati direttamente dall’Italia o scelti da produttori di fiducia.Nessun compromesso: qui si cucina come a casa.`,
       GENEROSITY_TITLE: 'Generosità',
-      GENEROSITY_DESC: `Porzioni abbondanti, piatti confortanti e una cucina che scalda il cuore tanto quanto l’appetito.
-Ogni boccone racconta una storia.
-`,
+      GENEROSITY_DESC: `Porzioni abbondanti, piatti confortanti e una cucina che scalda il cuore tanto quanto l’appetito.Ogni boccone racconta una storia.`,
       CONVIVIALITY_TITLE: 'Convivialità',
-      CONVIVIALITY_DESC: `Un luogo semplice e accogliente dove ognuno è ricevuto come un amico.
-      Da noi, amiamo i sorrisi, gli scambi e lo spirito di quartiere.`,
+      CONVIVIALITY_DESC: `Un luogo semplice e accogliente dove ognuno è ricevuto come un amico.Da noi, amiamo i sorrisi, gli scambi e lo spirito di quartiere.`,
       TRANSMISSION_TITLE: 'Trasmissione',
-      TRANSMISSION_DESC: `Perché la cucina è anche una memoria da condividere.
-Perpetuiamo le ricette e i gesti imparati dai nostri genitori e nonni, affinché questa cultura culinaria viva ancora e sempre.
-`,
+      TRANSMISSION_DESC: `Perché la cucina è anche una memoria da condividere.Perpetuiamo le ricette e i gesti imparati dai nostri genitori e nonni, affinché questa cultura culinaria viva ancora e sempre.`,
       TEAM_TITLE: 'CHI SIAMO',
       CHEF_TITLE: 'Alessandro',
       CHEF_ALT: 'Alessandro',
       CHEF_POSITION: 'Il maestro dei fornelli',
-      CHEF_DESC: `Da 15 anni impasta, frigge e cuoce lentamente ricette di famiglia provenienti direttamente dalla Sicilia e dall’Italia.
-Appassionato e generoso, prepara ogni piatto come a casa, con il gusto dei ricordi e l’amore per le cose buone.
-La sua missione? Far viaggiare le vostre papille gustative con sapori veri e generosi.
-`,
+      CHEF_DESC: `Da 15 anni impasta, frigge e cuoce lentamente ricette di famiglia provenienti direttamente dalla Sicilia e dall’Italia.Appassionato e generoso, prepara ogni piatto come a casa, con il gusto dei ricordi e l’amore per le cose buone.La sua missione? Far viaggiare le vostre papille gustative con sapori veri e generosi.`,
       MANAGER_ALT: 'Roberta',
       MANAGER_POSITION: 'Lo spirito creativo e digitale di Triskele',
-      MANAGER_DESC:
-        'Compagna nella vita e nell’avventura Triskele, Roberta immagina l’universo del marchio, gestisce l’immagine, i social media e tutta la parte digitale. Dall’idea allo schermo, è lei a dare vita alla storia che condividiamo.',
+      MANAGER_DESC:'Compagna nella vita e nell’avventura Triskele, Roberta immagina l’universo del marchio, gestisce l’immagine, i social media e tutta la parte digitale. Dall’idea allo schermo, è lei a dare vita alla storia che condividiamo.',
       CTA_TITLE: 'Venite a trovarci',
       CTA_SUBTITLE: "Scopri i sapori autentici d'Italia nel centro di Rennes",
       EXPLORE_MENU: 'Esplora il Menu',
@@ -117,8 +96,7 @@ La sua missione? Far viaggiare le vostre papille gustative con sapori veri e gen
     },
     CONTACT: {
       TITLE: 'Contattaci',
-      SUBTITLE:
-        'Siamo qui per aiutarti. Compilando il modulo sottostante, un membro del nostro team ti contatterà al più presto.',
+      SUBTITLE:'Siamo qui per aiutarti. Compilando il modulo sottostante, un membro del nostro team ti contatterà al più presto.',
       FORM_TITLE: 'Inviaci un messaggio',
       NAME_LABEL: 'Nome completo',
       NAME_PLACEHOLDER: 'Inserisci il tuo nome',
@@ -139,13 +117,12 @@ La sua missione? Far viaggiare le vostre papille gustative con sapori veri e gen
       PRIVACY_ERROR: 'Devi accettare la Privacy Policy',
       SENDING: 'Invio in corso...',
       SEND: 'Invia Messaggio',
-      SUCCESS_MESSAGE:
-        'Grazie per averci contattato! Ti risponderemo al più presto.',
+      SUCCESS_MESSAGE:'Grazie per averci contattato! Ti risponderemo al più presto.',
       INFO_TITLE: 'Informazioni di contatto',
       ADDRESS_TITLE: 'Indirizzo',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
       PHONE_TITLE: 'Telefono',
-      PHONE_NUMBER: 'xxxxxxxx',
+      PHONE_NUMBER: '06 72 78 06 22',
       EMAIL_TITLE: 'Email',
       EMAIL_ADDRESS: 'triskelegastronomie@gmail.com',
       HOURS_TITLE: 'Orari',
@@ -158,16 +135,14 @@ La sua missione? Far viaggiare le vostre papille gustative con sapori veri e gen
     },
     ORDER: {
       TITLE: 'Ordina da Asporto',
-      SUBTITLE:
-        'Ordina i tuoi piatti preferiti da ritirare o ricevere a domicilio',
+      SUBTITLE:'Ordina i tuoi piatti preferiti da ritirare o ricevere a domicilio',
       STEP1_LABEL: 'Scegli i Piatti',
       STEP2_LABEL: 'Dati di Consegna',
       STEP3_LABEL: 'Pagamento',
       STEP4_LABEL: 'Conferma',
       STEP1_TITLE: 'Seleziona i Piatti per il Tuo Ordine',
       YOUR_ORDER: 'Il Tuo Ordine',
-      EMPTY_CART:
-        'Il tuo carrello è vuoto. Aggiungi alcuni piatti per continuare.',
+      EMPTY_CART:'Il tuo carrello è vuoto. Aggiungi alcuni piatti per continuare.',
       SUBTOTAL: 'Subtotale',
       DELIVERY_FEE: 'Consegna',
       TOTAL: 'Totale',
@@ -179,27 +154,22 @@ La sua missione? Far viaggiare le vostre papille gustative con sapori veri e gen
     MENU_PAGE: {
       A_PARTIRE_DA: `A partire da `,
       TITLE: 'LE NOSTRE SPECIALITÀ',
-      SUBTITLE: `Qui, la cucina italo-siciliana incontra le ricette regionali italiane in uno spirito street food fatto in casa.
-Piatti caldi, dolci artigianali e bevande tipiche da gustare al volo o da asporto.
-I sapori del Sud – e non solo – a due passi da casa.`,
+      SUBTITLE: `Qui, la cucina italo-siciliana incontra le ricette regionali italiane in uno spirito street food fatto in casa.Piatti caldi, dolci artigianali e bevande tipiche da gustare al volo o da asporto.I sapori del Sud – e non solo – a due passi da casa.`,
       CATEGORIES: {
         TAVOLA_CALDA: 'FAST-GOOD',
         TAVOLA_CALDA_SUBTITLE: `Lo street food italo-siciliano che scalda il cuore`,
         PRIMI: 'I GRATINATI',
         PRIMI_SUBTITLE: `Piatti gratinati al forno che scaldano il cuore, proprio come a casa.`,
         DOLCI: 'DOLCEZZE DEL SUD',
-        DOLCI_SUBTITLE: `I dessert tradizionali italo-siciliani che illuminano la fine del pasto.
-Dolcezze artigianali per una nota zuccherina ricca di carattere.`,
+        DOLCI_SUBTITLE: `I dessert tradizionali italo-siciliani che illuminano la fine del pasto.Dolcezze artigianali per una nota zuccherina ricca di carattere.`,
         BEVANDE: 'Bevande',
         BEVANDE_SUBTITLE: `L’espresso italiano dall’aroma intenso e le bevande frizzanti siciliane Tomarchio per rinfrescare la tua pausa golosa con autenticità.`,
       },
       FEATURED: 'Specialità',
       ORDER_BUTTON: 'Ordina Ora',
-      ALLERGIES_NOTICE:
-        'Per informazioni sugli allergeni, chiedi al nostro staff',
+      ALLERGIES_NOTICE:'Per informazioni sugli allergeni, chiedi al nostro staff',
       CTA_TITLE: 'Vuoi ordinare da asporto?',
-      CTA_SUBTITLE:
-        'Ordinare è semplice e veloce. Ritira i tuoi piatti italiani preferiti direttamente nel nostro locale.',
+      CTA_SUBTITLE:'Ordinare è semplice e veloce. Ritira i tuoi piatti italiani preferiti direttamente nel nostro locale.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
@@ -227,16 +197,15 @@ Dolcezze artigianali per una nota zuccherina ricca di carattere.`,
       PRIMI: {
         LASAGNE: {
           NAME: 'Lasagne',
-          DESCRIPTION: `Strati di pasta, salsa di pomodoro fatta in casa e mozzarella filante. Un grande classico della domenica italiana.`,
+          DESCRIPTION: `Generosi strati di pasta farciti con un ragù alla bolognese fatto in casa, una besciamella vellutata e mozzarella filante. Un grande classico della domenica italiana.`,
         },
-        LASAGNE_VEGANE: {
-          NAME: 'Lasagne vegane',
-          DESCRIPTION: `Strati di pasta fatta in casa, salsa di pomodoro ricca e verdure grigliate, con una crema di besciamella vegana. Un grande classico della domenica, completamente vegano e saporito.`,
+        LASAGNE_VEGETARIANE: {
+          NAME: 'Lasagne vegetariane',
+          DESCRIPTION: `Una lasagna gustosa e colorata, farcita con verdure di stagione morbide, una salsa di pomodoro profumata e una besciamella cremosa. Tutto il piacere, senza compromessi.`,
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
-          DESCRIPTION: `Melanzane morbide, salsa profumata e gratin di mozzarella. Il piatto comfort per eccellenza, ricco e generoso.
-`,
+          DESCRIPTION: `Melanzane morbide, salsa profumata e gratin di mozzarella. Il piatto comfort per eccellenza, ricco e generoso.`,
         },
       },
       DOLCI: {
@@ -250,19 +219,35 @@ Dolcezze artigianali per una nota zuccherina ricca di carattere.`,
         },
         GRAFFE: {
           NAME: 'Graffe della nonna',
-          DESCRIPTION: `Palline di pasta per pizza leggermente dolci, fritte alla perfezione e servite con il topping che preferisci.
-La dolcezza confortante che la mia Nonna (mamì) preparava la domenica, mentre facevamo il pane in famiglia.
-Un ricordo d’infanzia da sgranocchiare, croccante e tenero insieme.`,
-        }
+          DESCRIPTION: `Palline di impasto per pizza dolce, fritte alla perfezione e servite con il topping a tua scelta. Una dolce coccola, croccante fuori e morbida dentro, come le preparava la mia Nonna la domenica.`,
+        },
       },
       BEVANDE: {
         CAFFE: {
           NAME: 'Caffè Espresso',
-          DESCRIPTION:
-            'Autentico caffè espresso italiano, servito nella tradizionale tazzina.',
+          DESCRIPTION:'Autentico caffè espresso italiano, servito nella tradizionale tazzina.',
         },
       },
     },
+    PRIVACYPOLICY: {
+      TITLE: `Privacy Policy`,
+      SUBTITLE: `La presente informativa descrive come raccogliamo, utilizziamo e proteggiamo i dati personali dei nostri utenti, in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR).`,
+      PRIMO: `1. Titolare del trattamento`,
+      SUBPRIMO: `Il titolare del trattamento dei dati è TRISKELE-GASTRONOMIE, con sede legale in 3 Rue des Francs Bourgeois, 35000 Rennes, contattabile all’indirizzo email triskelegastronomie@gmail.com.`,
+      SECONDO: `2. Tipi di dati raccolti`,
+      SUBSECONDO: `Raccogliamo dati personali forniti direttamente dagli utenti, quali nome, indirizzo email e altre informazioni necessarie per rispondere alle richieste o fornire servizi.`,
+      TERZO: `3. Finalità del trattamento`,
+      SUBTERZO: `I dati sono utilizzati esclusivamente per rispondere alle richieste degli utenti, inviare comunicazioni inerenti ai servizi offerti e per adempiere agli obblighi di legge.`,
+      QUARTO: `4. Modalità di trattamento`,
+      SUBQUARTO: `Il trattamento dei dati avviene con strumenti informatici e manuali, adottando misure di sicurezza idonee a proteggerli da accessi non autorizzati, perdita o divulgazione indebita.`,
+      QUINTO: `5. Conservazione dei dati`,
+      SUBQUINTO: `I dati personali sono conservati per il tempo necessario a conseguire le finalità per cui sono stati raccolti e in conformità con le normative vigenti.`,
+      SESTO: `6. Diritti degli interessati`,
+      SUBSESTO: `Gli utenti possono esercitare i diritti previsti dagli articoli 15-22 del GDPR, tra cui accesso, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità dei dati, inviando una richiesta al titolare del trattamento.`,
+      SETTIMO: `7. Modifiche alla privacy policy`,
+      SUBSETTIMO: `Ci riserviamo il diritto di aggiornare questa informativa. Eventuali modifiche saranno pubblicate su questa pagina.`,
+      CONCLUSIONI: `Per qualsiasi domanda o richiesta relativa alla privacy, contattaci all’indirizzo triskelegastronomie@gmail.com.`
+    }
   },
   en: {
     LOADING: {
@@ -276,8 +261,7 @@ Un ricordo d’infanzia da sgranocchiare, croccante e tenero insieme.`,
       ORDER: 'Order Online',
     },
     FOOTER: {
-      DESCRIPTION: `Close your eyes… you’re in Italy.
-At TRISKELE, we cook with heart and delight you with true, homemade, and generous flavors.`,
+      DESCRIPTION: `Close your eyes… you’re in Italy.At TRISKELE, we cook with heart and delight you with true, homemade, and generous flavors.`,
       LINKS: 'Links',
       HOME: 'Home',
       ABOUT: 'About Us',
@@ -286,7 +270,7 @@ At TRISKELE, we cook with heart and delight you with true, homemade, and generou
       ORDER: 'Order Online',
       CONTACT_US: 'Contact Us',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
-      PHONE: 'xxxxxxxx',
+      PHONE: '06 72 78 06 22',
       EMAIL: 'triskelegastronomie@gmail.com',
       OPENING_HOURS: 'Hours',
       MONDAY_FRIDAY: 'From Monday to Friday',
@@ -298,90 +282,68 @@ At TRISKELE, we cook with heart and delight you with true, homemade, and generou
       COPYRIGHT: 'Triskele Restaurant. All rights reserved.',
       MADE_WITH_LOVE: 'Made with ❤️ in Italy',
       OUR_LOCATION: 'Our location',
-      OUR_LOCATION_SUBTITLE: `Metro line B (Saint Germain); Stop Place Pasteur (12, C2, C3, C5, N5); Stop Musée Beaux Arts (C4, C6, 67, N4).`,
+      OUR_LOCATION_SUBTITLE1: `Metro line B (Saint Germain)`,
+      OUR_LOCATION_SUBTITLE2: `Stop Place Pasteur (12, C2, C3, C5, N5)`,
+      OUR_LOCATION_SUBTITLE3: `Stop Musée Beaux Arts (C4, C6, 67, N4)`,
       SOCIAL: 'Social',
     },
     HERO: {
-      TITLE: 'Hello! We are TRISKELE, Italo-Sicilian gastronomy',
-      SUBTITLE: `We’ve unpacked our suitcases and our pots just next to Place Saint-Germain, and here, we welcome you like at home: with genuine smiles, aromas that awaken memories, and flavors that tell a story.
-Sicilian for generations, I grew up surrounded by the scent of basil, simmering tomato sauce, and warm bread shared with family on Sundays.
-Thanks to my mother, the true culinary memory of our home, I learned that cooking isn’t just about feeding… it’s about passing something on.
-I want to share the scents and flavors of my homeland with as many people as possible. I offer delights that can be eaten with one hand but hold an explosion of authentic taste.
-Close your eyes, and you might just feel like you're in Italy. Welcome to TRISKELE, Italy in one bite.
-Come and discover our homemade Italo-Sicilian specialties. Here, we cook with heart… and you can taste it.`,
+      TITLE: `Here, we cook with heart and welcome you like family.Sicilian and Italian treats to enjoy with one hand, aromas that awaken memories, and flavors that tell a story.`,
       MENU_BUTTON: 'Discover Menu',
       ABOUT_BUTTON: 'About Us',
     },
-    'SUB-HERO': {
+    SUBHERO: {
       TITLE: 'Welcome to TRISKELE, Italy in a bite.',
     },
     FEATURED: {
       TITLE: 'Our Specialties',
       VIEW_MENU: 'View in Menu',
-      VIEW_ALL: 'View Full Menu',
+      VIEW_ALL: 'Download menu',
     },
     HOME: {
       SERVICES_TITLE: 'Our Services',
       AUTHENTIC_CUISINE_TITLE: 'Authentic Cuisine',
-      AUTHENTIC_CUISINE_DESC:
-        'Traditional dishes prepared according to original Italian recipes.',
+      AUTHENTIC_CUISINE_DESC:'Traditional dishes prepared according to original Italian recipes.',
       DELIVERY_TITLE: 'Takeaway Only',
-      DELIVERY_DESC:
-        'Order and pick up your favorite dishes freshly prepared in-store.',
+      DELIVERY_DESC:'Order and pick up your favorite dishes freshly prepared in-store.',
       FRESH_PASTA_TITLE: 'Fresh Pasta',
-      FRESH_PASTA_DESC:
-        'Our pasta is freshly prepared every day to ensure the highest quality.',
+      FRESH_PASTA_DESC:'Our pasta is freshly prepared every day to ensure the highest quality.',
     },
     ABOUT: {
       TITLE: 'Our Story',
       SUBTITLE: 'Triskele, a piece of Italy in the heart of Rennes',
       WHO_WE_ARE: 'Who We Are',
-      PARAGRAPH_1: `Triskele is, above all, a story of passion and flavors.
-Born from the love for authentic Italian cuisine and the desire to share family recipes passed down from generation to generation, our home celebrates the richness of Italian culinary traditions.`,
+      PARAGRAPH_1: `Triskele is, above all, a story of passion and flavors.Born from the love for authentic Italian cuisine and the desire to share family recipes passed down from generation to generation, our home celebrates the richness of Italian culinary traditions.`,
       PARAGRAPH_2: `Located in the heart of Rennes, Triskele invites you to enjoy a warm and friendly gourmet experience. Here, every dish tells a story, prepared with fresh products, quality ingredients, and specialties imported directly from Italy.`,
-      PARAGRAPH_3: `Our mission?
-To make you travel through the scents and flavors of the South, without leaving Rennes. To offer a piece of Italy to take away, as if you were at our home, in Sicily.`,
+      PARAGRAPH_3: `Our mission?To make you travel through the scents and flavors of the South, without leaving Rennes. To offer a piece of Italy to take away, as if you were at our home, in Sicily.`,
       IMAGE_ALT: 'The Triskele Team',
       VALUES_TITLE: 'Our Values',
       AUTHENTICITY_TITLE: 'Authenticity',
-      AUTHENTICITY_DESC:
-        'We select the best ingredients, favoring fresh and seasonal products.',
+      AUTHENTICITY_DESC:'We select the best ingredients, favoring fresh and seasonal products.',
       QUALITY_TITLE: 'Quality',
-      QUALITY_DESC: `Fresh ingredients, imported directly from Italy or sourced from trusted producers.
-No compromises: here, we cook just like at home.`,
+      QUALITY_DESC: `Fresh ingredients, imported directly from Italy or sourced from trusted producers.No compromises: here, we cook just like at home.`,
       GENEROSITY_TITLE: 'Generosity',
-      GENEROSITY_DESC: `Generous portions, comforting dishes, and a cuisine that warms the heart as much as the appetite.
-Every bite tells a story.
-`,
+      GENEROSITY_DESC: `Generous portions, comforting dishes, and a cuisine that warms the heart as much as the appetite.Every bite tells a story.`,
       CONVIVIALITY_TITLE: 'Conviviality',
-      CONVIVIALITY_DESC: `A simple and welcoming place where everyone is greeted like a friend.
-At our place, we love smiles, conversations, and the neighborhood spirit.
-`,
+      CONVIVIALITY_DESC: `A simple and welcoming place where everyone is greeted like a friend.At our place, we love smiles, conversations, and the neighborhood spirit.`,
       TRANSMISSION_TITLE: 'Transmission',
-      TRANSMISSION_DESC: `Because cooking is also a memory to share.
-We carry on the recipes and techniques learned from our parents and grandparents, so this culinary culture continues to live on and thrive.
-`,
+      TRANSMISSION_DESC: `Because cooking is also a memory to share.We carry on the recipes and techniques learned from our parents and grandparents, so this culinary culture continues to live on and thrive.`,
       TEAM_TITLE: 'WHO WE ARE',
       CHEF_TITLE: 'Alessandro',
       CHEF_ALT: 'Alessandro',
       CHEF_POSITION: 'The master of the stove',
-      CHEF_DESC: `For 15 years, he has been kneading, frying, and slow-cooking family recipes straight from Sicily and Italy.
-Passionate and generous, he prepares each dish like at home, with the taste of memories and the love of good things.
-His mission? To take your taste buds on a journey with true and generous flavors.
-`,
+      CHEF_DESC: `For 15 years, he has been kneading, frying, and slow-cooking family recipes straight from Sicily and Italy.Passionate and generous, he prepares each dish like at home, with the taste of memories and the love of good things.His mission? To take your taste buds on a journey with true and generous flavors.`,
       MANAGER_ALT: 'Manager Roberta',
       MANAGER_POSITION: 'The creative and digital spirit of Triskele',
       MANAGER_DESC: `Partner in life and in the Triskele adventure, Roberta envisions the brand’s universe, manages its image, social media, and all things digital. From the idea to the screen, she’s the one who brings to life the story we share.`,
       CTA_TITLE: 'Come Visit Us',
-      CTA_SUBTITLE:
-        'Discover the authentic flavors of Italy in the center of Rennes',
+      CTA_SUBTITLE:'Discover the authentic flavors of Italy in the center of Rennes',
       EXPLORE_MENU: 'Explore the Menu',
       CONTACT_US: 'Contact Us',
     },
     CONTACT: {
       TITLE: 'Contact Us',
-      SUBTITLE:
-        "We're here to help. By filling out the form below, a member of our team will contact you as soon as possible.",
+      SUBTITLE:"We're here to help. By filling out the form below, a member of our team will contact you as soon as possible.",
       FORM_TITLE: 'Send Us a Message',
       NAME_LABEL: 'Full Name',
       NAME_PLACEHOLDER: 'Enter your name',
@@ -402,13 +364,12 @@ His mission? To take your taste buds on a journey with true and generous flavors
       PRIVACY_ERROR: 'You must accept the Privacy Policy',
       SENDING: 'Sending...',
       SEND: 'Send Message',
-      SUCCESS_MESSAGE:
-        'Thank you for contacting us! We will respond as soon as possible.',
+      SUCCESS_MESSAGE:'Thank you for contacting us! We will respond as soon as possible.',
       INFO_TITLE: 'Contact Information',
       ADDRESS_TITLE: 'Address',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
       PHONE_TITLE: 'Phone',
-      PHONE_NUMBER: 'xxxxxxxx',
+      PHONE_NUMBER: '06 72 78 06 22',
       EMAIL_TITLE: 'Email',
       EMAIL_ADDRESS: 'triskelegastronomie@gmail.com',
       HOURS_TITLE: 'Hours',
@@ -440,17 +401,14 @@ His mission? To take your taste buds on a journey with true and generous flavors
     MENU_PAGE: {
       A_PARTIRE_DA: `From `,
       TITLE: 'OUR SPECIALTIES',
-      SUBTITLE: `Here, Italo-Sicilian cuisine meets traditional Italian regional recipes in a homemade street-food spirit.
-Hot dishes, artisanal sweets, and typical drinks to enjoy on the go or take away.
-The flavors of the South — and beyond — just around the corner.`,
+      SUBTITLE: `Here, Italo-Sicilian cuisine meets traditional Italian regional recipes in a homemade street-food spirit.Hot dishes, artisanal sweets, and typical drinks to enjoy on the go or take away.The flavors of the South — and beyond — just around the corner.`,
       CATEGORIES: {
         TAVOLA_CALDA: 'FAST-GOOD',
         TAVOLA_CALDA_SUBTITLE: `The Italo-Sicilian street food that warms the heart`,
         PRIMI: 'THE GRATINÉES',
         PRIMI_SUBTITLE: `Comforting oven-baked dishes, just like at home.`,
         DOLCI: 'SWEETS OF THE SOUTH',
-        DOLCI_SUBTITLE: `Traditional Italo-Sicilian desserts that brighten the end of your meal.
-Artisanal sweets with a bold, sweet note.`,
+        DOLCI_SUBTITLE: `Traditional Italo-Sicilian desserts that brighten the end of your meal.Artisanal sweets with a bold, sweet note.`,
         BEVANDE: 'Drinks',
         BEVANDE_SUBTITLE: `The Italian espresso with an intense aroma and the sparkling Sicilian Tomarchio drinks to refresh your gourmet break with authenticity.`,
       },
@@ -458,8 +416,7 @@ Artisanal sweets with a bold, sweet note.`,
       ORDER_BUTTON: 'Order Now',
       ALLERGIES_NOTICE: 'For information on allergens, ask our staff',
       CTA_TITLE: 'Want to order takeaway?',
-      CTA_SUBTITLE:
-        'Ordering is simple and fast. Pick up your favorite Italian dishes directly from our restaurant.',
+      CTA_SUBTITLE:'Ordering is simple and fast. Pick up your favorite Italian dishes directly from our restaurant.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
@@ -487,11 +444,11 @@ Artisanal sweets with a bold, sweet note.`,
       PRIMI: {
         LASAGNE: {
           NAME: 'Lasagne',
-          DESCRIPTION: `Layers of pasta, homemade tomato sauce, and melting mozzarella. A true Italian Sunday classic.`,
+          DESCRIPTION: `Generous layers of pasta filled with homemade Bolognese ragù, creamy béchamel, and melted mozzarella. A true Italian Sunday classic.`,
         },
-        LASAGNE_VEGANE: {
-          NAME: 'Vegan lasagna',
-          DESCRIPTION: `Homemade pasta layers, rich tomato sauce, and grilled vegetables, topped with a vegan béchamel cream. A Sunday classic, fully vegan and flavorful.`,
+        LASAGNE_VEGETARIANE: {
+          NAME: 'Vegetarian lasagne',
+          DESCRIPTION: `A delicious and colorful lasagna, filled with tender seasonal vegetables, a fragrant tomato sauce, and creamy béchamel. All the pleasure, no compromise.`,
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
@@ -509,19 +466,35 @@ Artisanal sweets with a bold, sweet note.`,
         },
         GRAFFE: {
           NAME: 'Grandma’s graffe',
-          DESCRIPTION: `Slightly sweet pizza dough balls, fried to perfection and served with the topping of your choice.
-The comforting treat my Nonna (mamì) used to make on Sundays while we baked bread as a family.
-A childhood memory to bite into, crispy and tender at the same time.`,
-        }
+          DESCRIPTION: `Sweet pizza dough balls, fried to perfection and served with the topping of your choice. A comforting treat, crispy on the outside and soft on the inside, just like my Nonna used to make on Sundays.`,
+        },
       },
       BEVANDE: {
         CAFFE: {
           NAME: 'Espresso Coffee',
-          DESCRIPTION:
-            'Authentic Italian espresso coffee, served in the traditional small cup.',
+          DESCRIPTION:'Authentic Italian espresso coffee, served in the traditional small cup.',
         },
       },
     },
+    PRIVACYPOLICY: {
+      TITLE: `Privacy Policy`,
+      SUBTITLE: `This notice describes how we collect, use, and protect our users' personal data in accordance with the General Data Protection Regulation (GDPR).`,
+      PRIMO: `1. Data Controller`,
+      SUBPRIMO: `The data controller is TRISKELE-GASTRONOMIE, with registered office at 3 Rue des Francs Bourgeois, 35000 Rennes, and can be contacted at triskelegastronomie@gmail.com.`,
+      SECONDO: `2. Types of data collected`,
+      SUBSECONDO: `We collect personal data directly provided by users, such as name, email address, and other information necessary to respond to requests or provide services.`,
+      TERZO: `3. Purpose of data processing`,
+      SUBTERZO: `The data is used exclusively to respond to user requests, send communications related to the services offered, and comply with legal obligations.`,
+      QUARTO: `4. Data processing methods`,
+      SUBQUARTO: `Data is processed using both digital and manual tools, with appropriate security measures to protect against unauthorized access, loss, or improper disclosure.`,
+      QUINTO: `5. Data retention`,
+      SUBQUINTO: `Personal data is retained for the time necessary to fulfill the purposes for which it was collected and in accordance with applicable regulations.`,
+      SESTO: `6. Data subject rights`,
+      SUBSESTO: `Users may exercise their rights under Articles 15-22 of the GDPR, including access, rectification, erasure, restriction of processing, objection, and data portability, by sending a request to the data controller.`,
+      SETTIMO: `7. Changes to the privacy policy`,
+      SUBSETTIMO: `We reserve the right to update this notice. Any changes will be published on this page.`,
+      CONCLUSIONI: `For any questions or requests related to privacy, please contact us at triskelegastronomie@gmail.com.`
+    }
   },
   fr: {
     LOADING: {
@@ -535,10 +508,7 @@ A childhood memory to bite into, crispy and tender at the same time.`,
       ORDER: 'Commander',
     },
     FOOTER: {
-      DESCRIPTION: `Fermez les yeux… vous êtes en Italie.
-Chez TRISKELE, on cuisine avec le cœur et on régale avec des saveurs vraies, maison et
-généreuses.
-`,
+      DESCRIPTION: `Fermez les yeux… vous êtes en Italie.Chez TRISKELE, on cuisine avec le cœur et on régale avec des saveurs vraies, maison etgénéreuses.`,
       LINKS: 'Liens',
       HOME: 'Accueil',
       ABOUT: 'À Propos',
@@ -547,9 +517,9 @@ généreuses.
       ORDER: 'Commander',
       CONTACT_US: 'Contactez-nous',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
-      PHONE: 'xxxxxxxx',
+      PHONE: '06 72 78 06 22',
       EMAIL: 'triskelegastronomie@gmail.com',
-      OPENING_HOURS: "Horaires",
+      OPENING_HOURS: 'Horaires',
       MONDAY_FRIDAY: 'du Lundi au Vendredi',
       SATURDAY: 'Samedi',
       SUNDAY: 'Dimanche',
@@ -559,105 +529,69 @@ généreuses.
       COPYRIGHT: 'Restaurant Triskele. Tous droits réservés.',
       MADE_WITH_LOVE: 'Fait avec ❤️ en Italie',
       OUR_LOCATION: 'Notre emplacement',
-      OUR_LOCATION_SUBTITLE: `metro b (St Germain); Arrêt Place Pasteur (12, C2, C3, C5,); Arrêt Musée Beaux Arts (C4,C6, 67, N4)`,
+      OUR_LOCATION_SUBTITLE1: `metro b (St Germain)`,
+      OUR_LOCATION_SUBTITLE2: `Arrêt Place Pasteur (12, C2, C3, C5,)`,
+      OUR_LOCATION_SUBTITLE3: `Arrêt Musée Beaux Arts (C4,C6, 67, N4)`,
       SOCIAL: 'Réseaux sociaux',
     },
     HERO: {
       TITLE: 'Bonjour! Nous sommes TRISKELE, gastronomie italo-sicilienne',
-      SUBTITLE: `Nous avons posé nos valises et nos casseroles à côté de la Place Saint-Germain, et ici, on
-vous accueille comme à la maison: avec des sourires sincères, des parfums qui réveillent les
-souvenirs et des saveurs qui racontent une histoire.
-Sicilien depuis des générations, j’ai grandi avec les odeurs du basilic, de la sauce tomate qui
-mijote et du pain chaud que l’on partageait en famille le dimanche. Grâce à ma mère,
-véritable mémoire culinaire de notre maison, j’ai appris que la cuisine, ce n’est pas juste
-nourrir… c’est transmettre.
-je souhaite transmettre les parfums et les saveurs de ma terre au plus grand nombre. Je
-propose des gourmandises qui se mangent d'une main mais renferment une explosion de
-saveurs authentiques. En fermant les yeux, vous pouvez vous sentir en Italie. Bienvenue chez
-TRISKELE, l'italie en un bouchè
-Venez découvrir nos spécialités italo-siciliennes préparées maison. Ici, on cuisine avec le
-cœur… et ça se sent.`,
+      SUBTITLE: `Ici, on cuisine avec le cœur et on vous accueille comme à la maison.Des gourmandises siciliennes et italiennes à savourer d’une main, des parfums qui réveillent les souvenirs et des saveurs qui racontent une histoire.`,
       MENU_BUTTON: 'Découvrir le Cart',
       ABOUT_BUTTON: 'À Propos de Nous',
     },
-    'SUB-HERO': {
+    SUBHERO: {
       TITLE: "Bienvenue chez TRISKELE, l'Italie en un bouché.",
     },
     FEATURED: {
       TITLE: 'Nos Spécialités',
       VIEW_MENU: 'Voir dans le Cart',
-      VIEW_ALL: 'Voir tout le Cart',
+      VIEW_ALL: 'Télécharger la carte',
     },
     HOME: {
       SERVICES_TITLE: 'Nos Services',
       AUTHENTIC_CUISINE_TITLE: 'Cuisine Authentique',
-      AUTHENTIC_CUISINE_DESC:
-        'Plats traditionnels préparés selon les recettes italiennes originales.',
+      AUTHENTIC_CUISINE_DESC:'Plats traditionnels préparés selon les recettes italiennes originales.',
       DELIVERY_TITLE: 'À Emporter Uniquement',
-      DELIVERY_DESC:
-        'Commandez et retirez en magasin vos plats préférés préparés sur place.',
+      DELIVERY_DESC:'Commandez et retirez en magasin vos plats préférés préparés sur place.',
       FRESH_PASTA_TITLE: 'Pâtes Fraîches',
-      FRESH_PASTA_DESC:
-        'Nos pâtes sont préparées fraîchement chaque jour pour garantir une qualité optimale.',
+      FRESH_PASTA_DESC:'Nos pâtes sont préparées fraîchement chaque jour pour garantir une qualité optimale.',
     },
     ABOUT: {
       TITLE: 'Notre Histoire',
       SUBTITLE: "Triskele, un morceau d'Italie au cœur de Rennes",
       WHO_WE_ARE: 'Qui Sommes-Nous',
-      PARAGRAPH_1: `Triskele, c’est avant tout une histoire de passion et de saveurs.
-Née de l’amour pour la cuisine italienne authentique et du désir de partager les recettes de
-famille transmises de génération en génération, notre maison célèbre la richesse des traditions
-culinaires italiennes.`,
-      PARAGRAPH_2: `Installé en plein cœur de Rennes, Triskele vous invite à vivre une expérience gourmande
-chaleureuse et conviviale. Ici, chaque plat raconte une histoire, préparée avec des produits
-frais, des ingrédients de qualité, et des spécialités importées directement d’Italie.
-`,
-      PARAGRAPH_3: `Notre mission ?
-Vous faire voyager à travers les parfums et les saveurs du Sud, sans quitter Rennes. Offrir un
-morceau d’Italie à emporter, comme si vous étiez chez nous, en Sicile.
-Bienvenue chez Triskele. L’Italie comme on l’aime, généreuse, sincère et gourmande.`,
+      PARAGRAPH_1: `Triskele, c’est avant tout une histoire de passion et de saveurs.Née de l’amour pour la cuisine italienne authentique et du désir de partager les recettes defamille transmises de génération en génération, notre maison célèbre la richesse des traditionsculinaires italiennes.`,
+      PARAGRAPH_2: `Installé en plein cœur de Rennes, Triskele vous invite à vivre une expérience gourmandechaleureuse et conviviale. Ici, chaque plat raconte une histoire, préparée avec des produitsfrais, des ingrédients de qualité, et des spécialités importées directement d’Italie.`,
+      PARAGRAPH_3: `Notre mission ?Vous faire voyager à travers les parfums et les saveurs du Sud, sans quitter Rennes. Offrir unmorceau d’Italie à emporter, comme si vous étiez chez nous, en Sicile.Bienvenue chez Triskele. L’Italie comme on l’aime, généreuse, sincère et gourmande.`,
       IMAGE_ALT: "L'Équipe Triskele",
       VALUES_TITLE: 'Nos Valeurs',
       AUTHENTICITY_TITLE: 'Authenticité',
-      AUTHENTICITY_DESC: `Des recettes familiales, des produits soigneusement sélectionnés et des saveurs fidèles à la
-cuisine italienne et sicilienne d’autrefois.`,
+      AUTHENTICITY_DESC: `Des recettes familiales, des produits soigneusement sélectionnés et des saveurs fidèles à lacuisine italienne et sicilienne d’autrefois.`,
       QUALITY_TITLE: 'Qualité',
-      QUALITY_DESC: `Des ingrédients frais, importés directement d’Italie ou choisis chez des producteurs de
-confiance. Pas de compromis : ici, on cuisine comme à la maison.`,
+      QUALITY_DESC: `Des ingrédients frais, importés directement d’Italie ou choisis chez des producteurs deconfiance. Pas de compromis : ici, on cuisine comme à la maison.`,
       CONVIVIALITY_TITLE: 'Convivialité',
-      CONVIVIALITY_DESC: `Un lieu simple et accueillant où chacun est reçu comme un ami. Chez nous, on aime les
-sourires, les échanges et l’esprit de quartier.`,
+      CONVIVIALITY_DESC: `Un lieu simple et accueillant où chacun est reçu comme un ami. Chez nous, on aime lessourires, les échanges et l’esprit de quartier.`,
       TRANSMISSION_TITLE: 'Transmission',
-      TRANSMISSION_DESC: `Parce que la cuisine, c’est aussi une mémoire à partager. Nous perpétuons les recettes et les
-gestes appris de nos parents et grands-parents, pour que cette culture culinaire vive encore et
-toujours.`,
+      TRANSMISSION_DESC: `Parce que la cuisine, c’est aussi une mémoire à partager. Nous perpétuons les recettes et lesgestes appris de nos parents et grands-parents, pour que cette culture culinaire vive encore ettoujours.`,
       GENEROSITY_TITLE: 'Générosité',
-      GENEROSITY_DESC: `Des portions gourmandes, des plats réconfortants et une cuisine qui réchauffe le cœur aussi
-bien que l’appétit. Chaque bouchée raconte une histoire.
-`,
+      GENEROSITY_DESC: `Des portions gourmandes, des plats réconfortants et une cuisine qui réchauffe le cœur aussibien que l’appétit. Chaque bouchée raconte une histoire.`,
       TEAM_TITLE: 'QUI SOMMES NOUS',
       CHEF_TITLE: 'Alessandro',
       CHEF_ALT: 'Alessandro',
       CHEF_POSITION: 'Le maestro des fourneaux',
-      CHEF_DESC: `Depuis 15 ans, il pétrit, frit et mijote des recettes de famille venues tout droit de Sicile et
-d’Italie. Passionné et généreux, il prépare chaque plat comme à la maison, avec le goût des
-souvenirs et l’amour des bonnes choses. Sa mission ? Faire voyager vos papilles avec des
-saveurs vraies et généreuses.`,
+      CHEF_DESC: `Depuis 15 ans, il pétrit, frit et mijote des recettes de famille venues tout droit de Sicile etd’Italie. Passionné et généreux, il prépare chaque plat comme à la maison, avec le goût dessouvenirs et l’amour des bonnes choses. Sa mission ? Faire voyager vos papilles avec dessaveurs vraies et généreuses.`,
       MANAGER_ALT: 'Manager Roberta',
       MANAGER_POSITION: 'L’esprit créatif et digital de Triskele',
-      MANAGER_DESC: `Complice dans la vie et dans l’aventure Triskele, Roberta imagine l’univers de la marque,
-gère l’image, les réseaux sociaux et toute la partie digitale. De l’idée à l’écran, c’est elle qui
-donne vie à l’histoire que nous partageons.`,
+      MANAGER_DESC: `Complice dans la vie et dans l’aventure Triskele, Roberta imagine l’univers de la marque,gère l’image, les réseaux sociaux et toute la partie digitale. De l’idée à l’écran, c’est elle quidonne vie à l’histoire que nous partageons.`,
       CTA_TITLE: 'Venez chez nous',
-      CTA_SUBTITLE:
-        "Découvrez les saveurs authentiques de l'Italie au centre de Rennes",
+      CTA_SUBTITLE:"Découvrez les saveurs authentiques de l'Italie au centre de Rennes",
       EXPLORE_MENU: 'Explorer le Cart',
       CONTACT_US: 'Contactez-Nous',
     },
     CONTACT: {
       TITLE: 'Contactez-Nous',
-      SUBTITLE:
-        'Nous sommes là pour vous aider. En remplissant le formulaire ci-dessous, un membre de notre équipe vous contactera dès que possible.',
+      SUBTITLE:'Nous sommes là pour vous aider. En remplissant le formulaire ci-dessous, un membre de notre équipe vous contactera dès que possible.',
       FORM_TITLE: 'Envoyez-Nous un Message',
       NAME_LABEL: 'Nom Complet',
       NAME_PLACEHOLDER: 'Entrez votre nom',
@@ -678,13 +612,12 @@ donne vie à l’histoire que nous partageons.`,
       PRIVACY_ERROR: 'Vous devez accepter la Politique de Confidentialité',
       SENDING: 'Envoi en cours...',
       SEND: 'Envoyer le Message',
-      SUCCESS_MESSAGE:
-        'Merci de nous avoir contactés ! Nous vous répondrons dès que possible.',
+      SUCCESS_MESSAGE:'Merci de nous avoir contactés ! Nous vous répondrons dès que possible.',
       INFO_TITLE: 'Informations de Contact',
       ADDRESS_TITLE: 'Adresse',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
       PHONE_TITLE: 'Téléphone',
-      PHONE_NUMBER: 'xxxxxxxx',
+      PHONE_NUMBER: '06 72 78 06 22',
       EMAIL_TITLE: 'Email',
       EMAIL_ADDRESS: 'triskelegastronomie@gmail.com',
       HOURS_TITLE: 'Horaires',
@@ -704,8 +637,7 @@ donne vie à l’histoire que nous partageons.`,
       STEP4_LABEL: 'Confirmation',
       STEP1_TITLE: 'Sélectionnez les Plats pour Votre Commande',
       YOUR_ORDER: 'Votre Commande',
-      EMPTY_CART:
-        'Votre panier est vide. Ajoutez quelques plats pour continuer.',
+      EMPTY_CART:'Votre panier est vide. Ajoutez quelques plats pour continuer.',
       SUBTOTAL: 'Sous-total',
       DELIVERY_FEE: 'Livraison',
       TOTAL: 'Total',
@@ -717,98 +649,73 @@ donne vie à l’histoire que nous partageons.`,
     MENU_PAGE: {
       A_PARTIRE_DA: `À partir de `,
       TITLE: 'NOS SPÉCIALITÉS',
-      SUBTITLE: `Ici, la cuisine italo-sicilienne rencontre les recettes régionales italiennes dans un esprit
-street-food fait maison. Des plats chauds, des douceurs artisanales et des boissons
-typiques à déguster sur le pouce ou à emporter.
-Les saveurs du Sud et d’ailleurs, à deux pas de chez vous.
-`,
+      SUBTITLE: `Ici, la cuisine italo-sicilienne rencontre les recettes régionales italiennes dans un espritstreet-food fait maison. Des plats chauds, des douceurs artisanales et des boissonstypiques à déguster sur le pouce ou à emporter.Les saveurs du Sud et d’ailleurs, à deux pas de chez vous.`,
       CATEGORIES: {
         TAVOLA_CALDA: 'FAST-GOOD',
         TAVOLA_CALDA_SUBTITLE: `La street-food italo-sicilienne qui réchauffe les cœurs`,
         PRIMI: 'LES GRATINÉS',
         PRIMI_SUBTITLE: `Les plats réconfortants gratinés au four comme à la maison.`,
         DOLCI: 'DOUCEURS DU SUD',
-        DOLCI_SUBTITLE: `Les desserts traditionnels italo-siciliens qui ensoleillent la fin de repas. Des douceurs
-artisanales pour une note sucrée pleine de caractère.`,
+        DOLCI_SUBTITLE: `Les desserts traditionnels italo-siciliens qui ensoleillent la fin de repas. Des douceursartisanales pour une note sucrée pleine de caractère.`,
         BEVANDE: 'À BOIRE',
-        BEVANDE_SUBTITLE: `L’espresso italien à l’arôme intense et les boissons pétillantes siciliennes Tomarchio
-pour rafraîchir votre pause gourmande avec authenticité.`,
+        BEVANDE_SUBTITLE: `L’espresso italien à l’arôme intense et les boissons pétillantes siciliennes Tomarchiopour rafraîchir votre pause gourmande avec authenticité.`,
       },
       FEATURED: 'Spécialité',
       ORDER_BUTTON: 'Commander',
-      ALLERGIES_NOTICE:
-        'Pour des informations sur les allergènes, demandez à notre personnel',
+      ALLERGIES_NOTICE:'Pour des informations sur les allergènes, demandez à notre personnel',
       CTA_TITLE: 'Vous voulez commander à emporter?',
-      CTA_SUBTITLE:
-        'Commander est simple et rapide. Récupérez vos plats italiens préférés directement dans notre restaurant.',
+      CTA_SUBTITLE:'Commander est simple et rapide. Récupérez vos plats italiens préférés directement dans notre restaurant.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
         ARANCINI: {
           NAME: 'Arancini',
-          DESCRIPTION: `Boules de riz croustillantes farcies aux saveurs du Sud. Dorés, fondants et
-100% maison.`,
+          DESCRIPTION: `Boules de riz croustillantes farcies aux saveurs du Sud. Dorés, fondants et100% maison.`,
         },
         FOCACCIA: {
           NAME: 'Focacce farcies',
-          DESCRIPTION: `Spécialité toscane aux arômes d’huile d’olive, garnies de produits
-frais et savoureux. Un plaisir croustillant et généreux, venu du cœur de l’Italie.`,
+          DESCRIPTION: `Spécialité toscane aux arômes d’huile d’olive, garnies de produitsfrais et savoureux. Un plaisir croustillant et généreux, venu du cœur de l’Italie.`,
         },
         PIZZA_FRITTA: {
           NAME: 'Pizza Fritta',
-          DESCRIPTION: `La pizza rebelle et irrésistible du street-food napolitaine. Farcie et frite à la
-perfection pour un plaisir coupable totalement assumé.`,
+          DESCRIPTION: `La pizza rebelle et irrésistible du street-food napolitaine. Farcie et frite à laperfection pour un plaisir coupable totalement assumé.`,
         },
         PIZZA_TEGLIA: {
           NAME: 'Pizza in teglia',
-          DESCRIPTION: `Pâte moelleuse, cuisson au four, garnitures ensoleillées. À partager…
-ou pas.
-`,
+          DESCRIPTION: `Pâte moelleuse, cuisson au four, garnitures ensoleillées. À partager…ou pas.`,
         },
         PIZZA_PORTAFOGLIO: {
           NAME: 'Pizza à portafoglio',
-          DESCRIPTION: `La street-food napolitaine par excellence. Une pizza pliée à
-dévorer sur le pouce, chaude et généreuse.
-`,
+          DESCRIPTION: `La street-food napolitaine par excellence. Une pizza pliée àdévorer sur le pouce, chaude et généreuse.`,
         },
       },
       PRIMI: {
         LASAGNE: {
           NAME: 'Lasagne',
-          DESCRIPTION: `Les couches de pâte, sauce tomate maison et mozzarella fondante. Un
-grand classique du dimanche italien.
-`,
+          DESCRIPTION: `De généreuses couches de pâte garnies d’un ragù bolognaise mijoté maison, d’une béchamel onctueuse et de mozzarella fondante. Un grand classique du dimanche italien.`,
         },
-        LASAGNE_VEGANE: {
-          NAME: 'Lasagnes véganes',
-          DESCRIPTION: `Couches de pâtes maison, sauce tomate riche et légumes grillés, avec une crème de béchamel végétalienne. Un grand classique du dimanche, entièrement vegan et savoureux.`,
+        LASAGNE_VEGETARIANE: {
+          NAME: 'Lasagnes végé',
+          DESCRIPTION: `Une lasagne gourmande et colorée, garnie de légumes de saison fondants, d’une sauce tomate parfumée et d’une béchamel crémeuse. Tout le plaisir sans compromis.`,
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
-          DESCRIPTION: `Aubergines fondantes, sauce parfumée et gratin de mozzarella. Le plat
-réconfortant et généreux par excellence.
-`,
+          DESCRIPTION: `Aubergines fondantes, sauce parfumée et gratin de mozzarella. Le platréconfortant et généreux par excellence.`,
         },
       },
       DOLCI: {
         CANNOLI: {
           NAME: 'Cannoli',
-          DESCRIPTION: ` La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuse
-et éclats de pistache.
-`,
+          DESCRIPTION: ` La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuseet éclats de pistache.`,
         },
         TIRAMISU: {
           NAME: 'Tiramisù',
-          DESCRIPTION: `Le dessert italien incontournable. Crème légère au mascarpone, café
-intense et cacao amer pour finir en beauté.`,
+          DESCRIPTION: `Le dessert italien incontournable. Crème légère au mascarpone, caféintense et cacao amer pour finir en beauté.`,
         },
         GRAFFE: {
           NAME: 'Graffe della nonna',
-          DESCRIPTION: `Boules de pâte à pizza légèrement sucrée, frite à la perfection et
-servie avec le topping de votre choix. La douceur réconfortante que ma Nonna (mamì)
-préparait le dimanche, pendant qu’on faisait le pain en famille. Un souvenir d’enfance à
-croquer, croustillant et tendre à la fois.`
-        }
+          DESCRIPTION: `Boules de pâte à pizza sucrée, frites à la perfection et servies avec le topping de votre choix. Une douceur réconfortante, croustillante et tendre, comme les faisait ma Nonna (mami) le dimanche.`,
+        },
       },
       BEVANDE: {
         CAFFE: {
@@ -818,5 +725,24 @@ croquer, croustillant et tendre à la fois.`
         },
       },
     },
+    PRIVACYPOLICY: {
+      TITLE: `Politique de confidentialité`,
+      SUBTITLE: `La présente politique décrit comment nous collectons, utilisons et protégeons les données personnelles de nos utilisateurs, conformément au Règlement Général sur la Protection des Données (RGPD).`,
+      PRIMO: `1. Responsable du traitement`,
+      SUBPRIMO: `Le responsable du traitement des données est TRISKELE-GASTRONOMIE, dont le siège est situé au 3 Rue des Francs Bourgeois, 35000 Rennes, joignable à l’adresse triskelegastronomie@gmail.com.`,
+      SECONDO: `2. Types de données collectées`,
+      SUBSECONDO: `Nous collectons les données personnelles fournies directement par les utilisateurs, telles que le nom, l’adresse email et toute autre information nécessaire pour répondre aux demandes ou fournir des services.`,
+      TERZO: `3. Finalité du traitement`,
+      SUBTERZO: `Les données sont utilisées exclusivement pour répondre aux demandes des utilisateurs, envoyer des communications liées aux services proposés et respecter les obligations légales.`,
+      QUARTO: `4. Modalités de traitement`,
+      SUBQUARTO: `Le traitement des données est effectué à l’aide d’outils informatiques et manuels, en adoptant des mesures de sécurité appropriées pour les protéger contre tout accès non autorisé, perte ou divulgation abusive.`,
+      QUINTO: `5. Conservation des données`,
+      SUBQUINTO: `Les données personnelles sont conservées pendant la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées, conformément à la réglementation en vigueur.`,
+      SESTO: `6. Droits des personnes concernées`,
+      SUBSESTO: `Les utilisateurs peuvent exercer les droits prévus aux articles 15 à 22 du RGPD, notamment l’accès, la rectification, l’effacement, la limitation du traitement, l’opposition et la portabilité des données, en envoyant une demande au responsable du traitement.`,
+      SETTIMO: `7. Modifications de la politique de confidentialité`,
+      SUBSETTIMO: `Nous nous réservons le droit de mettre à jour cette politique. Toute modification sera publiée sur cette page.`,
+      CONCLUSIONI: `Pour toute question ou demande relative à la confidentialité, veuillez nous contacter à l’adresse triskelegastronomie@gmail.com.`
+    }
   },
 };

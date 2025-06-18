@@ -622,13 +622,29 @@ app-header header .header-title {
 
 app-menu .menu-header {
   position: relative;
-  height: 400px;
+  min-height: 400px;
   display: flex;
   align-items: center;
-  background: var(--secondary-color); /* Sfondo scuro uniforme come nell'hero */
+  background: var(--secondary-color);
   color: var(--primary-color);
   text-align: center;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  app-menu .menu-header {
+    min-height: 500px;
+  }
+}
+@media (min-width: 992px) {
+  app-menu .menu-header {
+    min-height: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  app-menu .menu-header {
+    min-height: 700px;
+  }
 }
 
 app-menu .menu-header::before {
@@ -636,12 +652,11 @@ app-menu .menu-header::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* Utilizzo solo della parte circolare centrale del logo */
   background-image: url("/assets/images/pizzateglia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3; /* Stessa opacità dell'hero */
+  opacity: 0.3;
   z-index: 1;
 }
 
@@ -1257,6 +1272,10 @@ app-footer .footer-bottom-links {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s;
+}
+
+app-footer .footer-our-location-subtitle {
+  color: var(--primary-color)
 }
 
 @media (max-width: 768px) {
@@ -2043,8 +2062,24 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 700px;
+  min-height: 400px;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .sub-hero-container {
+    min-height: 500px;
+  }
+}
+@media (min-width: 992px) {
+  .sub-hero-container {
+    min-height: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .sub-hero-container {
+    min-height: 700px;
+  }
 }
 
 .sub-hero-container::before {
@@ -2064,6 +2099,11 @@ body {
 }
 
 .sub-hero-title {
-  font-size: 60px;
+  font-size: 40px;
   color: var(--primary-color);
+}
+
+app-featured-products .carousel-card:hover {
+  transform: none;
+  box-shadow: var(--box-shadow, 0 2px 8px rgba(0,0,0,0.08));
 }

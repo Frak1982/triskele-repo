@@ -23,7 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
       <div
         class="sub-hero-container justify-content-center d-flex align-items-center"
       >
-        <h1 class="sub-hero-title">{{ 'SUB-HERO.TITLE' | translate }}</h1>
+        <h1 class="sub-hero-title px-5">{{ 'SUBHERO.TITLE' | translate }}</h1>
       </div>
     </section>
 
@@ -58,9 +58,9 @@ import { TranslateModule } from '@ngx-translate/core';
       <app-testimonials></app-testimonials>
     </section> -->
 
-    <section class="cta">
+    <!-- <section class="cta">
       <div class="container">
-        <h2>Gusta l'Italia a Rennes</h2>
+        <h2>Gusta l'Italia a Rennes</h2> -->
         <!-- <p>
           Vieni a trovarci o ordina i nostri autentici piatti italiani da
           asporto.
@@ -69,8 +69,8 @@ import { TranslateModule } from '@ngx-translate/core';
           <a routerLink="/menu" class="btn primary">Vedi il Menu</a>
           <a routerLink="/contact" class="btn secondary">Contattaci</a>
         </div> -->
-      </div>
-    </section>
+      <!-- </div>
+    </section> -->
   `,
   styles: [],
 })

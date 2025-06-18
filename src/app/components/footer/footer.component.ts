@@ -102,10 +102,16 @@ import { Subscription } from 'rxjs';
         <div class="map-container">
           <h3 class="footer-title">
             {{ 'FOOTER.OUR_LOCATION' | translate }}
-            <h5>
-              {{ 'FOOTER.OUR_LOCATION_SUBTITLE' | translate}}
-            </h5>
           </h3>
+          <h5 class="footer-our-location-subtitle">
+            {{ 'FOOTER.OUR_LOCATION_SUBTITLE1' | translate}}
+          </h5>
+          <h5 class="footer-our-location-subtitle">
+            {{ 'FOOTER.OUR_LOCATION_SUBTITLE2' | translate}}
+          </h5>
+          <h5 class="footer-our-location-subtitle">
+            {{ 'FOOTER.OUR_LOCATION_SUBTITLE3' | translate}}
+          </h5>
           <div class="google-map">
             <iframe
               [src]="mapUrl"
