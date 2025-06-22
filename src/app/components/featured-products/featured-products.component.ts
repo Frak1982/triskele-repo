@@ -41,7 +41,7 @@ interface Product {
         <span *ngFor="let p of featuredProducts; let i = index" class="dot" [class.active]="i === currentIndex" (click)="goTo(i)"></span>
       </div>
       <div class="view-all">
-        <a href="/assets/menu.pdf" class="view-all-btn" download="Triskele-Menu.pdf">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
+        <a href="/assets/menu.pdf" class="view-all-btn" target="_blank">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
       </div>
     </div>
   `,
@@ -68,7 +68,7 @@ interface Product {
     .carousel-card {
       min-width: 280px;
       width: 400px;
-      height: 700px;
+      height: 630px;
       width: 100%;
       margin: 0 10px;
       box-shadow: var(--box-shadow, 0 2px 8px rgba(0,0,0,0.08));

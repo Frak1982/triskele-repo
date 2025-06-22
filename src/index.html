@@ -1,166 +1,80 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="utf-8">
-  <title>Triskele - Autentica Gastronomia Italiana a Rennes</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/jpeg" href="/assets/images/triskele.jpg">
+  <head>
+    <meta charset="utf-8" />
+    <title>Triskele - Autentica Gastronomia Italiana a Rennes</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/jpeg" href="/assets/images/triskele.jpg" />
 
-  <!-- Font mancanti (importante per lo stile) -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font mancanti (importante per lo stile) -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> -->
 
-  <!-- Stili CSS di base mancanti -->
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fff;
-      min-height: 100vh;
-    }
-
-    app-root {
-      display: block;
-      min-height: 100vh;
-    }
-
-    /* Loader mentre l'app si carica */
-    .app-loading {
-      position: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100vw;
-      background-color: #fff;
-      z-index: 1000;
-      text-align: center;
-    }
-
-    .app-loading img {
-      max-width: 150px;
-      margin-bottom: 20px;
-    }
-
-    .app-loading h1 {
-      font-family: 'Playfair Display', serif;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #deb16d;
-      border-top: 4px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="mat-typography">
-  <!-- Spinner di caricamento -->
-  <div class="app-loading" id="app-loading">
-    <img src="/assets/images/triskele.svg" alt="Triskele Logo">
-    <h1>Triskele</h1>
-    <p id="loading-text">Autentica Gastronomia Italiana</p>
-    <div class="spinner"></div>
-  </div>
-
-  <!-- Tag app-root -->
-  <app-root></app-root>
-
-  <!-- Script per gestire le traduzioni nel loader -->
-  <script>
-    // Traduzioni per il loader
-    const LOADER_TRANSLATIONS = {
-      'LOADING.DESCRIPTION': {
-        it: 'Autentica Gastronomia Italiana',
-        fr: 'Authentique Gastronomie Italienne',
-        en: 'Authentic Italian Gastronomy'
+    <!-- Stili CSS di base mancanti -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: #fff;
+        min-height: 100vh;
       }
-    };
 
-    // Funzione per ottenere la lingua preferita del browser
-    function getBrowserLanguage() {
-      const lang = navigator.language || navigator.userLanguage;
-      return lang.startsWith('fr') ? 'fr' :
-             lang.startsWith('it') ? 'it' : 'en';
-    }
+      app-root {
+        display: block;
+        min-height: 100vh;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+    <!-- Tag app-root -->
+    <app-root></app-root>
 
-    // Funzione per tradurre il testo del loader
-    function translateLoader() {
-      const loadingText = document.getElementById('loading-text');
-      if (!loadingText) return;
-
-      const lang = getBrowserLanguage();
-      const translation = LOADER_TRANSLATIONS['LOADING.DESCRIPTION'][lang] ||
-                         LOADER_TRANSLATIONS['LOADING.DESCRIPTION']['fr'];
-
-      loadingText.textContent = translation;
-    }
-
-    // Applica la traduzione immediatamente
-    translateLoader();
-  </script>
-
-  <!-- Script per nascondere il loader quando l'app è pronta -->
-  <script>
-    window.onload = function() {
-      // Nascondi il loader dopo 1 secondi (o quando l'app Angular è caricata)
-      setTimeout(function() {
-        var loader = document.getElementById('app-loading');
-        if (loader) {
-          loader.style.display = 'none';
-        }
-      }, 1000);
-    }
-  </script>
-
-  <!-- Script per gestire l'overlay quando il menu mobile è espanso -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Aspetta che Angular carichi completamente
-      setTimeout(function() {
-        // Osserva il nav menu per le modifiche
-        var observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.attributeName === 'class') {
-              var navMenu = document.querySelector('app-header nav ul');
-              if (navMenu && navMenu.classList.contains('active')) {
-                document.body.classList.add('menu-expanded');
-              } else {
-                document.body.classList.remove('menu-expanded');
+    <!-- Script per gestire l'overlay quando il menu mobile è espanso -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Aspetta che Angular carichi completamente
+        setTimeout(function () {
+          // Osserva il nav menu per le modifiche
+          var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+              if (mutation.attributeName === "class") {
+                var navMenu = document.querySelector("app-header nav ul");
+                if (navMenu && navMenu.classList.contains("active")) {
+                  document.body.classList.add("menu-expanded");
+                } else {
+                  document.body.classList.remove("menu-expanded");
+                }
               }
-            }
+            });
           });
-        });
 
-        // Configura l'osservatore per il nav menu
-        var navMenu = document.querySelector('app-header nav ul');
-        if (navMenu) {
-          observer.observe(navMenu, { attributes: true });
-        }
+          // Configura l'osservatore per il nav menu
+          var navMenu = document.querySelector("app-header nav ul");
+          if (navMenu) {
+            observer.observe(navMenu, { attributes: true });
+          }
 
-        // Osserva anche i click sul pulsante del menu mobile
-        var menuButton = document.querySelector('app-header .mobile-menu-btn');
-        if (menuButton) {
-          menuButton.addEventListener('click', function() {
-            // Il cambio classe avverrà grazie all'osservatore
-          });
-        }
-      }, 1500); // Attendi che Angular abbia caricato la UI
-    });
-  </script>
-</body>
+          // Osserva anche i click sul pulsante del menu mobile
+          var menuButton = document.querySelector(
+            "app-header .mobile-menu-btn"
+          );
+          if (menuButton) {
+            menuButton.addEventListener("click", function () {
+              // Il cambio classe avverrà grazie all'osservatore
+            });
+          }
+        }, 1500); // Attendi che Angular abbia caricato la UI
+      });
+    </script>
+  </body>
 </html>
