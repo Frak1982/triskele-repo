@@ -41,7 +41,7 @@ export const TRANSLATIONS = {
     },
     HERO: {
       TITLE: 'Buongiorno! Noi siamo TRISKELE, Gastronomia italo-siciliana',
-      SUBTITLE: `Qui cuciniamo con il cuore e vi accogliamo come a casa.Delizie siciliane e italiane da gustare con una mano, profumi che risvegliano i ricordi e sapori che raccontano una storia.`,
+      SUBTITLE: `Qui cuciniamo con il cuore e vi accogliamo come a casa. Delizie siciliane e italiane da gustare con una mano, profumi che risvegliano i ricordi e sapori che raccontano una storia.`,
       MENU_BUTTON: 'Scopri il Menu',
       ABOUT_BUTTON: 'Chi Siamo',
     },
@@ -288,7 +288,7 @@ export const TRANSLATIONS = {
       SOCIAL: 'Social',
     },
     HERO: {
-      TITLE: `Here, we cook with heart and welcome you like family.Sicilian and Italian treats to enjoy with one hand, aromas that awaken memories, and flavors that tell a story.`,
+      TITLE: `Here, we cook with heart and welcome you like family. Sicilian and Italian treats to enjoy with one hand, aromas that awaken memories, and flavors that tell a story.`,
       MENU_BUTTON: 'Discover Menu',
       ABOUT_BUTTON: 'About Us',
     },
@@ -502,7 +502,7 @@ export const TRANSLATIONS = {
     },
     HEADER: {
       HOME: 'Accueil',
-      MENU: 'Cart',
+      MENU: 'Carte',
       ABOUT: 'À Propos',
       CONTACT: 'Contact',
       ORDER: 'Commander',
@@ -536,12 +536,12 @@ export const TRANSLATIONS = {
     },
     HERO: {
       TITLE: 'Bonjour! Nous sommes TRISKELE, gastronomie italo-sicilienne',
-      SUBTITLE: `Ici, on cuisine avec le cœur et on vous accueille comme à la maison.Des gourmandises siciliennes et italiennes à savourer d’une main, des parfums qui réveillent les souvenirs et des saveurs qui racontent une histoire.`,
+      SUBTITLE: `Ici, on cuisine avec le cœur et on vous accueille comme à la maison. Des gourmandises siciliennes et italiennes à savourer d’une main, des parfums qui réveillent les souvenirs et des saveurs qui racontent une histoire.`,
       MENU_BUTTON: 'Découvrir le Cart',
       ABOUT_BUTTON: 'À Propos de Nous',
     },
     SUBHERO: {
-      TITLE: "Bienvenue chez TRISKELE, l'Italie en un bouché.",
+      TITLE: "Bienvenue chez TRISKELE, l'Italie en une bouchée.",
     },
     FEATURED: {
       TITLE: 'Nos Spécialités',
@@ -649,16 +649,16 @@ export const TRANSLATIONS = {
     MENU_PAGE: {
       A_PARTIRE_DA: `À partir de `,
       TITLE: 'NOS SPÉCIALITÉS',
-      SUBTITLE: `Ici, la cuisine italo-sicilienne rencontre les recettes régionales italiennes dans un espritstreet-food fait maison. Des plats chauds, des douceurs artisanales et des boissonstypiques à déguster sur le pouce ou à emporter.Les saveurs du Sud et d’ailleurs, à deux pas de chez vous.`,
+      SUBTITLE: `Ici, la cuisine italo-sicilienne rencontre les recettes régionales italiennes dans un espritstreet-food fait maison. Des plats chauds, des douceurs artisanales et des boissons typiques à déguster sur le pouce ou à emporter.Les saveurs du Sud et d’ailleurs, à deux pas de chez vous.`,
       CATEGORIES: {
         TAVOLA_CALDA: 'FAST-GOOD',
         TAVOLA_CALDA_SUBTITLE: `La street-food italo-sicilienne qui réchauffe les cœurs`,
         PRIMI: 'LES GRATINÉS',
         PRIMI_SUBTITLE: `Les plats réconfortants gratinés au four comme à la maison.`,
         DOLCI: 'DOUCEURS DU SUD',
-        DOLCI_SUBTITLE: `Les desserts traditionnels italo-siciliens qui ensoleillent la fin de repas. Des douceursartisanales pour une note sucrée pleine de caractère.`,
+        DOLCI_SUBTITLE: `Les desserts traditionnels italo-siciliens qui ensoleillent la fin de repas. Des douceurs artisanales pour une note sucrée pleine de caractère.`,
         BEVANDE: 'À BOIRE',
-        BEVANDE_SUBTITLE: `L’espresso italien à l’arôme intense et les boissons pétillantes siciliennes Tomarchiopour rafraîchir votre pause gourmande avec authenticité.`,
+        BEVANDE_SUBTITLE: `L’espresso italien à l’arôme intense et les boissons pétillantes siciliennes Tomarchio pour rafraîchir votre pause gourmande avec authenticité.`,
       },
       FEATURED: 'Spécialité',
       ORDER_BUTTON: 'Commander',
@@ -678,7 +678,7 @@ export const TRANSLATIONS = {
         },
         PIZZA_FRITTA: {
           NAME: 'Pizza Fritta',
-          DESCRIPTION: `La pizza rebelle et irrésistible du street-food napolitaine. Farcie et frite à laperfection pour un plaisir coupable totalement assumé.`,
+          DESCRIPTION: `La pizza rebelle et irrésistible du street-food napolitaine. Farcie et frite à la perfection pour un plaisir coupable totalement assumé.`,
         },
         PIZZA_TEGLIA: {
           NAME: 'Pizza in teglia',
@@ -700,13 +700,13 @@ export const TRANSLATIONS = {
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
-          DESCRIPTION: `Aubergines fondantes, sauce parfumée et gratin de mozzarella. Le platréconfortant et généreux par excellence.`,
+          DESCRIPTION: `Aubergines fondantes, sauce parfumée et gratin de mozzarella. Le plat réconfortant et généreux par excellence.`,
         },
       },
       DOLCI: {
         CANNOLI: {
           NAME: 'Cannoli',
-          DESCRIPTION: ` La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuseet éclats de pistache.`,
+          DESCRIPTION: ` La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuse et éclats de pistache.`,
         },
         TIRAMISU: {
           NAME: 'Tiramisù',
@@ -714,12 +714,12 @@ export const TRANSLATIONS = {
         },
         GRAFFE: {
           NAME: 'Graffe della nonna',
-          DESCRIPTION: `Boules de pâte à pizza sucrée, frites à la perfection et servies avec le topping de votre choix. Une douceur réconfortante, croustillante et tendre, comme les faisait ma Nonna (mami) le dimanche.`,
+          DESCRIPTION: `Boules de pâte à pizza sucrée, frites à la perfection et servies avec le topping de votre choix. Une douceur réconfortante, croustillante et tendre, comme les faisait ma Nonna (mamì) le dimanche.`,
         },
       },
       BEVANDE: {
         CAFFE: {
-          NAME: 'Café Expresso',
+          NAME: 'Café espresso',
           DESCRIPTION:
             'Authentique café expresso italien, servi dans la traditionnelle petite tasse.',
         },

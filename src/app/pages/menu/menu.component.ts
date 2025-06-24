@@ -280,7 +280,7 @@ export class MenuComponent {
     },
     {
       id: 7,
-      translationKey: 'MENU_ITEMS.PRIMI.LASAGNE_VEGANE',
+      translationKey: 'MENU_ITEMS.PRIMI.LASAGNE_VEGETARIANE',
       price: 9,
       image: '/assets/images/lasagnavege.jpg',
       featured: true,
