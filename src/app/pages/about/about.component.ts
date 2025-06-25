@@ -22,11 +22,11 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
         <!-- Chi siamo section -->
         <div class="flex flex-col md:flex-row items-center mb-24 gap-12">
           <div class="md:w-1/2 mb-8 md:mb-0">
-            <div class="section-title-container">
+            <!-- <div class="section-title-container">
               <h2 class="text-3xl font-bold mb-2 text-primary-900">{{ 'ABOUT.WHO_WE_ARE' | translate }}</h2>
               <div class="accent-line mb-8"></div>
-            </div>
-            <p class="mb-6 text-gray-700 leading-relaxed">
+            </div> -->
+            <p class="mb-6 text-gray-700 leading-relaxed pt-2">
               {{ 'ABOUT.PARAGRAPH_1' | translate }}
             </p>
             <p class="mb-6 text-gray-700 leading-relaxed">
@@ -36,7 +36,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               {{ 'ABOUT.PARAGRAPH_3' | translate }}
             </p>
           </div>
-          <div class="md:w-1/2">
+          <!-- <div class="md:w-1/2">
             <div class="img-frame">
               <img
                 src="/assets/images/team.jpg"
@@ -44,7 +44,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
                 class="w-full h-auto object-cover rounded-md"
               />
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- I nostri valori section -->
@@ -110,14 +110,14 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div class="team-card">
-              <div class="img-container">
+              <!-- <div class="img-container">
                 <img
                   src="/assets/images/chef.jpg"
                   alt="{{ 'ABOUT.CHEF_ALT' | translate }}"
                   class="w-full h-full object-cover"
                 />
                 <div class="team-overlay"></div>
-              </div>
+              </div> -->
               <div class="content">
                 <h3 class="text-2xl font-bold text-primary-800">{{ 'ABOUT.CHEF_TITLE' | translate }}</h3>
                 <p class="text-primary-500 mb-4 font-medium">{{ 'ABOUT.CHEF_POSITION' | translate }}</p>
@@ -127,14 +127,14 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               </div>
             </div>
             <div class="team-card">
-              <div class="img-container">
+              <!-- <div class="img-container">
                 <img
                   src="/assets/images/manager.jpg"
                   alt="{{ 'ABOUT.MANAGER_ALT' | translate }}"
                   class="w-full h-full object-cover"
                 />
                 <div class="team-overlay"></div>
-              </div>
+              </div> -->
               <div class="content">
                 <h3 class="text-2xl font-bold text-primary-800">Roberta</h3>
                 <p class="text-primary-500 mb-4 font-medium">{{ 'ABOUT.MANAGER_POSITION' | translate }}</p>

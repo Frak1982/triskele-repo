@@ -10,6 +10,7 @@ interface MenuItem {
   image?: string;
   featured?: boolean;
   category: string;
+  images?: string[]; // solo per arancini
 }
 
 @Component({
@@ -52,32 +53,32 @@ interface MenuItem {
                 </h3>
               </h2>
               <div class="menu-items">
-                @for (item of getItemsByCategory('tavolaCalda'); track item.id) {
-                  <div class="menu-item">
-                    @if (item.image) {
-                      <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" />
-                        @if (item.featured) {
-                          <span class="featured">{{
-                            'MENU_PAGE.FEATURED' | translate
-                          }}</span>
-                        }
-                      </div>
-                    }
-                    <div class="menu-item-info">
-                      <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                      <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                      <div class="menu-item-price">
-                      {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
-                      </div>
+                <div *ngFor="let item of getItemsByCategory('tavolaCalda'); trackBy: trackById" class="menu-item">
+                  <ng-container *ngIf="item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI'; else singleImageBlock">
+                    <div class="menu-item-image"
+                      (touchstart)="onTouchStart($event)"
+                      (touchend)="onTouchEnd($event)">
+                      <img [src]="aranciniImages[aranciniIndex]" [alt]="getItemName(item)" style="width:100%;max-width:350px;object-fit:cover;display:block;margin:0 auto;" />
                     </div>
-                    <!-- <div class="menu-item-action">
-                      <a routerLink="/order" class="order-btn">{{
-                        'MENU_PAGE.ORDER_BUTTON' | translate
-                      }}</a>
-                    </div> -->
+                    <div class="carousel-dots">
+                      <span *ngFor="let img of aranciniImages; let i = index" class="dot" [class.active]="i === aranciniIndex" (click)="goToArancini(i)"></span>
+                    </div>
+                    <span *ngIf="item.featured" class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
+                  </ng-container>
+                  <ng-template #singleImageBlock>
+                    <div *ngIf="item.image" class="menu-item-image">
+                      <img [src]="item.image" [alt]="getItemName(item)" />
+                      <span *ngIf="item.featured" class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
+                    </div>
+                  </ng-template>
+                  <div class="menu-item-info">
+                    <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                    <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                    <div class="menu-item-price">
+                      {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
+                    </div>
                   </div>
-                }
+                </div>
               </div>
             </div>
           }
@@ -110,11 +111,6 @@ interface MenuItem {
                       €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
-                    <!-- <div class="menu-item-action">
-                      <a routerLink="/order" class="order-btn">{{
-                        'MENU_PAGE.ORDER_BUTTON' | translate
-                      }}</a>
-                    </div> -->
                   </div>
                 }
               </div>
@@ -149,11 +145,6 @@ interface MenuItem {
                       €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
-                    <!-- <div class="menu-item-action">
-                      <a routerLink="/order" class="order-btn">{{
-                        'MENU_PAGE.ORDER_BUTTON' | translate
-                      }}</a>
-                    </div> -->
                   </div>
                 }
               </div>
@@ -188,11 +179,6 @@ interface MenuItem {
                         €{{ item.price.toFixed(2) }}
                       </div>
                     </div>
-                    <!-- <div class="menu-item-action">
-                      <a routerLink="/order" class="order-btn">{{
-                        'MENU_PAGE.ORDER_BUTTON' | translate
-                      }}</a>
-                    </div> -->
                   </div>
                 }
               </div>
@@ -216,7 +202,28 @@ interface MenuItem {
       </div> -->
     </div>
   `,
-  styles: []
+  styles: [
+    `
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0 0 0;
+      gap: 8px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .dot.active {
+      background: var(--primary-color, #333);
+    }
+    `
+  ]
 })
 export class MenuComponent {
   categories = ['tavolaCalda', 'primi', 'dolci', 'bevande'];
@@ -237,7 +244,11 @@ export class MenuComponent {
       id: 1,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
       price: 4.50,
-      image: '/assets/images/arancini.jpg',
+      images: [
+        '/assets/images/arancini.jpg',
+        '/assets/images/arancino.jpg',
+        '/assets/images/arancinopistacchio.jpg',
+      ],
       featured: true,
       category: 'tavolaCalda',
     },
@@ -359,5 +370,50 @@ export class MenuComponent {
       bevande: 'MENU_PAGE.CATEGORIES.BEVANDE',
     };
     return mapping[category] || category;
+  }
+
+  aranciniIndex = 0;
+  touchStartX = 0;
+  touchEndX = 0;
+
+  get aranciniImages(): string[] {
+    const arancini = this.menuItems.find(item => item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI');
+    return arancini?.images || [];
+  }
+
+  prevArancini() {
+    this.aranciniIndex = (this.aranciniIndex - 1 + this.aranciniImages.length) % this.aranciniImages.length;
+  }
+
+  nextArancini() {
+    this.aranciniIndex = (this.aranciniIndex + 1) % this.aranciniImages.length;
+  }
+
+  goToArancini(i: number) {
+    this.aranciniIndex = i;
+  }
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipe();
+  }
+
+  handleSwipe() {
+    const delta = this.touchEndX - this.touchStartX;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) {
+        this.prevArancini();
+      } else {
+        this.nextArancini();
+      }
+    }
+  }
+
+  trackById(index: number, item: MenuItem) {
+    return item.id;
   }
 }

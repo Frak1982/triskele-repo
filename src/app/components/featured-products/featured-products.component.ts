@@ -49,7 +49,7 @@ interface Product {
     .carousel-wrapper {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center;z-index
       position: relative;
     }
     .carousel-arrow {

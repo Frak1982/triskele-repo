@@ -20,7 +20,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               class="hero-logo"
             />
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7 d-flex flex-column justify-content-center">
             <p class="hero-subtitle">{{ 'HERO.SUBTITLE' | translate }}</p>
             <div class="hero-buttons justify-content-center">
               <a routerLink="/about" class="hero-btn secondary" scrollToTop>{{

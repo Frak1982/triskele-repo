@@ -769,7 +769,7 @@ app-menu .menu-item:hover {
 }
 
 app-menu .menu-item-image {
-  height: 200px;
+  height: 500px;
   position: relative;
   overflow: hidden;
 }
