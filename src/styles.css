@@ -1060,6 +1060,7 @@ app-featured-products .product-icon {
 
 app-featured-products .product-details {
   padding: 10px;
+  max-width: 400px;
 }
 
 app-featured-products .product-name {
@@ -1073,7 +1074,7 @@ app-featured-products .product-description {
   margin-bottom: 15px;
   line-height: 1.5;
   font-family: var(--font-body);
-  height: 90px;
+  /* height: 90px; */
 }
 
 app-featured-products .product-price {

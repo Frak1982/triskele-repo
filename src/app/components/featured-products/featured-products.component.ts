@@ -20,7 +20,7 @@ interface Product {
     <div class="container">
       <h2 class="section-title">{{ 'FEATURED.TITLE' | translate }}</h2>
       <div class="carousel-wrapper" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
-        <button class="carousel-arrow left" (click)="prev()" aria-label="Precedente">&#8592;</button>
+        <!-- <button class="carousel-arrow left" (click)="prev()" aria-label="Precedente">&#8592;</button> -->
         <div class="product-card carousel-card">
           <div class="product-image">
             <img
@@ -36,7 +36,7 @@ interface Product {
             <button class="product-btn" (click)="goToMenu(currentProduct)">{{ 'FEATURED.VIEW_MENU' | translate }}</button>
           </div>
         </div>
-        <button class="carousel-arrow right" (click)="next()" aria-label="Successivo">&#8594;</button>
+        <!-- <button class="carousel-arrow right" (click)="next()" aria-label="Successivo">&#8594;</button> -->
       </div>
       <div class="carousel-dots">
         @for (p of featuredProducts; track p.id) {
@@ -69,10 +69,10 @@ interface Product {
       color: var(--secondary-color, #e67e22);
     }
     .carousel-card {
-      min-width: 280px;
-      width: 400px;
-      height: 630px;
-      width: 100%;
+      min-width: 400px;
+      // width: 400px;
+      // height: 630px;
+      // width: 100%;
       margin: 0 10px;
       box-shadow: var(--box-shadow, 0 2px 8px rgba(0,0,0,0.08));
       border-radius: var(--border-radius, 16px);
