@@ -18,6 +18,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
               src="assets/images/triskele.svg"
               alt="Triskele Logo"
               class="hero-logo"
+              loading="lazy"
             />
           </div>
           <div class="col-md-7 d-flex flex-column justify-content-center">

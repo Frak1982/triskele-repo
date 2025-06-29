@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 
@@ -27,18 +27,21 @@ interface Product {
               [src]="'/assets/images/' + currentProduct.image"
               [alt]="getProductName(currentProduct)"
               class="product-img"
+              loading="lazy"
             />
           </div>
           <div class="product-details">
             <h3 class="product-name">{{ getProductName(currentProduct) }}</h3>
             <p class="product-description">{{ getProductDescription(currentProduct) }}</p>
-            <a routerLink="/menu" class="product-btn" scrollToTop>{{ 'FEATURED.VIEW_MENU' | translate }}</a>
+            <button class="product-btn" (click)="goToMenu(currentProduct)">{{ 'FEATURED.VIEW_MENU' | translate }}</button>
           </div>
         </div>
         <button class="carousel-arrow right" (click)="next()" aria-label="Successivo">&#8594;</button>
       </div>
       <div class="carousel-dots">
-        <span *ngFor="let p of featuredProducts; let i = index" class="dot" [class.active]="i === currentIndex" (click)="goTo(i)"></span>
+        @for (p of featuredProducts; track p.id) {
+          <span class="dot" [class.active]="$index === currentIndex" (click)="goTo($index)"></span>
+        }
       </div>
       <div class="view-all">
         <a href="/assets/menu.pdf" class="view-all-btn" target="_blank">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
@@ -105,7 +108,7 @@ interface Product {
   `]
 })
 export class FeaturedProductsComponent {
-  constructor(private translateService: TranslateService) {}
+  constructor(private translateService: TranslateService, private router: Router) {}
 
   featuredProducts: Product[] = [
     {
@@ -174,5 +177,14 @@ export class FeaturedProductsComponent {
         this.next();
       }
     }
+  }
+
+  goToMenu(product: Product) {
+    let category = '';
+    if (product.category === 'primi') category = 'primi';
+    else if (product.category === 'tavola calda') category = 'tavolaCalda';
+    else if (product.category === 'dolce') category = 'dolci';
+    else if (product.category === 'bevanda') category = 'bevande';
+    this.router.navigate(['/menu'], { queryParams: { category, scrollId: product.translationKey } });
   }
 }

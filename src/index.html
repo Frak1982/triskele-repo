@@ -36,6 +36,12 @@
     />
   </head>
   <body class="mat-typography">
+    <script>
+      // Se la path non è la root, reindirizza a /
+      if (window.location.pathname !== '/') {
+        window.location.replace('/');
+      }
+    </script>
     <!-- Tag app-root -->
     <app-root></app-root>
 

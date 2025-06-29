@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface MenuItem {
   id: number;
@@ -53,32 +54,50 @@ interface MenuItem {
                 </h3>
               </h2>
               <div class="menu-items">
-                <div *ngFor="let item of getItemsByCategory('tavolaCalda'); trackBy: trackById" class="menu-item">
-                  <ng-container *ngIf="item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI'; else singleImageBlock">
-                    <div class="menu-item-image"
-                      (touchstart)="onTouchStart($event)"
-                      (touchend)="onTouchEnd($event)">
-                      <img [src]="aranciniImages[aranciniIndex]" [alt]="getItemName(item)" style="width:100%;max-width:350px;object-fit:cover;display:block;margin:0 auto;" />
+                @for (item of getItemsByCategory('tavolaCalda'); track item.id) {
+                  @if (item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI') {
+                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
+                      <div class="menu-item-image"
+                        (touchstart)="onTouchStart($event)"
+                        (touchend)="onTouchEnd($event)">
+                        <img [src]="aranciniImages[aranciniIndex]" [alt]="getItemName(item)" style="width:100%;object-fit:cover;display:block;margin:0 auto;" loading="lazy" />
+                      </div>
+                      <div class="carousel-dots">
+                        @for (img of aranciniImages; track $index) {
+                          <span class="dot" [class.active]="$index === aranciniIndex" (click)="goToArancini($index)"></span>
+                        }
+                      </div>
+                      @if (item.featured) {
+                        <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
+                      }
+                      <div class="menu-item-info">
+                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                        <div class="menu-item-price">
+                          {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
+                        </div>
+                      </div>
                     </div>
-                    <div class="carousel-dots">
-                      <span *ngFor="let img of aranciniImages; let i = index" class="dot" [class.active]="i === aranciniIndex" (click)="goToArancini(i)"></span>
-                    </div>
-                    <span *ngIf="item.featured" class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                  </ng-container>
-                  <ng-template #singleImageBlock>
-                    <div *ngIf="item.image" class="menu-item-image">
-                      <img [src]="item.image" [alt]="getItemName(item)" />
-                      <span *ngIf="item.featured" class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                    </div>
-                  </ng-template>
-                  <div class="menu-item-info">
-                    <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                    <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                    <div class="menu-item-price">
-                      {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
-                    </div>
-                  </div>
-                </div>
+                  } @else {
+                    @if (item.image) {
+                      <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
+                        <div class="menu-item-image">
+                          <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
+                          @if (item.featured) {
+                            <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
+                          }
+                        </div>
+                        <div class="menu-item-info">
+                          <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                          <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                          <div class="menu-item-price">
+                            {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  }
+                }
               </div>
             </div>
           }
@@ -93,25 +112,23 @@ interface MenuItem {
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('primi'); track item.id) {
-                  <div class="menu-item">
-                    @if (item.image) {
+                  @if (item.image) {
+                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
                       <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" />
+                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
                         @if (item.featured) {
-                          <span class="featured">{{
-                            'MENU_PAGE.FEATURED' | translate
-                          }}</span>
+                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
                         }
                       </div>
-                    }
-                    <div class="menu-item-info">
-                      <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                      <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                      <div class="menu-item-price">
-                      €{{ item.price.toFixed(2) }}
+                      <div class="menu-item-info">
+                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                        <div class="menu-item-price">
+                          €{{ item.price.toFixed(2) }}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  }
                 }
               </div>
             </div>
@@ -127,25 +144,23 @@ interface MenuItem {
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('dolci'); track item.id) {
-                  <div class="menu-item">
-                    @if (item.image) {
+                  @if (item.image) {
+                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
                       <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" />
+                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
                         @if (item.featured) {
-                          <span class="featured">{{
-                            'MENU_PAGE.FEATURED' | translate
-                          }}</span>
+                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
                         }
                       </div>
-                    }
-                    <div class="menu-item-info">
-                      <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                      <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                      <div class="menu-item-price">
-                      €{{ item.price.toFixed(2) }}
+                      <div class="menu-item-info">
+                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                        <div class="menu-item-price">
+                          €{{ item.price.toFixed(2) }}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  }
                 }
               </div>
             </div>
@@ -161,25 +176,23 @@ interface MenuItem {
               </h2>
               <div class="menu-items">
                 @for (item of getItemsByCategory('bevande'); track item.id) {
-                  <div class="menu-item">
-                    @if (item.image) {
+                  @if (item.image) {
+                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
                       <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" />
+                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
                         @if (item.featured) {
-                          <span class="featured">{{
-                            'MENU_PAGE.FEATURED' | translate
-                          }}</span>
+                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
                         }
                       </div>
-                    }
-                    <div class="menu-item-info">
-                      <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                      <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                      <div class="menu-item-price">
-                        €{{ item.price.toFixed(2) }}
+                      <div class="menu-item-info">
+                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
+                        <div class="menu-item-price">
+                          €{{ item.price.toFixed(2) }}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  }
                 }
               </div>
             </div>
@@ -225,7 +238,7 @@ interface MenuItem {
     `
   ]
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   categories = ['tavolaCalda', 'primi', 'dolci', 'bevande'];
   selectedCategory = 'tavolaCalda';
 
@@ -236,7 +249,7 @@ export class MenuComponent {
     bevande: 'Bevande',
   };
 
-  constructor(private translateService: TranslateService) {}
+  constructor(private translateService: TranslateService, private route: ActivatedRoute, private router: Router) {}
 
   menuItems: MenuItem[] = [
     // Tavola calda
@@ -284,7 +297,7 @@ export class MenuComponent {
     {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
-      price: 9,
+      price: 9.50,
       image: '/assets/images/lasagnabolo.jpg',
       featured: true,
       category: 'primi',
@@ -333,6 +346,14 @@ export class MenuComponent {
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
       price: 1.50,
       image: '/assets/images/caffe.jpg',
+      featured: true,
+      category: 'bevande',
+    },
+    {
+      id: 13,
+      translationKey: 'MENU_ITEMS.BEVANDE.TOMARCHIO',
+      price: 3.50,
+      image: '/assets/images/tomarchio.png',
       featured: true,
       category: 'bevande',
     },
@@ -415,5 +436,23 @@ export class MenuComponent {
 
   trackById(index: number, item: MenuItem) {
     return item.id;
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const category = params['category'];
+      const scrollId = params['scrollId'];
+      if (category && this.categories.includes(category)) {
+        this.selectedCategory = category;
+        setTimeout(() => {
+          if (scrollId) {
+            const el = document.querySelector(`[data-scroll-id='${scrollId}']`);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }
+        }, 300);
+      }
+    });
   }
 }

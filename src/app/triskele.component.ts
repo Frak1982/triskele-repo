@@ -12,20 +12,23 @@ import { ScrollService } from './services/scroll.service';
   standalone: true,
   imports: [RouterOutlet, CommonModule, HeaderComponent, FooterComponent, TranslateModule],
   template: `
-    <div *ngIf="isLoading" class="app-loading">
-      <img src="/assets/images/triskele.svg" alt="Triskele Logo" />
-      <h1>Triskele</h1>
-      <p>{{ 'LOADING.DESCRIPTION' | translate }}</p>
-      <div class="spinner"></div>
-    </div>
-
-    <div class="app-container" [hidden]="isLoading">
-      <app-header [currentLang]="currentLang" (languageChange)="useLanguage($event)"></app-header>
-      <main class="main-content">
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer></app-footer>
-    </div>
+    @if (isLoading) {
+      <div class="app-loading">
+        <img src="/assets/images/triskele.svg" alt="Triskele Logo" loading="lazy" />
+        <h1>Triskele</h1>
+        <p>{{ 'LOADING.DESCRIPTION' | translate }}</p>
+        <div class="spinner"></div>
+      </div>
+    }
+    @if (!isLoading) {
+      <div class="app-container">
+        <app-header [currentLang]="currentLang" (languageChange)="useLanguage($event)"></app-header>
+        <main class="main-content">
+          <router-outlet></router-outlet>
+        </main>
+        <app-footer></app-footer>
+      </div>
+    }
   `,
   styles: [`
     .app-loading {

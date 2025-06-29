@@ -697,7 +697,7 @@ app-menu .menu-tabs {
 app-menu .tabs {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   padding: 15px 0;
 }
 
@@ -888,15 +888,15 @@ app-menu .cta-btn:hover {
 }
 
 @media (max-width: 768px) {
-  app-menu .tabs {
+  /* app-menu .tabs {
     justify-content: flex-start;
     padding: 15px 10px;
-  }
+  } */
 
-  app-menu .tabs button {
+  /* app-menu .tabs button {
     padding: 8px 20px;
     font-size: 0.9rem;
-  }
+  } */
 
   app-menu .menu-items {
     grid-template-columns: 1fr;
@@ -1092,6 +1092,7 @@ app-featured-products .product-btn {
   border: 2px solid var(--primary-color);
   transition: background-color 0.3s;
   font-weight: 500;
+  background-color: transparent;
 }
 
 app-featured-products .product-btn:hover {
@@ -1191,7 +1192,6 @@ app-footer .social-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid var(--primary-color);
   color: var(--primary-color);
   transition: var(--transition);
   text-decoration: none;
@@ -1277,7 +1277,7 @@ app-footer .footer-bottom-links {
 }
 
 app-footer .footer-our-location-subtitle {
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
@@ -1665,6 +1665,9 @@ app-contact .accent-line {
 /* Section Title */
 app-contact .section-title-container {
   margin-bottom: 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Form Styles */
@@ -2127,5 +2130,42 @@ body {
 
 app-featured-products .carousel-card:hover {
   transform: none;
-  box-shadow: var(--box-shadow, 0 2px 8px rgba(0,0,0,0.08));
+  box-shadow: var(--box-shadow, 0 2px 8px rgba(0, 0, 0, 0.08));
+}
+
+/* Icona Instagram */
+.icon-instagram {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.icon-instagram::before {
+  display: none;
+}
+.icon-instagram svg {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  z-index: 2;
+}
+
+.icon-instagram img {
+  width: 36px;
+  height: 36px;
+  display: block;
+  filter: none;
+  transition: box-shadow 0.2s, filter 0.2s;
+}
+.social-icon:focus .icon-instagram img,
+.social-icon:hover .icon-instagram img {
+  box-shadow: 0 0 0 4px #fd5949, 0 0 0 8px #d6249f33;
+  border-radius: 50%;
+  filter: none;
 }

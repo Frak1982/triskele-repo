@@ -56,11 +56,14 @@ export const TRANSLATIONS = {
     HOME: {
       SERVICES_TITLE: 'I Nostri Servizi',
       AUTHENTIC_CUISINE_TITLE: 'Cucina Autentica',
-      AUTHENTIC_CUISINE_DESC:'Piatti tradizionali preparati secondo le ricette originali italiane.',
+      AUTHENTIC_CUISINE_DESC:
+        'Piatti tradizionali preparati secondo le ricette originali italiane.',
       DELIVERY_TITLE: 'Solo Asporto',
-      DELIVERY_DESC:'Ordina e ritira in negozio i tuoi piatti preferiti preparati al momento.',
+      DELIVERY_DESC:
+        'Ordina e ritira in negozio i tuoi piatti preferiti preparati al momento.',
       FRESH_PASTA_TITLE: 'Pasta Fresca',
-      FRESH_PASTA_DESC:'La nostra pasta è preparata fresca ogni giorno per garantire la massima qualità.',
+      FRESH_PASTA_DESC:
+        'La nostra pasta è preparata fresca ogni giorno per garantire la massima qualità.',
     },
     ABOUT: {
       TITLE: 'La Nostra Storia',
@@ -72,7 +75,8 @@ export const TRANSLATIONS = {
       IMAGE_ALT: 'Il Team di Triskele',
       VALUES_TITLE: 'I Nostri Valori',
       AUTHENTICITY_TITLE: 'Autenticità',
-      AUTHENTICITY_DESC:'Selezioniamo i migliori ingredienti, prediligendo prodotti freschi e di stagione.',
+      AUTHENTICITY_DESC:
+        'Selezioniamo i migliori ingredienti, prediligendo prodotti freschi e di stagione.',
       QUALITY_TITLE: 'Qualità',
       QUALITY_DESC: `Ingredienti freschi, importati direttamente dall’Italia o scelti da produttori di fiducia.Nessun compromesso: qui si cucina come a casa.`,
       GENEROSITY_TITLE: 'Generosità',
@@ -88,7 +92,8 @@ export const TRANSLATIONS = {
       CHEF_DESC: `Da 15 anni impasta, frigge e cuoce lentamente ricette di famiglia provenienti direttamente dalla Sicilia e dall’Italia.Appassionato e generoso, prepara ogni piatto come a casa, con il gusto dei ricordi e l’amore per le cose buone.La sua missione? Far viaggiare le vostre papille gustative con sapori veri e generosi.`,
       MANAGER_ALT: 'Roberta',
       MANAGER_POSITION: 'Lo spirito creativo e digitale di Triskele',
-      MANAGER_DESC:'Compagna nella vita e nell’avventura Triskele, Roberta immagina l’universo del marchio, gestisce l’immagine, i social media e tutta la parte digitale. Dall’idea allo schermo, è lei a dare vita alla storia che condividiamo.',
+      MANAGER_DESC:
+        'Compagna nella vita e nell’avventura Triskele, Roberta immagina l’universo del marchio, gestisce l’immagine, i social media e tutta la parte digitale. Dall’idea allo schermo, è lei a dare vita alla storia che condividiamo.',
       CTA_TITLE: 'Venite a trovarci',
       CTA_SUBTITLE: "Scopri i sapori autentici d'Italia nel centro di Rennes",
       EXPLORE_MENU: 'Esplora il Menu',
@@ -96,7 +101,8 @@ export const TRANSLATIONS = {
     },
     CONTACT: {
       TITLE: 'Contattaci',
-      SUBTITLE:'Siamo qui per aiutarti. Compilando il modulo sottostante, un membro del nostro team ti contatterà al più presto.',
+      SUBTITLE:
+        'Siamo qui per aiutarti. Compilando il modulo sottostante, un membro del nostro team ti contatterà al più presto.',
       FORM_TITLE: 'Inviaci un messaggio',
       NAME_LABEL: 'Nome completo',
       NAME_PLACEHOLDER: 'Inserisci il tuo nome',
@@ -117,7 +123,8 @@ export const TRANSLATIONS = {
       PRIVACY_ERROR: 'Devi accettare la Privacy Policy',
       SENDING: 'Invio in corso...',
       SEND: 'Invia Messaggio',
-      SUCCESS_MESSAGE:'Grazie per averci contattato! Ti risponderemo al più presto.',
+      SUCCESS_MESSAGE:
+        'Grazie per averci contattato! Ti risponderemo al più presto.',
       INFO_TITLE: 'Informazioni di contatto',
       ADDRESS_TITLE: 'Indirizzo',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
@@ -135,14 +142,16 @@ export const TRANSLATIONS = {
     },
     ORDER: {
       TITLE: 'Ordina da Asporto',
-      SUBTITLE:'Ordina i tuoi piatti preferiti da ritirare o ricevere a domicilio',
+      SUBTITLE:
+        'Ordina i tuoi piatti preferiti da ritirare o ricevere a domicilio',
       STEP1_LABEL: 'Scegli i Piatti',
       STEP2_LABEL: 'Dati di Consegna',
       STEP3_LABEL: 'Pagamento',
       STEP4_LABEL: 'Conferma',
       STEP1_TITLE: 'Seleziona i Piatti per il Tuo Ordine',
       YOUR_ORDER: 'Il Tuo Ordine',
-      EMPTY_CART:'Il tuo carrello è vuoto. Aggiungi alcuni piatti per continuare.',
+      EMPTY_CART:
+        'Il tuo carrello è vuoto. Aggiungi alcuni piatti per continuare.',
       SUBTOTAL: 'Subtotale',
       DELIVERY_FEE: 'Consegna',
       TOTAL: 'Totale',
@@ -167,9 +176,11 @@ export const TRANSLATIONS = {
       },
       FEATURED: 'Specialità',
       ORDER_BUTTON: 'Ordina Ora',
-      ALLERGIES_NOTICE:'Per informazioni sugli allergeni, chiedi al nostro staff',
+      ALLERGIES_NOTICE:
+        'Per informazioni sugli allergeni, chiedi al nostro staff',
       CTA_TITLE: 'Vuoi ordinare da asporto?',
-      CTA_SUBTITLE:'Ordinare è semplice e veloce. Ritira i tuoi piatti italiani preferiti direttamente nel nostro locale.',
+      CTA_SUBTITLE:
+        'Ordinare è semplice e veloce. Ritira i tuoi piatti italiani preferiti direttamente nel nostro locale.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
@@ -225,7 +236,13 @@ export const TRANSLATIONS = {
       BEVANDE: {
         CAFFE: {
           NAME: 'Caffè Espresso',
-          DESCRIPTION:'Autentico caffè espresso italiano, servito nella tradizionale tazzina.',
+          DESCRIPTION:
+            'Autentico caffè espresso italiano, servito nella tradizionale tazzina.',
+        },
+        TOMARCHIO: {
+          NAME: 'Le Tomarchio',
+          DESCRIPTION:
+            'Un sorso di Tomarchio è un viaggio tra i profumi e i colori dell’isola. Arance, limoni e tradizione: bollicine che raccontano la Sicilia.',
         },
       },
     },
@@ -246,8 +263,8 @@ export const TRANSLATIONS = {
       SUBSESTO: `Gli utenti possono esercitare i diritti previsti dagli articoli 15-22 del GDPR, tra cui accesso, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità dei dati, inviando una richiesta al titolare del trattamento.`,
       SETTIMO: `7. Modifiche alla privacy policy`,
       SUBSETTIMO: `Ci riserviamo il diritto di aggiornare questa informativa. Eventuali modifiche saranno pubblicate su questa pagina.`,
-      CONCLUSIONI: `Per qualsiasi domanda o richiesta relativa alla privacy, contattaci all’indirizzo triskelegastronomie@gmail.com.`
-    }
+      CONCLUSIONI: `Per qualsiasi domanda o richiesta relativa alla privacy, contattaci all’indirizzo triskelegastronomie@gmail.com.`,
+    },
   },
   en: {
     LOADING: {
@@ -303,11 +320,14 @@ export const TRANSLATIONS = {
     HOME: {
       SERVICES_TITLE: 'Our Services',
       AUTHENTIC_CUISINE_TITLE: 'Authentic Cuisine',
-      AUTHENTIC_CUISINE_DESC:'Traditional dishes prepared according to original Italian recipes.',
+      AUTHENTIC_CUISINE_DESC:
+        'Traditional dishes prepared according to original Italian recipes.',
       DELIVERY_TITLE: 'Takeaway Only',
-      DELIVERY_DESC:'Order and pick up your favorite dishes freshly prepared in-store.',
+      DELIVERY_DESC:
+        'Order and pick up your favorite dishes freshly prepared in-store.',
       FRESH_PASTA_TITLE: 'Fresh Pasta',
-      FRESH_PASTA_DESC:'Our pasta is freshly prepared every day to ensure the highest quality.',
+      FRESH_PASTA_DESC:
+        'Our pasta is freshly prepared every day to ensure the highest quality.',
     },
     ABOUT: {
       TITLE: 'Our Story',
@@ -319,7 +339,8 @@ export const TRANSLATIONS = {
       IMAGE_ALT: 'The Triskele Team',
       VALUES_TITLE: 'Our Values',
       AUTHENTICITY_TITLE: 'Authenticity',
-      AUTHENTICITY_DESC:'We select the best ingredients, favoring fresh and seasonal products.',
+      AUTHENTICITY_DESC:
+        'We select the best ingredients, favoring fresh and seasonal products.',
       QUALITY_TITLE: 'Quality',
       QUALITY_DESC: `Fresh ingredients, imported directly from Italy or sourced from trusted producers.No compromises: here, we cook just like at home.`,
       GENEROSITY_TITLE: 'Generosity',
@@ -337,13 +358,15 @@ export const TRANSLATIONS = {
       MANAGER_POSITION: 'The creative and digital spirit of Triskele',
       MANAGER_DESC: `Partner in life and in the Triskele adventure, Roberta envisions the brand’s universe, manages its image, social media, and all things digital. From the idea to the screen, she’s the one who brings to life the story we share.`,
       CTA_TITLE: 'Come Visit Us',
-      CTA_SUBTITLE:'Discover the authentic flavors of Italy in the center of Rennes',
+      CTA_SUBTITLE:
+        'Discover the authentic flavors of Italy in the center of Rennes',
       EXPLORE_MENU: 'Explore the Menu',
       CONTACT_US: 'Contact Us',
     },
     CONTACT: {
       TITLE: 'Contact Us',
-      SUBTITLE:"We're here to help. By filling out the form below, a member of our team will contact you as soon as possible.",
+      SUBTITLE:
+        "We're here to help. By filling out the form below, a member of our team will contact you as soon as possible.",
       FORM_TITLE: 'Send Us a Message',
       NAME_LABEL: 'Full Name',
       NAME_PLACEHOLDER: 'Enter your name',
@@ -364,7 +387,8 @@ export const TRANSLATIONS = {
       PRIVACY_ERROR: 'You must accept the Privacy Policy',
       SENDING: 'Sending...',
       SEND: 'Send Message',
-      SUCCESS_MESSAGE:'Thank you for contacting us! We will respond as soon as possible.',
+      SUCCESS_MESSAGE:
+        'Thank you for contacting us! We will respond as soon as possible.',
       INFO_TITLE: 'Contact Information',
       ADDRESS_TITLE: 'Address',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
@@ -416,7 +440,8 @@ export const TRANSLATIONS = {
       ORDER_BUTTON: 'Order Now',
       ALLERGIES_NOTICE: 'For information on allergens, ask our staff',
       CTA_TITLE: 'Want to order takeaway?',
-      CTA_SUBTITLE:'Ordering is simple and fast. Pick up your favorite Italian dishes directly from our restaurant.',
+      CTA_SUBTITLE:
+        'Ordering is simple and fast. Pick up your favorite Italian dishes directly from our restaurant.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
@@ -472,7 +497,13 @@ export const TRANSLATIONS = {
       BEVANDE: {
         CAFFE: {
           NAME: 'Espresso Coffee',
-          DESCRIPTION:'Authentic Italian espresso coffee, served in the traditional small cup.',
+          DESCRIPTION:
+            'Authentic Italian espresso coffee, served in the traditional small cup.',
+        },
+        TOMARCHIO: {
+          NAME: 'Le Tomarchio',
+          DESCRIPTION:
+            'A sip of Tomarchio is a journey through the scents and colors of the island. Oranges, lemons, and tradition: bubbles that tell the story of Sicily.',
         },
       },
     },
@@ -493,8 +524,8 @@ export const TRANSLATIONS = {
       SUBSESTO: `Users may exercise their rights under Articles 15-22 of the GDPR, including access, rectification, erasure, restriction of processing, objection, and data portability, by sending a request to the data controller.`,
       SETTIMO: `7. Changes to the privacy policy`,
       SUBSETTIMO: `We reserve the right to update this notice. Any changes will be published on this page.`,
-      CONCLUSIONI: `For any questions or requests related to privacy, please contact us at triskelegastronomie@gmail.com.`
-    }
+      CONCLUSIONI: `For any questions or requests related to privacy, please contact us at triskelegastronomie@gmail.com.`,
+    },
   },
   fr: {
     LOADING: {
@@ -551,11 +582,14 @@ export const TRANSLATIONS = {
     HOME: {
       SERVICES_TITLE: 'Nos Services',
       AUTHENTIC_CUISINE_TITLE: 'Cuisine Authentique',
-      AUTHENTIC_CUISINE_DESC:'Plats traditionnels préparés selon les recettes italiennes originales.',
+      AUTHENTIC_CUISINE_DESC:
+        'Plats traditionnels préparés selon les recettes italiennes originales.',
       DELIVERY_TITLE: 'À Emporter Uniquement',
-      DELIVERY_DESC:'Commandez et retirez en magasin vos plats préférés préparés sur place.',
+      DELIVERY_DESC:
+        'Commandez et retirez en magasin vos plats préférés préparés sur place.',
       FRESH_PASTA_TITLE: 'Pâtes Fraîches',
-      FRESH_PASTA_DESC:'Nos pâtes sont préparées fraîchement chaque jour pour garantir une qualité optimale.',
+      FRESH_PASTA_DESC:
+        'Nos pâtes sont préparées fraîchement chaque jour pour garantir une qualité optimale.',
     },
     ABOUT: {
       TITLE: 'Notre Histoire',
@@ -585,13 +619,15 @@ export const TRANSLATIONS = {
       MANAGER_POSITION: 'L’esprit créatif et digital de Triskele',
       MANAGER_DESC: `Complice dans la vie et dans l’aventure Triskele, Roberta imagine l’univers de la marque,gère l’image, les réseaux sociaux et toute la partie digitale. De l’idée à l’écran, c’est elle quidonne vie à l’histoire que nous partageons.`,
       CTA_TITLE: 'Venez chez nous',
-      CTA_SUBTITLE:"Découvrez les saveurs authentiques de l'Italie au centre de Rennes",
+      CTA_SUBTITLE:
+        "Découvrez les saveurs authentiques de l'Italie au centre de Rennes",
       EXPLORE_MENU: 'Explorer le Cart',
       CONTACT_US: 'Contactez-Nous',
     },
     CONTACT: {
       TITLE: 'Contactez-Nous',
-      SUBTITLE:'Nous sommes là pour vous aider. En remplissant le formulaire ci-dessous, un membre de notre équipe vous contactera dès que possible.',
+      SUBTITLE:
+        'Nous sommes là pour vous aider. En remplissant le formulaire ci-dessous, un membre de notre équipe vous contactera dès que possible.',
       FORM_TITLE: 'Envoyez-Nous un Message',
       NAME_LABEL: 'Nom Complet',
       NAME_PLACEHOLDER: 'Entrez votre nom',
@@ -612,7 +648,8 @@ export const TRANSLATIONS = {
       PRIVACY_ERROR: 'Vous devez accepter la Politique de Confidentialité',
       SENDING: 'Envoi en cours...',
       SEND: 'Envoyer le Message',
-      SUCCESS_MESSAGE:'Merci de nous avoir contactés ! Nous vous répondrons dès que possible.',
+      SUCCESS_MESSAGE:
+        'Merci de nous avoir contactés ! Nous vous répondrons dès que possible.',
       INFO_TITLE: 'Informations de Contact',
       ADDRESS_TITLE: 'Adresse',
       ADDRESS: '3 Rue des Francs Bourgeois, 35000 Rennes',
@@ -637,7 +674,8 @@ export const TRANSLATIONS = {
       STEP4_LABEL: 'Confirmation',
       STEP1_TITLE: 'Sélectionnez les Plats pour Votre Commande',
       YOUR_ORDER: 'Votre Commande',
-      EMPTY_CART:'Votre panier est vide. Ajoutez quelques plats pour continuer.',
+      EMPTY_CART:
+        'Votre panier est vide. Ajoutez quelques plats pour continuer.',
       SUBTOTAL: 'Sous-total',
       DELIVERY_FEE: 'Livraison',
       TOTAL: 'Total',
@@ -662,9 +700,11 @@ export const TRANSLATIONS = {
       },
       FEATURED: 'Spécialité',
       ORDER_BUTTON: 'Commander',
-      ALLERGIES_NOTICE:'Pour des informations sur les allergènes, demandez à notre personnel',
+      ALLERGIES_NOTICE:
+        'Pour des informations sur les allergènes, demandez à notre personnel',
       CTA_TITLE: 'Vous voulez commander à emporter?',
-      CTA_SUBTITLE:'Commander est simple et rapide. Récupérez vos plats italiens préférés directement dans notre restaurant.',
+      CTA_SUBTITLE:
+        'Commander est simple et rapide. Récupérez vos plats italiens préférés directement dans notre restaurant.',
     },
     MENU_ITEMS: {
       TAVOLA_CALDA: {
@@ -723,6 +763,10 @@ export const TRANSLATIONS = {
           DESCRIPTION:
             'Authentique café expresso italien, servi dans la traditionnelle petite tasse.',
         },
+        TOMARCHIO: {
+          NAME: 'Les Tomarchio',
+          DESCRIPTION: 'Une gorgée de Tomarchio, c’est un voyage à travers les parfums et les couleurs de l’île. Oranges, citrons et tradition : des bulles qui racontent la Sicile.',
+        },
       },
     },
     PRIVACYPOLICY: {
@@ -742,7 +786,7 @@ export const TRANSLATIONS = {
       SUBSESTO: `Les utilisateurs peuvent exercer les droits prévus aux articles 15 à 22 du RGPD, notamment l’accès, la rectification, l’effacement, la limitation du traitement, l’opposition et la portabilité des données, en envoyant une demande au responsable du traitement.`,
       SETTIMO: `7. Modifications de la politique de confidentialité`,
       SUBSETTIMO: `Nous nous réservons le droit de mettre à jour cette politique. Toute modification sera publiée sur cette page.`,
-      CONCLUSIONI: `Pour toute question ou demande relative à la confidentialité, veuillez nous contacter à l’adresse triskelegastronomie@gmail.com.`
-    }
+      CONCLUSIONI: `Pour toute question ou demande relative à la confidentialité, veuillez nous contacter à l’adresse triskelegastronomie@gmail.com.`,
+    },
   },
 };
