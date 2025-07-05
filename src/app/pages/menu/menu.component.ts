@@ -17,13 +17,18 @@ interface MenuItem {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, TranslateModule,ScrollToTopDirective],
+  imports: [CommonModule, TranslateModule, ScrollToTopDirective],
   template: `
     <div class="menu-page">
-      <div class="menu-header">
+      <div class="menu-header flex-column justify-content-center">
         <div class="container">
           <h1>{{ 'MENU_PAGE.TITLE' | translate }}</h1>
           <p>{{ 'MENU_PAGE.SUBTITLE' | translate }}</p>
+        </div>
+        <div class="view-all">
+          <a href="/assets/menu.pdf" class="view-all-btn" target="_blank">{{
+            'FEATURED.VIEW_ALL' | translate
+          }}</a>
         </div>
       </div>
 
@@ -31,13 +36,13 @@ interface MenuItem {
         <div class="container">
           <div class="tabs">
             @for (category of categories; track category) {
-              <button
-                [class.active]="selectedCategory === category"
-                (click)="selectCategory(category)"
-                scrollToTop
-              >
-                {{ getCategoryLabel(category) | translate }}
-              </button>
+            <button
+              [class.active]="selectedCategory === category"
+              (click)="selectCategory(category)"
+              scrollToTop
+            >
+              {{ getCategoryLabel(category) | translate }}
+            </button>
             }
           </div>
         </div>
@@ -46,156 +51,210 @@ interface MenuItem {
       <div class="menu-content">
         <div class="container">
           @if (selectedCategory === 'tavolaCalda') {
-            <div class="menu-section">
-              <h2 class="category-title">
-                {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA' | translate }}
-                <h3>
-                  {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA_SUBTITLE' | translate }}
-                </h3>
-              </h2>
-              <div class="menu-items">
-                @for (item of getItemsByCategory('tavolaCalda'); track item.id) {
-                  @if (item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI') {
-                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
-                      <div class="menu-item-image"
-                        (touchstart)="onTouchStart($event)"
-                        (touchend)="onTouchEnd($event)">
-                        <img [src]="aranciniImages[aranciniIndex]" [alt]="getItemName(item)" style="width:100%;object-fit:cover;display:block;margin:0 auto;" loading="lazy" />
-                      </div>
-                      <div class="carousel-dots">
-                        @for (img of aranciniImages; track $index) {
-                          <span class="dot" [class.active]="$index === aranciniIndex" (click)="goToArancini($index)"></span>
-                        }
-                      </div>
-                      @if (item.featured) {
-                        <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                      }
-                      <div class="menu-item-info">
-                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                        <div class="menu-item-price">
-                          {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
-                        </div>
-                      </div>
-                    </div>
-                  } @else {
-                    @if (item.image) {
-                      <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
-                        <div class="menu-item-image">
-                          <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
-                          @if (item.featured) {
-                            <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                          }
-                        </div>
-                        <div class="menu-item-info">
-                          <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                          <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                          <div class="menu-item-price">
-                            {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{ item.price.toFixed(2) }}
-                          </div>
-                        </div>
-                      </div>
-                    }
+          <div class="menu-section">
+            <h2 class="category-title">
+              {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA' | translate }}
+              <h3>
+                {{ 'MENU_PAGE.CATEGORIES.TAVOLA_CALDA_SUBTITLE' | translate }}
+              </h3>
+            </h2>
+            <div class="menu-items">
+              @for (item of getItemsByCategory('tavolaCalda'); track item.id) {
+              @if (item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI') {
+              <div
+                class="menu-item"
+                [attr.data-scroll-id]="item.translationKey"
+              >
+                <div
+                  class="menu-item-image"
+                  (touchstart)="onTouchStart($event)"
+                  (touchend)="onTouchEnd($event)"
+                >
+                  <img
+                    [src]="aranciniImages[aranciniIndex]"
+                    [alt]="getItemName(item)"
+                    style="width:100%;object-fit:cover;display:block;margin:0 auto;"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="carousel-dots">
+                  @for (img of aranciniImages; track $index) {
+                  <span
+                    class="dot"
+                    [class.active]="$index === aranciniIndex"
+                    (click)="goToArancini($index)"
+                  ></span>
                   }
+                </div>
+                @if (item.featured) {
+                <span class="featured">{{
+                  'MENU_PAGE.FEATURED' | translate
+                }}</span>
                 }
+                <div class="menu-item-info">
+                  <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                  <p class="menu-item-description">
+                    {{ getItemDescription(item) }}
+                  </p>
+                  <div class="menu-item-price">
+                    {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{
+                      item.price.toFixed(2)
+                    }}
+                  </div>
+                </div>
               </div>
-            </div>
-          }
-
-          @if (selectedCategory === 'primi') {
-            <div class="menu-section">
-              <h2 class="category-title">
-                {{ 'MENU_PAGE.CATEGORIES.PRIMI' | translate }}
-                <h3>
-                  {{ 'MENU_PAGE.CATEGORIES.PRIMI_SUBTITLE' | translate }}
-                </h3>
-              </h2>
-              <div class="menu-items">
-                @for (item of getItemsByCategory('primi'); track item.id) {
-                  @if (item.image) {
-                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
-                      <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
-                        @if (item.featured) {
-                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                        }
-                      </div>
-                      <div class="menu-item-info">
-                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                        <div class="menu-item-price">
-                          €{{ item.price.toFixed(2) }}
-                        </div>
-                      </div>
-                    </div>
+              } @else { @if (item.image) {
+              <div
+                class="menu-item"
+                [attr.data-scroll-id]="item.translationKey"
+              >
+                <div class="menu-item-image">
+                  <img
+                    [src]="item.image"
+                    [alt]="getItemName(item)"
+                    loading="lazy"
+                  />
+                  @if (item.featured) {
+                  <span class="featured">{{
+                    'MENU_PAGE.FEATURED' | translate
+                  }}</span>
                   }
-                }
+                </div>
+                <div class="menu-item-info">
+                  <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                  <p class="menu-item-description">
+                    {{ getItemDescription(item) }}
+                  </p>
+                  <div class="menu-item-price">
+                    {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{
+                      item.price.toFixed(2)
+                    }}
+                  </div>
+                </div>
               </div>
+              } } }
             </div>
-          }
-
-          @if (selectedCategory === 'dolci') {
-            <div class="menu-section">
-              <h2 class="category-title">
-                {{ 'MENU_PAGE.CATEGORIES.DOLCI' | translate }}
-                <h3>
-                  {{ 'MENU_PAGE.CATEGORIES.DOLCI_SUBTITLE' | translate }}
-                </h3>
-              </h2>
-              <div class="menu-items">
-                @for (item of getItemsByCategory('dolci'); track item.id) {
-                  @if (item.image) {
-                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
-                      <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
-                        @if (item.featured) {
-                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                        }
-                      </div>
-                      <div class="menu-item-info">
-                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                        <div class="menu-item-price">
-                          €{{ item.price.toFixed(2) }}
-                        </div>
-                      </div>
-                    </div>
+          </div>
+          } @if (selectedCategory === 'primi') {
+          <div class="menu-section">
+            <h2 class="category-title">
+              {{ 'MENU_PAGE.CATEGORIES.PRIMI' | translate }}
+              <h3>
+                {{ 'MENU_PAGE.CATEGORIES.PRIMI_SUBTITLE' | translate }}
+              </h3>
+            </h2>
+            <div class="menu-items">
+              @for (item of getItemsByCategory('primi'); track item.id) { @if
+              (item.image) {
+              <div
+                class="menu-item"
+                [attr.data-scroll-id]="item.translationKey"
+              >
+                <div class="menu-item-image">
+                  <img
+                    [src]="item.image"
+                    [alt]="getItemName(item)"
+                    loading="lazy"
+                  />
+                  @if (item.featured) {
+                  <span class="featured">{{
+                    'MENU_PAGE.FEATURED' | translate
+                  }}</span>
                   }
-                }
+                </div>
+                <div class="menu-item-info">
+                  <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                  <p class="menu-item-description">
+                    {{ getItemDescription(item) }}
+                  </p>
+                  <div class="menu-item-price">
+                    €{{ item.price.toFixed(2) }}
+                  </div>
+                </div>
               </div>
+              } }
             </div>
-          }
-
-          @if (selectedCategory === 'bevande') {
-            <div class="menu-section">
-              <h2 class="category-title">
-                {{ 'MENU_PAGE.CATEGORIES.BEVANDE' | translate }}
-                <h3>
-                  {{ 'MENU_PAGE.CATEGORIES.BEVANDE_SUBTITLE' | translate }}
-                </h3>
-              </h2>
-              <div class="menu-items">
-                @for (item of getItemsByCategory('bevande'); track item.id) {
-                  @if (item.image) {
-                    <div class="menu-item" [attr.data-scroll-id]="item.translationKey">
-                      <div class="menu-item-image">
-                        <img [src]="item.image" [alt]="getItemName(item)" loading="lazy" />
-                        @if (item.featured) {
-                          <span class="featured">{{ 'MENU_PAGE.FEATURED' | translate }}</span>
-                        }
-                      </div>
-                      <div class="menu-item-info">
-                        <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
-                        <p class="menu-item-description">{{ getItemDescription(item) }}</p>
-                        <div class="menu-item-price">
-                          €{{ item.price.toFixed(2) }}
-                        </div>
-                      </div>
-                    </div>
+          </div>
+          } @if (selectedCategory === 'dolci') {
+          <div class="menu-section">
+            <h2 class="category-title">
+              {{ 'MENU_PAGE.CATEGORIES.DOLCI' | translate }}
+              <h3>
+                {{ 'MENU_PAGE.CATEGORIES.DOLCI_SUBTITLE' | translate }}
+              </h3>
+            </h2>
+            <div class="menu-items">
+              @for (item of getItemsByCategory('dolci'); track item.id) { @if
+              (item.image) {
+              <div
+                class="menu-item"
+                [attr.data-scroll-id]="item.translationKey"
+              >
+                <div class="menu-item-image">
+                  <img
+                    [src]="item.image"
+                    [alt]="getItemName(item)"
+                    loading="lazy"
+                  />
+                  @if (item.featured) {
+                  <span class="featured">{{
+                    'MENU_PAGE.FEATURED' | translate
+                  }}</span>
                   }
-                }
+                </div>
+                <div class="menu-item-info">
+                  <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                  <p class="menu-item-description">
+                    {{ getItemDescription(item) }}
+                  </p>
+                  <div class="menu-item-price">
+                    €{{ item.price.toFixed(2) }}
+                  </div>
+                </div>
               </div>
+              } }
             </div>
+          </div>
+          } @if (selectedCategory === 'bevande') {
+          <div class="menu-section">
+            <h2 class="category-title">
+              {{ 'MENU_PAGE.CATEGORIES.BEVANDE' | translate }}
+              <h3>
+                {{ 'MENU_PAGE.CATEGORIES.BEVANDE_SUBTITLE' | translate }}
+              </h3>
+            </h2>
+            <div class="menu-items">
+              @for (item of getItemsByCategory('bevande'); track item.id) { @if
+              (item.image) {
+              <div
+                class="menu-item"
+                [attr.data-scroll-id]="item.translationKey"
+              >
+                <div class="menu-item-image">
+                  <img
+                    [src]="item.image"
+                    [alt]="getItemName(item)"
+                    loading="lazy"
+                  />
+                  @if (item.featured) {
+                  <span class="featured">{{
+                    'MENU_PAGE.FEATURED' | translate
+                  }}</span>
+                  }
+                </div>
+                <div class="menu-item-info">
+                  <h3 class="menu-item-name">{{ getItemName(item) }}</h3>
+                  <p class="menu-item-description">
+                    {{ getItemDescription(item) }}
+                  </p>
+                  <div class="menu-item-price">
+                    €{{ item.price.toFixed(2) }}
+                  </div>
+                </div>
+              </div>
+              } }
+            </div>
+          </div>
           }
 
           <div class="menu-notice">
@@ -217,26 +276,26 @@ interface MenuItem {
   `,
   styles: [
     `
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      margin: 15px 0 0 0;
-      gap: 8px;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ccc;
-      display: inline-block;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .dot.active {
-      background: var(--primary-color, #333);
-    }
-    `
-  ]
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 0 0;
+        gap: 8px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+        display: inline-block;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .dot.active {
+        background: var(--primary-color, #333);
+      }
+    `,
+  ],
 })
 export class MenuComponent implements OnInit {
   categories = ['tavolaCalda', 'primi', 'dolci', 'bevande'];
@@ -249,14 +308,18 @@ export class MenuComponent implements OnInit {
     bevande: 'Bevande',
   };
 
-  constructor(private translateService: TranslateService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private translateService: TranslateService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   menuItems: MenuItem[] = [
     // Tavola calda
     {
       id: 1,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
-      price: 4.50,
+      price: 4.5,
       images: [
         '/assets/images/arancini.jpg',
         '/assets/images/arancino.jpg',
@@ -268,28 +331,28 @@ export class MenuComponent implements OnInit {
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
-      price: 7.00,
+      price: 7.0,
       image: '/assets/images/focaccia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_FRITTA',
-      price: 6.50,
+      price: 6.5,
       image: '/assets/images/pizzafritta1.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
-      price: 5.50,
+      price: 5.5,
       image: '/assets/images/pizzateglia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
-      price: 6.50,
+      price: 6.5,
       image: '/assets/images/pizzaportafoglio.jpg',
       category: 'tavolaCalda',
     },
@@ -297,7 +360,7 @@ export class MenuComponent implements OnInit {
     {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
-      price: 9.50,
+      price: 9.5,
       image: '/assets/images/lasagnabolo.jpg',
       featured: true,
       category: 'primi',
@@ -329,14 +392,14 @@ export class MenuComponent implements OnInit {
     {
       id: 10,
       translationKey: 'MENU_ITEMS.DOLCI.TIRAMISU',
-      price:4.50,
+      price: 4.5,
       image: '/assets/images/tiramisu.jpg',
       category: 'dolci',
     },
     {
       id: 11,
       translationKey: 'MENU_ITEMS.DOLCI.GRAFFE',
-      price: 3.50,
+      price: 3.5,
       image: '/assets/images/graffe.jpg',
       category: 'dolci',
     },
@@ -344,7 +407,7 @@ export class MenuComponent implements OnInit {
     {
       id: 12,
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
-      price: 1.50,
+      price: 1.5,
       image: '/assets/images/caffe.jpg',
       featured: true,
       category: 'bevande',
@@ -352,7 +415,7 @@ export class MenuComponent implements OnInit {
     {
       id: 13,
       translationKey: 'MENU_ITEMS.BEVANDE.TOMARCHIO',
-      price: 3.50,
+      price: 3.5,
       image: '/assets/images/tomarchio.png',
       featured: true,
       category: 'bevande',
@@ -398,12 +461,16 @@ export class MenuComponent implements OnInit {
   touchEndX = 0;
 
   get aranciniImages(): string[] {
-    const arancini = this.menuItems.find(item => item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI');
+    const arancini = this.menuItems.find(
+      (item) => item.translationKey === 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI'
+    );
     return arancini?.images || [];
   }
 
   prevArancini() {
-    this.aranciniIndex = (this.aranciniIndex - 1 + this.aranciniImages.length) % this.aranciniImages.length;
+    this.aranciniIndex =
+      (this.aranciniIndex - 1 + this.aranciniImages.length) %
+      this.aranciniImages.length;
   }
 
   nextArancini() {
@@ -439,7 +506,7 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       const category = params['category'];
       const scrollId = params['scrollId'];
       if (category && this.categories.includes(category)) {

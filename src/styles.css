@@ -631,6 +631,31 @@ app-menu .menu-header {
   padding: 0;
 }
 
+app-menu .view-all {
+  text-align: center;
+  margin-top: 30px;
+}
+
+app-menu .view-all-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+app-menu .view-all-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 @media (min-width: 768px) {
   app-menu .menu-header {
     min-height: 500px;
@@ -1547,7 +1572,7 @@ app-about .btn-outline-white:hover {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   app-about .menu-header {
-    padding: 70px 0;
+    /* padding: 70px 0; */
   }
 
   app-about .menu-header h1 {
@@ -1560,6 +1585,28 @@ app-about .btn-outline-white:hover {
 
   app-about .accent-line {
     margin-bottom: 2rem;
+  }
+
+  /* CTA Section responsive */
+  app-about .cta-section {
+    padding: 3rem 1.5rem;
+  }
+
+  app-about .cta-section .flex {
+    flex-direction: column;
+    gap: 1.5rem !important;
+    align-items: center;
+  }
+
+  app-about .cta-section .btn {
+    margin-left: 0;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  app-about .cta-section .btn:first-child {
+    margin-bottom: 1rem;
   }
 }
 
@@ -1574,6 +1621,17 @@ app-about .btn-outline-white:hover {
     height: 80px;
     bottom: -15px;
     right: -15px;
+  }
+
+  /* CTA Section per schermi molto piccoli */
+  app-about .cta-section {
+    padding: 2.5rem 1rem;
+  }
+
+  app-about .cta-section .btn {
+    max-width: 260px;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1869,7 +1927,7 @@ app-contact .hours-row:last-child {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   app-contact .menu-header {
-    padding: 70px 0;
+    /* padding: 70px 0; */
   }
 
   app-contact .menu-header h1 {
@@ -2030,7 +2088,7 @@ app-home .primary:hover {
   app-menu .menu-header,
   app-about .menu-header,
   app-contact .menu-header {
-    padding: 70px 0;
+    /* padding: 70px 0; */
   }
 }
 
