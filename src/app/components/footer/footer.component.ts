@@ -150,9 +150,9 @@ import { RouterLink } from '@angular/router';
           <div class="copyright">
             © {{ currentYear }} {{ 'FOOTER.COPYRIGHT' | translate }}
           </div>
-          <!-- <div class="footer-bottom-links">
-            {{ 'FOOTER.MADE_WITH_LOVE' | translate }}
-          </div> -->
+          <div class="footer-bottom-links">
+            {{ 'FOOTER.AUTHOR' | translate }}
+          </div>
         </div>
       </div>
     </footer>

@@ -5,6 +5,80 @@
     <title>Triskele - Autentica Gastronomia Italiana a Rennes</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Hreflang tags per indicare le lingue disponibili -->
+    <link rel="alternate" hreflang="it" href="https://triskelegastronomie.com/?lang=it" />
+    <link rel="alternate" hreflang="en" href="https://triskelegastronomie.com/?lang=en" />
+    <link rel="alternate" hreflang="fr" href="https://triskelegastronomie.com/?lang=fr" />
+    <link rel="alternate" hreflang="x-default" href="https://triskelegastronomie.com/?lang=it" />
+
+    <!-- Meta tag SEO statici (altri sono gestiti dinamicamente) -->
+    <meta name="author" content="Francesco Raciti" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph Meta Tags statici -->
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://triskelegastronomie.com" />
+    <meta property="og:image" content="/assets/images/triskele.jpg" />
+    <meta property="og:site_name" content="Triskele Gastronomie" />
+
+    <!-- Twitter Card Meta Tags statici -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/assets/images/triskele.jpg" />
+
+    <!-- Meta tag per la geolocalizzazione -->
+    <meta name="geo.region" content="FR-35" />
+    <meta name="geo.placename" content="Rennes" />
+    <meta name="geo.position" content="48.1113387;-1.6949653" />
+    <meta name="ICBM" content="48.1113387, -1.6949653" />
+
+    <!-- Meta tag per il business -->
+    <meta name="business:contact_data:street_address" content="3 Rue des Francs Bourgeois" />
+    <meta name="business:contact_data:locality" content="Rennes" />
+    <meta name="business:contact_data:postal_code" content="35000" />
+    <meta name="business:contact_data:country_name" content="France" />
+    <meta name="business:contact_data:phone_number" content="06 72 78 06 22" />
+    <meta name="business:contact_data:email" content="triskelegastronomie@gmail.com" />
+
+    <!-- Schema.org JSON-LD per il ristorante -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Triskele",
+      "description": "Autentica gastronomia italo-siciliana a Rennes",
+      "url": "https://triskelegastronomie.com",
+      "telephone": "06 72 78 06 22",
+      "email": "triskelegastronomie@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Rue des Francs Bourgeois",
+        "addressLocality": "Rennes",
+        "postalCode": "35000",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.1113387,
+        "longitude": -1.6949653
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "15:00"
+        }
+      ],
+      "servesCuisine": ["Italian", "Sicilian"],
+      "priceRange": "6€",
+      "acceptsReservations": false,
+      "hasMenu": true,
+      "image": "/assets/images/triskele.jpg"
+    }
+    </script>
+
     <link rel="icon" type="image/jpeg" href="/assets/images/triskele.jpg" />
 
     <!-- Font mancanti (importante per lo stile) -->

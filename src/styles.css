@@ -1286,13 +1286,14 @@ app-footer .footer-bottom {
   padding-top: 20px;
   border-top: 1px solid #444;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 app-footer .copyright {
   color: var(--text-light);
   margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
 }
 
 app-footer .footer-bottom-links {
@@ -1300,6 +1301,8 @@ app-footer .footer-bottom-links {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s;
+  justify-content: center;
+  display: flex;
 }
 
 app-footer .footer-our-location-subtitle {
@@ -2083,12 +2086,6 @@ app-home .primary:hover {
   app-contact .menu-header p,
   app-hero .hero-subtitle {
     font-size: 1.2rem;
-  }
-
-  app-menu .menu-header,
-  app-about .menu-header,
-  app-contact .menu-header {
-    /* padding: 70px 0; */
   }
 }
 

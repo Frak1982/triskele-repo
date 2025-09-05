@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TRANSLATIONS } from './translations';
 import { ScrollService } from './services/scroll.service';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -90,7 +91,8 @@ export class TriskeleComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit() {
@@ -106,6 +108,9 @@ export class TriskeleComponent implements OnInit {
     this.currentLang = langToUse;
     this.setStaticTranslations(langToUse);
 
+    // Aggiorna i meta tag SEO per la lingua corrente
+    this.seoService.updateMetaTags(langToUse);
+
     // Simula l'inizializzazione dell'app
     setTimeout(() => {
       this.isLoading = false;
@@ -115,6 +120,10 @@ export class TriskeleComponent implements OnInit {
   useLanguage(language: 'fr' | 'it' | 'en'): void {
     this.currentLang = language;
     this.setStaticTranslations(language);
+
+    // Aggiorna i meta tag SEO per la nuova lingua
+    this.seoService.updateMetaTags(language);
+
     // Forza lo scroll in alto quando cambia la lingua
     this.scrollService.scrollToTop();
   }
