@@ -319,7 +319,7 @@ export class MenuComponent implements OnInit {
     {
       id: 1,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
-      price: 4.5,
+      price: 5,
       images: [
         '/assets/images/arancini.jpg',
         '/assets/images/arancino.jpg',
@@ -331,28 +331,28 @@ export class MenuComponent implements OnInit {
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
-      price: 7.0,
+      price: 7.5,
       image: '/assets/images/focaccia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_FRITTA',
-      price: 6.5,
+      price: 7,
       image: '/assets/images/pizzafritta1.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
-      price: 5.5,
+      price: 6,
       image: '/assets/images/pizzateglia.jpg',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
-      price: 6.5,
+      price: 7,
       image: '/assets/images/pizzaportafoglio.jpg',
       category: 'tavolaCalda',
     },
@@ -368,7 +368,7 @@ export class MenuComponent implements OnInit {
     {
       id: 7,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE_VEGETARIANE',
-      price: 9,
+      price: 9.5,
       image: '/assets/images/lasagnavege.jpg',
       featured: true,
       category: 'primi',
@@ -376,7 +376,7 @@ export class MenuComponent implements OnInit {
     {
       id: 8,
       translationKey: 'MENU_ITEMS.PRIMI.PARMIGIANA',
-      price: 8,
+      price: 8.5,
       image: '/assets/images/parmigiana.jpg',
       featured: true,
       category: 'primi',
@@ -392,14 +392,14 @@ export class MenuComponent implements OnInit {
     {
       id: 10,
       translationKey: 'MENU_ITEMS.DOLCI.TIRAMISU',
-      price: 4.5,
+      price: 5,
       image: '/assets/images/tiramisu.jpg',
       category: 'dolci',
     },
     {
       id: 11,
       translationKey: 'MENU_ITEMS.DOLCI.GRAFFE',
-      price: 3.5,
+      price: 3.7,
       image: '/assets/images/graffe.jpg',
       category: 'dolci',
     },
@@ -407,7 +407,7 @@ export class MenuComponent implements OnInit {
     {
       id: 12,
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
-      price: 1.5,
+      price: 1.8,
       image: '/assets/images/caffe.jpg',
       featured: true,
       category: 'bevande',
