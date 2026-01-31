@@ -26,7 +26,7 @@ interface MenuItem {
           <p>{{ 'MENU_PAGE.SUBTITLE' | translate }}</p>
         </div>
         <div class="view-all">
-          <a href="/assets/menu.pdf" class="view-all-btn" target="_blank">{{
+          <a href="/assets/menu2026.pdf" class="view-all-btn" target="_blank">{{
             'FEATURED.VIEW_ALL' | translate
           }}</a>
         </div>
