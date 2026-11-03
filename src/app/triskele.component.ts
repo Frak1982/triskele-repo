@@ -15,7 +15,7 @@ import { SeoService } from './services/seo.service';
   template: `
     @if (isLoading) {
       <div class="app-loading">
-        <img src="/assets/images/triskele.svg" alt="Triskele Logo" loading="lazy" />
+        <img src="/assets/images/triskele.svg" [alt]="'UI.LOGO' | translate" loading="lazy" />
         <h1>Triskele</h1>
         <p>{{ 'LOADING.DESCRIPTION' | translate }}</p>
         <div class="spinner"></div>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
+import { MenuDownloadService } from '../../services/menu-download.service';
+import { productImageSrcset } from '../../shared/responsive-image';
 
 interface Product {
   id: number;
@@ -25,6 +27,11 @@ interface Product {
           <div class="product-image">
             <img
               [src]="'/assets/images/' + currentProduct.image"
+              [attr.srcset]="imageSrcset('/assets/images/' + currentProduct.image)"
+              sizes="400px"
+              width="400"
+              height="400"
+              decoding="async"
               [alt]="getProductName(currentProduct)"
               class="product-img"
               loading="lazy"
@@ -44,7 +51,7 @@ interface Product {
         }
       </div>
       <div class="view-all">
-        <a href="/assets/menu2026.pdf" class="view-all-btn" target="_blank">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
+        <a [href]="menuDownload.url" [attr.download]="menuDownload.filename" class="view-all-btn">{{ 'FEATURED.VIEW_ALL' | translate }}</a>
       </div>
     </div>
   `,
@@ -52,7 +59,8 @@ interface Product {
     .carousel-wrapper {
       display: flex;
       align-items: center;
-      justify-content: center;z-index
+      justify-content: center;
+      z-index: 1;
       position: relative;
     }
     .carousel-arrow {
@@ -108,26 +116,31 @@ interface Product {
   `]
 })
 export class FeaturedProductsComponent {
-  constructor(private translateService: TranslateService, private router: Router) {}
+  readonly imageSrcset = productImageSrcset;
+  constructor(
+    private translateService: TranslateService,
+    private router: Router,
+    public readonly menuDownload: MenuDownloadService
+  ) {}
 
   featuredProducts: Product[] = [
     {
       id: 1,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
       category: 'primi',
-      image: 'lasagnabolo.jpg',
+      image: 'lasagnabolo.webp',
     },
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
       category: 'tavola calda',
-      image: 'arancini.jpg',
+      image: 'arancini.webp',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
       category: 'dolce',
-      image: 'cannoli1.jpg',
+      image: 'cannoli1.webp',
     },
   ];
 
@@ -179,12 +192,15 @@ export class FeaturedProductsComponent {
     }
   }
 
+  private readonly categoryMap: Record<string, string> = {
+    primi: 'primi',
+    'tavola calda': 'tavolaCalda',
+    dolce: 'dolci',
+    bevanda: 'bevande',
+  };
+
   goToMenu(product: Product) {
-    let category = '';
-    if (product.category === 'primi') category = 'primi';
-    else if (product.category === 'tavola calda') category = 'tavolaCalda';
-    else if (product.category === 'dolce') category = 'dolci';
-    else if (product.category === 'bevanda') category = 'bevande';
+    const category = this.categoryMap[product.category] ?? '';
     this.router.navigate(['/menu'], { queryParams: { category, scrollId: product.translationKey } });
   }
 }

@@ -269,7 +269,7 @@ import { RouterLink } from '@angular/router';
       @if (showPrivacy) {
         <div class="privacy-modal" tabindex="-1" role="dialog" aria-modal="true">
           <div class="privacy-modal-content">
-            <button class="privacy-modal-close" (click)="closePrivacy()" aria-label="Chiudi">
+            <button class="privacy-modal-close" (click)="closePrivacy()" [attr.aria-label]="'UI.CLOSE' | translate">
               &times;
             </button>
             <h2>{{ 'PRIVACYPOLICY.TITLE' | translate }}</h2>

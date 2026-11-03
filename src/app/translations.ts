@@ -2,6 +2,9 @@
 
 export const TRANSLATIONS = {
   it: {
+    MENU_TABS: { tavolaCalda: 'Fast-good', primi: 'Gratinati', dolci: 'Dolci', bevande: 'Bevande', menuFisso: 'Menu fisso' },
+    UI: {"CLOSE": "Chiudi", "NAVIGATION": "Apri o chiudi la navigazione", "LANGUAGE": "Scegli la lingua", "LOGO": "Logo Triskele"},
+    PAGE_TITLES: {"HOME": "Triskele - Autentica gastronomia italiana a Rennes", "MENU": "Menu - Triskele", "ABOUT": "Chi siamo - Triskele", "CONTACT": "Contatti - Triskele", "PRIVACY": "Informativa sulla privacy - Triskele"},
     LOADING: {
       DESCRIPTION: 'Autentica Gastronomia Italiana',
     },
@@ -35,7 +38,7 @@ export const TRANSLATIONS = {
       MADE_WITH_LOVE: 'Fatto con ❤️ in Italia',
       AUTHOR: 'Sviluppato da Francesco Raciti',
       OUR_LOCATION: 'La nostra posizione',
-      OUR_LOCATION_SUBTITLE1: `Metro B (Saint Germain)`,
+      OUR_LOCATION_SUBTITLE1: `Metropolitana B (Saint Germain)`,
       OUR_LOCATION_SUBTITLE2: `Fermata Place Pasteur`,
       OUR_LOCATION_SUBTITLE3: `Fermata Musée Beaux Arts (C4, C6, 67, N4)`,
       SOCIAL: 'Social',
@@ -72,19 +75,19 @@ export const TRANSLATIONS = {
       WHO_WE_ARE: 'Chi Siamo',
       PARAGRAPH_1: `Triskele è, prima di tutto, una storia di passione e sapori. Nata dall'amore per la cucina italiana autentica e dal desiderio di condividere le ricette di famiglia tramandate di generazione in generazione, la nostra casa celebra la ricchezza delle tradizioni culinarie italiane.`,
       PARAGRAPH_2: `Situato nel cuore di Rennes, Triskele vi invita a vivere un'esperienza gustosa, calda e conviviale. Qui, ogni piatto racconta una storia, preparata con prodotti freschi, ingredienti di qualità e specialità importate direttamente dall'Italia.`,
-      PARAGRAPH_3: `La nostra missione?Farvi viaggiare attraverso i profumi e i sapori del Sud, senza lasciare Rennes. Offrire un pezzo d'Italia da portare via, come se foste a casa nostra, in Sicilia.`,
+      PARAGRAPH_3: `La nostra missione? Farvi viaggiare attraverso i profumi e i sapori del Sud, senza lasciare Rennes. Offrire un pezzo d'Italia da portare via, come se foste a casa nostra, in Sicilia. Benvenuti da Triskele: l'Italia come piace a noi, generosa, sincera e ricca di gusto.`,
       IMAGE_ALT: 'Il Team di Triskele',
       VALUES_TITLE: 'I Nostri Valori',
       AUTHENTICITY_TITLE: 'Autenticità',
       AUTHENTICITY_DESC:
-        'Selezioniamo i migliori ingredienti, prediligendo prodotti freschi e di stagione.',
+        'Ricette di famiglia, prodotti selezionati con cura e sapori fedeli alla cucina italiana e siciliana di una volta.',
       QUALITY_TITLE: 'Qualità',
       QUALITY_DESC: `Ingredienti freschi, importati direttamente dall'Italia o scelti da produttori di fiducia. Nessun compromesso: qui si cucina come a casa.`,
       GENEROSITY_TITLE: 'Generosità',
       GENEROSITY_DESC: `Porzioni abbondanti, piatti confortanti e una cucina che scalda il cuore tanto quanto l'appetito. Ogni boccone racconta una storia.`,
       CONVIVIALITY_TITLE: 'Convivialità',
       CONVIVIALITY_DESC: `Un luogo semplice e accogliente dove ognuno è ricevuto come un amico. Da noi, amiamo i sorrisi, gli scambi e lo spirito di quartiere.`,
-      TRANSMISSION_TITLE: 'Trasmissione',
+      TRANSMISSION_TITLE: 'Tradizione',
       TRANSMISSION_DESC: `Perché la cucina è anche una memoria da condividere. Perpetuiamo le ricette e i gesti imparati dai nostri genitori e nonni, affinché questa cultura culinaria viva ancora e sempre.`,
       TEAM_TITLE: 'CHI SIAMO',
       CHEF_TITLE: 'Alessandro',
@@ -107,7 +110,7 @@ export const TRANSLATIONS = {
       FORM_TITLE: 'Inviaci un messaggio',
       NAME_LABEL: 'Nome completo',
       NAME_PLACEHOLDER: 'Inserisci il tuo nome',
-      NAME_ERROR: 'Nome è obbligatorio',
+      NAME_ERROR: 'Il nome è obbligatorio',
       EMAIL_LABEL: 'Email',
       EMAIL_PLACEHOLDER: 'La tua email',
       EMAIL_ERROR: 'Email non valida',
@@ -115,13 +118,13 @@ export const TRANSLATIONS = {
       PHONE_PLACEHOLDER: 'Il tuo numero di telefono',
       SUBJECT_LABEL: 'Oggetto',
       SUBJECT_PLACEHOLDER: 'Oggetto del messaggio',
-      SUBJECT_ERROR: 'Oggetto è obbligatorio',
+      SUBJECT_ERROR: 'L’oggetto è obbligatorio',
       MESSAGE_LABEL: 'Messaggio',
       MESSAGE_PLACEHOLDER: 'Scrivi il tuo messaggio qui',
-      MESSAGE_ERROR: 'Messaggio è obbligatorio',
-      PRIVACY_LABEL: 'Accetto la',
-      PRIVACY_LINK: 'Privacy Policy',
-      PRIVACY_ERROR: 'Devi accettare la Privacy Policy',
+      MESSAGE_ERROR: 'Il messaggio è obbligatorio',
+      PRIVACY_LABEL: 'Ho letto e accetto:',
+      PRIVACY_LINK: 'Informativa sulla privacy',
+      PRIVACY_ERROR: 'Devi accettare l’informativa sulla privacy',
       SENDING: 'Invio in corso...',
       SEND: 'Invia Messaggio',
       SUCCESS_MESSAGE:
@@ -183,11 +186,34 @@ export const TRANSLATIONS = {
       CTA_SUBTITLE:
         'Ordinare è semplice e veloce. Ritira i tuoi piatti italiani preferiti direttamente nel nostro locale.',
     },
+    MENU_DETAILS: {
+      "RAGUSA": "Polpa di pomodoro, bufala, basilico, olio d’oliva, origano.",
+      "ROMA": "Fior di latte, pancetta pepata, crema carbonara, basilico, olio d’oliva.",
+      "CATANIA": "Polpa di pomodoro, mozzarella, melanzane, ricotta salata, basilico, olio d’oliva.",
+      "TROPEA": "Polpa di pomodoro, mozzarella, cipolla rossa, spianata, basilico, olio d’oliva piccante, origano.",
+      "LICUTI": "Panna fresca, fior di latte, salmone affumicato, limone, pistacchio, basilico.",
+      "NAPOLI": "Ricotta, provola, mix di pepi, basilico.",
+      "SICILIANA": "Formaggio Tomme grise, olive nere, acciughe, basilico.",
+      "CASERTA": "Polpa di pomodoro, fior di latte, friarielli, olive nere, basilico.",
+      "ELBA": "Pecorino al peperoncino, zucchine grigliate, fili di peperoncino, basilico.",
+      "FIRENZE": "Mortadella, stracciatella, pistacchio, limone, basilico, olio d’oliva.",
+      "TOSCANA": "Bufala, carciofi saltati, coppa, olio d’oliva, basilico.",
+      "LUCCA": "Melanzane, stracciatella, pistacchio, basilico.",
+      "ETNA": "Riso, ragù alla bolognese (manzo, piselli, polpa di pomodoro, carote, cipolla), fior di latte, zafferano.",
+      "BRONTE": "Riso, pistacchi, fior di latte, besciamella, parmigiano, zafferano.",
+      "NOTO": "Riso, parmigiano, fior di latte, provola, pecorino, besciamella, zafferano.",
+      "NORMA": "Riso, ricotta, fior di latte, melanzane, basilico, zafferano.",
+      "NDUJA": "Riso, fior di latte, n’duja, provola, basilico, zafferano.",
+      "FORMULE_TITLE": "MENU FISSO",
+      "FORMULE_MAIN": "Pizza in teglia (esclusa Licuti) oppure Margherita",
+      "FORMULE_DESSERT": "Dolce",
+      "FORMULE_DRINK": "Acqua o caffè"
+},
     MENU_ITEMS: {
       TAVOLA_CALDA: {
         ARANCINI: {
           NAME: 'Arancini',
-          DESCRIPTION: `Vulcani di riso ripieni di sapori del Sud. Dorate, cremose e 100% fatte in casa.`,
+          DESCRIPTION: `Vulcani di riso ripieni di sapori del Sud. Dorati, cremosi e fatti in casa al 100%.`,
         },
         FOCACCIA: {
           NAME: 'Focacce farcite',
@@ -217,7 +243,7 @@ export const TRANSLATIONS = {
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
-          DESCRIPTION: `Melanzane morbide, salsa profumata e gratin di mozzarella. Il piatto comfort per eccellenza, ricco e generoso.`,
+          DESCRIPTION: `Melanzane morbide, salsa profumata e mozzarella gratinata. Un piatto ricco e generoso, che sa di casa.`,
         },
       },
       DOLCI: {
@@ -231,7 +257,7 @@ export const TRANSLATIONS = {
         },
         GRAFFE: {
           NAME: 'Graffe della nonna',
-          DESCRIPTION: `Palline di impasto per pizza dolce, fritte alla perfezione e servite con il topping a tua scelta. Una dolce coccola, croccante fuori e morbida dentro, come le preparava la mia Nonna la domenica.`,
+          DESCRIPTION: `Palline di impasto per pizza dolce, fritte alla perfezione e servite con la guarnizione a tua scelta. Una dolce coccola, croccante fuori e morbida dentro, come le preparava la mia nonna la domenica.`,
         },
       },
       BEVANDE: {
@@ -241,14 +267,14 @@ export const TRANSLATIONS = {
             'Autentico caffè espresso italiano, servito nella tradizionale tazzina.',
         },
         TOMARCHIO: {
-          NAME: 'Le Tomarchio',
+          NAME: 'Bibite Tomarchio',
           DESCRIPTION:
             `Un sorso di Tomarchio è un viaggio tra i profumi e i colori dell'isola. Arance, limoni e tradizione: bollicine che raccontano la Sicilia.`,
         },
       },
     },
     PRIVACYPOLICY: {
-      TITLE: `Privacy Policy`,
+      TITLE: `Informativa sulla privacy`,
       SUBTITLE: `La presente informativa descrive come raccogliamo, utilizziamo e proteggiamo i dati personali dei nostri utenti, in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR).`,
       PRIMO: `1. Titolare del trattamento`,
       SUBPRIMO: `Il titolare del trattamento dei dati è TRISKELE-GASTRONOMIE, con sede legale in 3 Rue des Francs Bourgeois, 35000 Rennes, contattabile all'indirizzo email triskelegastronomie@gmail.com.`,
@@ -262,12 +288,15 @@ export const TRANSLATIONS = {
       SUBQUINTO: `I dati personali sono conservati per il tempo necessario a conseguire le finalità per cui sono stati raccolti e in conformità con le normative vigenti.`,
       SESTO: `6. Diritti degli interessati`,
       SUBSESTO: `Gli utenti possono esercitare i diritti previsti dagli articoli 15-22 del GDPR, tra cui accesso, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilità dei dati, inviando una richiesta al titolare del trattamento.`,
-      SETTIMO: `7. Modifiche alla privacy policy`,
+      SETTIMO: `7. Modifiche all’informativa sulla privacy`,
       SUBSETTIMO: `Ci riserviamo il diritto di aggiornare questa informativa. Eventuali modifiche saranno pubblicate su questa pagina.`,
       CONCLUSIONI: `Per qualsiasi domanda o richiesta relativa alla privacy, contattaci all'indirizzo triskelegastronomie@gmail.com.`,
     },
   },
   en: {
+    MENU_TABS: { tavolaCalda: 'Fast-good', primi: 'Gratins', dolci: 'Sweets', bevande: 'Drinks', menuFisso: 'Meal deal' },
+    UI: {"CLOSE": "Close", "NAVIGATION": "Open or close navigation", "LANGUAGE": "Choose language", "LOGO": "Triskele logo"},
+    PAGE_TITLES: {"HOME": "Triskele - Authentic Italian cuisine in Rennes", "MENU": "Menu - Triskele", "ABOUT": "About us - Triskele", "CONTACT": "Contact - Triskele", "PRIVACY": "Privacy policy - Triskele"},
     LOADING: {
       DESCRIPTION: 'Authentic Italian Gastronomy',
     },
@@ -294,7 +323,7 @@ export const TRANSLATIONS = {
       MONDAY_FRIDAY: 'From Monday to Friday',
       SATURDAY: 'Saturday',
       SUNDAY: 'Sunday',
-      HOURS_MON_FRI: '9h-15h',
+      HOURS_MON_FRI: '9 am–3 pm',
       HOURS_SAT: 'Closed',
       HOURS_SUN: 'Closed',
       COPYRIGHT: 'Triskele Restaurant. All rights reserved.',
@@ -307,9 +336,9 @@ export const TRANSLATIONS = {
       SOCIAL: 'Social',
     },
     HERO: {
-      TITLE: `Good Morning! We are TRISKELE, Italian-Sicilian Gastronomy`,
+      TITLE: `Hello! We are TRISKELE, Italian-Sicilian cuisine`,
       SUBTITLE: `Here we cook with heart and welcome you as if you were at home. Sicilian and Italian delights to enjoy with one hand, aromas that awaken memories, and flavors that tell a story.`,
-      MENU_BUTTON: 'Discover Menu',
+      MENU_BUTTON: 'Discover the Menu',
       ABOUT_BUTTON: 'About Us',
     },
     SUBHERO: {
@@ -317,7 +346,7 @@ export const TRANSLATIONS = {
     },
     FEATURED: {
       TITLE: 'Our Specialties',
-      VIEW_MENU: 'View in Menu',
+      VIEW_MENU: 'View on the Menu',
       VIEW_ALL: 'Download menu',
     },
     HOME: {
@@ -338,24 +367,24 @@ export const TRANSLATIONS = {
       WHO_WE_ARE: 'Who We Are',
       PARAGRAPH_1: `Triskele is, above all, a story of passion and flavors. Born from the love for authentic Italian cuisine and the desire to share family recipes passed down from generation to generation, our home celebrates the richness of Italian culinary traditions.`,
       PARAGRAPH_2: `Located in the heart of Rennes, Triskele invites you to enjoy a warm and friendly gourmet experience. Here, every dish tells a story, prepared with fresh products, quality ingredients, and specialties imported directly from Italy.`,
-      PARAGRAPH_3: `Our mission?To make you travel through the scents and flavors of the South, without leaving Rennes. To offer a piece of Italy to take away, as if you were at our home, in Sicily.`,
+      PARAGRAPH_3: `Our mission? To take you on a journey through the aromas and flavors of Southern Italy, without leaving Rennes. To offer a taste of Italy to take away, as if you were at our home in Sicily. Welcome to Triskele: Italy as we love it, generous, sincere, and full of flavor.`,
       IMAGE_ALT: 'The Triskele Team',
       VALUES_TITLE: 'Our Values',
       AUTHENTICITY_TITLE: 'Authenticity',
       AUTHENTICITY_DESC:
-        'We select the best ingredients, favoring fresh and seasonal products.',
+        'Family recipes, carefully selected ingredients, and flavors true to traditional Italian and Sicilian cooking.',
       QUALITY_TITLE: 'Quality',
       QUALITY_DESC: `Fresh ingredients, imported directly from Italy or sourced from trusted producers. No compromises: here, we cook just like at home.`,
       GENEROSITY_TITLE: 'Generosity',
       GENEROSITY_DESC: `Generous portions, comforting dishes, and a cuisine that warms the heart as much as the appetite. Every bite tells a story.`,
       CONVIVIALITY_TITLE: 'Conviviality',
       CONVIVIALITY_DESC: `A simple and welcoming place where everyone is greeted like a friend. At our place, we love smiles, conversations, and the neighborhood spirit.`,
-      TRANSMISSION_TITLE: 'Transmission',
+      TRANSMISSION_TITLE: 'Tradition',
       TRANSMISSION_DESC: `Because cooking is also a memory to share. We carry on the recipes and techniques learned from our parents and grandparents, so this culinary culture continues to live on and thrive.`,
       TEAM_TITLE: 'WHO WE ARE',
       CHEF_TITLE: 'Alessandro',
       CHEF_ALT: 'Alessandro',
-      CHEF_POSITION: 'The master of the stove',
+      CHEF_POSITION: 'The master in the kitchen',
       CHEF_DESC: `For 15 years, he has been kneading, frying, and slow-cooking family recipes straight from Sicily and Italy. Passionate and generous, he prepares each dish like at home, with the taste of memories and the love of good things. His mission? To take your taste buds on a journey with true and generous flavors.`,
       MANAGER_ALT: 'Manager Roberta',
       MANAGER_POSITION: 'The creative and digital spirit of Triskele',
@@ -401,7 +430,7 @@ export const TRANSLATIONS = {
       EMAIL_ADDRESS: 'triskelegastronomie@gmail.com',
       HOURS_TITLE: 'Hours',
       MONDAY_FRIDAY: 'From Monday to Friday',
-      WEEKDAY_HOURS: '9h-15h',
+      WEEKDAY_HOURS: '9 am–3 pm',
       SATURDAY: 'Saturday',
       SATURDAY_HOURS: 'Closed',
       SUNDAY: 'Sunday',
@@ -432,7 +461,7 @@ export const TRANSLATIONS = {
       CATEGORIES: {
         TAVOLA_CALDA: 'FAST-GOOD',
         TAVOLA_CALDA_SUBTITLE: `The Italo-Sicilian street food that warms the heart`,
-        PRIMI: 'THE GRATINÉES',
+        PRIMI: 'OVEN-BAKED DISHES',
         PRIMI_SUBTITLE: `Comforting oven-baked dishes, just like at home.`,
         DOLCI: 'SWEETS OF THE SOUTH',
         DOLCI_SUBTITLE: `Traditional Italo-Sicilian desserts that brighten the end of your meal. Artisanal sweets with a bold, sweet note.`,
@@ -446,41 +475,64 @@ export const TRANSLATIONS = {
       CTA_SUBTITLE:
         'Ordering is simple and fast. Pick up your favorite Italian dishes directly from our restaurant.',
     },
+    MENU_DETAILS: {
+      "RAGUSA": "Tomato pulp, buffalo mozzarella, basil, olive oil, oregano.",
+      "ROMA": "Fior di latte mozzarella, peppered pancetta, carbonara cream, basil, olive oil.",
+      "CATANIA": "Tomato pulp, mozzarella, aubergine, salted ricotta, basil, olive oil.",
+      "TROPEA": "Tomato pulp, mozzarella, red onion, spianata salami, basil, chilli olive oil, oregano.",
+      "LICUTI": "Fresh cream, fior di latte mozzarella, smoked salmon, lemon, pistachio, basil.",
+      "NAPOLI": "Ricotta, provola, mixed peppercorns, basil.",
+      "SICILIANA": "Tomme grise cheese, black olives, anchovies, basil.",
+      "CASERTA": "Tomato pulp, fior di latte mozzarella, broccoli rabe, black olives, basil.",
+      "ELBA": "Chilli pecorino, grilled courgette, chilli threads, basil.",
+      "FIRENZE": "Mortadella, stracciatella, pistachio, lemon, basil, olive oil.",
+      "TOSCANA": "Buffalo mozzarella, pan-fried artichokes, coppa, olive oil, basil.",
+      "LUCCA": "Aubergine, stracciatella, pistachio, basil.",
+      "ETNA": "Rice, Bolognese meat sauce (beef, peas, tomato pulp, carrots, onion), fior di latte mozzarella, saffron.",
+      "BRONTE": "Rice, pistachios, fior di latte mozzarella, white sauce, Parmesan, saffron.",
+      "NOTO": "Rice, Parmesan, fior di latte mozzarella, provola, pecorino, white sauce, saffron.",
+      "NORMA": "Rice, ricotta, fior di latte mozzarella, aubergines, basil, saffron.",
+      "NDUJA": "Rice, fior di latte mozzarella, n’duja, provola, basil, saffron.",
+      "FORMULE_TITLE": "MEAL DEAL",
+      "FORMULE_MAIN": "Tray pizza (except Licuti) or Margherita",
+      "FORMULE_DESSERT": "Dessert",
+      "FORMULE_DRINK": "Water or coffee"
+},
     MENU_ITEMS: {
       TAVOLA_CALDA: {
         ARANCINI: {
           NAME: 'Arancini',
-          DESCRIPTION: `Crispy rice balls filled with Southern flavors. Golden, melting, and 100% homemade.`,
+          DESCRIPTION: `Crispy rice balls filled with the flavors of Southern Italy. Golden, creamy, and 100% homemade.`,
         },
         FOCACCIA: {
-          NAME: 'Stuffed focaccias',
-          DESCRIPTION: `A Tuscan specialty with the aroma of olive oil, topped with fresh and flavorful ingredients. A crispy and generous delight straight from the heart of Italy.`,
+          NAME: 'Filled focaccia',
+          DESCRIPTION: `A Tuscan specialty with the aroma of olive oil, filled with fresh and flavorful ingredients. A crispy and generous delight straight from the heart of Italy.`,
         },
         PIZZA_FRITTA: {
-          NAME: 'Pizza fritta',
-          DESCRIPTION: `The rebellious and irresistible star of Neapolitan street food. Stuffed and perfectly fried for a guilty pleasure you'll proudly own.`,
+          NAME: 'Fried pizza',
+          DESCRIPTION: `The rebellious and irresistible star of Neapolitan street food. Filled and fried to perfection for an indulgent treat to enjoy without guilt.`,
         },
         PIZZA_TEGLIA: {
-          NAME: 'Pizza in teglia',
+          NAME: 'Tray pizza',
           DESCRIPTION: `Soft dough, oven-baked, sun-kissed toppings. To share… or not.`,
         },
         PIZZA_PORTAFOGLIO: {
-          NAME: 'Wallet Pizza',
+          NAME: 'Folded pizza',
           DESCRIPTION: `The ultimate Neapolitan street food. A folded pizza to devour on the go — hot and generous.`,
         },
       },
       PRIMI: {
         LASAGNE: {
           NAME: 'Lasagne',
-          DESCRIPTION: `Generous layers of pasta filled with homemade Bolognese ragù, creamy béchamel, and melted mozzarella. A true Italian Sunday classic.`,
+          DESCRIPTION: `Generous layers of pasta filled with homemade Bolognese meat sauce, creamy white sauce, and melted mozzarella. A true Italian Sunday classic.`,
         },
         LASAGNE_VEGETARIANE: {
           NAME: 'Vegetarian lasagne',
-          DESCRIPTION: `A delicious and colorful lasagna, filled with tender seasonal vegetables, a fragrant tomato sauce, and creamy béchamel. All the pleasure, no compromise.`,
+          DESCRIPTION: `Delicious, colorful lasagne, filled with tender seasonal vegetables, a fragrant tomato sauce, and creamy white sauce. All the pleasure, no compromise.`,
         },
         PARMIGIANA: {
           NAME: 'Parmigiana',
-          DESCRIPTION: `Tender eggplants, fragrant sauce, and a mozzarella gratin. The ultimate comforting and generous dish.`,
+          DESCRIPTION: `Tender aubergines, fragrant sauce, and golden baked mozzarella. A generous dish that tastes of home.`,
         },
       },
       DOLCI: {
@@ -494,7 +546,7 @@ export const TRANSLATIONS = {
         },
         GRAFFE: {
           NAME: `Grandma's graffe`,
-          DESCRIPTION: `Sweet pizza dough balls, fried to perfection and served with the topping of your choice. A comforting treat, crispy on the outside and soft on the inside, just like my Nonna used to make on Sundays.`,
+          DESCRIPTION: `Sweet pizza dough balls, fried to perfection and served with the topping of your choice. A comforting treat, crispy on the outside and soft on the inside, just like my grandmother used to make on Sundays.`,
         },
       },
       BEVANDE: {
@@ -504,7 +556,7 @@ export const TRANSLATIONS = {
             'Authentic Italian espresso coffee, served in the traditional small cup.',
         },
         TOMARCHIO: {
-          NAME: 'Le Tomarchio',
+          NAME: 'Tomarchio soft drinks',
           DESCRIPTION:
             'A sip of Tomarchio is a journey through the scents and colors of the island. Oranges, lemons, and tradition: bubbles that tell the story of Sicily.',
         },
@@ -531,6 +583,9 @@ export const TRANSLATIONS = {
     },
   },
   fr: {
+    MENU_TABS: { tavolaCalda: 'Fast-good', primi: 'Gratinés', dolci: 'Douceurs', bevande: 'À boire', menuFisso: 'Formule' },
+    UI: {"CLOSE": "Fermer", "NAVIGATION": "Ouvrir ou fermer la navigation", "LANGUAGE": "Choisir la langue", "LOGO": "Logo Triskele"},
+    PAGE_TITLES: {"HOME": "Triskele - Gastronomie italienne authentique à Rennes", "MENU": "Carte - Triskele", "ABOUT": "À propos - Triskele", "CONTACT": "Contact - Triskele", "PRIVACY": "Politique de confidentialité - Triskele"},
     LOADING: {
       DESCRIPTION: 'Cuisine Italienne Authentique',
     },
@@ -542,11 +597,11 @@ export const TRANSLATIONS = {
       ORDER: 'Commander',
     },
     FOOTER: {
-      DESCRIPTION: `Fermez les yeux… vous êtes en Italie. Chez TRISKELE, on cuisine avec le coeur et on régale avec des saveurs vraies, maison etgénéreuses.`,
+      DESCRIPTION: `Fermez les yeux… vous êtes en Italie. Chez TRISKELE, on cuisine avec le cœur et on régale avec des saveurs vraies, maison et généreuses.`,
       LINKS: 'Liens',
       HOME: 'Accueil',
       ABOUT: 'À Propos',
-      MENU: 'Cart',
+      MENU: 'Carte',
       CONTACT: 'Contact',
       ORDER: 'Commander',
       CONTACT_US: 'Contactez-nous',
@@ -564,15 +619,15 @@ export const TRANSLATIONS = {
       MADE_WITH_LOVE: 'Fait avec ❤️ en Italie',
       AUTHOR: 'Développé par Francesco Raciti',
       OUR_LOCATION: 'Notre emplacement',
-      OUR_LOCATION_SUBTITLE1: `metro b (St Germain)`,
-      OUR_LOCATION_SUBTITLE2: `Arrêt Place Pasteur (12, C2, C3, C5,)`,
+      OUR_LOCATION_SUBTITLE1: `Métro B (Saint Germain)`,
+      OUR_LOCATION_SUBTITLE2: `Arrêt Place Pasteur (12, C2, C3, C5)`,
       OUR_LOCATION_SUBTITLE3: `Arrêt Musée Beaux Arts (C4,C6, 67, N4)`,
       SOCIAL: 'Réseaux sociaux',
     },
     HERO: {
       TITLE: 'Bonjour! Nous sommes TRISKELE, gastronomie italo-sicilienne',
       SUBTITLE: `Ici, on cuisine avec le coeur et on vous accueille comme à la maison. Des gourmandises siciliennes et italiennes à savourer d'une main, des parfums qui réveillent les souvenirs et des saveurs qui racontent une histoire.`,
-      MENU_BUTTON: 'Découvrir le Cart',
+      MENU_BUTTON: 'Découvrir la carte',
       ABOUT_BUTTON: 'À Propos de Nous',
     },
     SUBHERO: {
@@ -580,7 +635,7 @@ export const TRANSLATIONS = {
     },
     FEATURED: {
       TITLE: 'Nos Spécialités',
-      VIEW_MENU: 'Voir dans le Cart',
+      VIEW_MENU: 'Voir sur la carte',
       VIEW_ALL: 'Télécharger la carte',
     },
     HOME: {
@@ -625,7 +680,7 @@ export const TRANSLATIONS = {
       CTA_TITLE: `Venez chez nous`,
       CTA_SUBTITLE:
         `Découvrez les saveurs authentiques de l'Italie au centre de Rennes`,
-      EXPLORE_MENU: `Explorer le Cart`,
+      EXPLORE_MENU: `Explorer la carte`,
       CONTACT_US: `Contactez-Nous`,
     },
     CONTACT: {
@@ -710,33 +765,56 @@ export const TRANSLATIONS = {
       CTA_SUBTITLE:
         'Commander est simple et rapide. Récupérez vos plats italiens préférés directement dans notre restaurant.',
     },
+    MENU_DETAILS: {
+      "RAGUSA": "Pulpe de tomate, bufala, basilic, huile d’olive, origan.",
+      "ROMA": "Fior di latte, pancetta poivrée, carbo crème, basilic, huile d’olive.",
+      "CATANIA": "Pulpe de tomate, mozzarella, aubergine, ricotta salée, basilic, huile d’olive.",
+      "TROPEA": "Pulpe de tomate, mozzarella, oignon rouge, spianata, basilic, huile d’olive pimentée, origan.",
+      "LICUTI": "Crème fraîche, fior di latte, saumon fumé, citron, pistache, basilic.",
+      "NAPOLI": "Ricotta, provola, mélange de poivres, basilic.",
+      "SICILIANA": "Tomme grise, olives noires, anchois, basilic.",
+      "CASERTA": "Pulpe de tomate, fior di latte, friarielli, olives noires, basilic.",
+      "ELBA": "Pecorino pimenté, courgette grillée, filaments de piment, basilic.",
+      "FIRENZE": "Mortadella, stracciatella, pistache, citron, basilic, huile d’olive.",
+      "TOSCANA": "Bufala, artichaut sauté, coppa, huile d’olive, basilic.",
+      "LUCCA": "Aubergine, stracciatella, pistache, basilic.",
+      "ETNA": "Riz, ragù bolognese (bœuf, petits pois, pulpe de tomate, carottes, oignon), fior di latte, safran.",
+      "BRONTE": "Riz, pistaches, fior di latte, béchamel, parmesan, safran.",
+      "NOTO": "Riz, parmesan, fior di latte, provola, pecorino, béchamel, safran.",
+      "NORMA": "Riz, ricotta, fior di latte, aubergines, basilic, safran.",
+      "NDUJA": "Riz, fior di latte, n’duja, provola, basilic, safran.",
+      "FORMULE_TITLE": "FORMULE",
+      "FORMULE_MAIN": "Pizza in teglia (sauf Licuti) ou Margherita",
+      "FORMULE_DESSERT": "Dessert",
+      "FORMULE_DRINK": "Eau ou café"
+},
     MENU_ITEMS: {
       TAVOLA_CALDA: {
         ARANCINI: {
           NAME: 'Arancini',
-          DESCRIPTION: `Boules de riz croustillantes farcies aux saveurs du Sud. Dorés, fondants et 100% maison.`,
+          DESCRIPTION: `Boules de riz croustillantes farcies aux saveurs du Sud. Dorées, fondantes et 100% maison.`,
         },
         FOCACCIA: {
           NAME: 'Focacce farcies',
-          DESCRIPTION: `Spécialité toscane aux arômes d'huile d'olive, garnies de produits frais et savoureux. Un plaisir croustillant et généreux, venu du coeur de l'Italie.`,
+          DESCRIPTION: `Spécialité toscane aux arômes d'huile d'olive, garnie de produits frais et savoureux. Un plaisir croustillant et généreux, venu du cœur de l'Italie.`,
         },
         PIZZA_FRITTA: {
           NAME: 'Pizza Fritta',
-          DESCRIPTION: `La pizza rebelle et irrésistible du street-food napolitaine. Farcie et frite à la perfection pour un plaisir coupable totalement assumé.`,
+          DESCRIPTION: `La pizza rebelle et irrésistible de la street-food napolitaine. Farcie et frite à la perfection pour un plaisir coupable totalement assumé.`,
         },
         PIZZA_TEGLIA: {
           NAME: 'Pizza in teglia',
           DESCRIPTION: `Pâte moelleuse, cuisson au four, garnitures ensoleillées. À partager… ou pas.`,
         },
         PIZZA_PORTAFOGLIO: {
-          NAME: 'Pizza à portafoglio',
+          NAME: 'Pizza a portafoglio',
           DESCRIPTION: `La street-food napolitaine par excellence. Une pizza pliée à dévorer sur le pouce, chaude et généreuse.`,
         },
       },
       PRIMI: {
         LASAGNE: {
           NAME: 'Lasagne',
-          DESCRIPTION: `De généreuses couches de pâte garnies d'un ragù bolognaise mijoté maison, d'une béchamel onctueuse et de mozzarella fondante. Un grand classique du dimanche italien.`,
+          DESCRIPTION: `De généreuses couches de pâtes garnies d'un ragù à la bolognaise mijoté maison, d'une béchamel onctueuse et de mozzarella fondante. Un grand classique du dimanche italien.`,
         },
         LASAGNE_VEGETARIANE: {
           NAME: 'Lasagnes végé',
@@ -750,7 +828,7 @@ export const TRANSLATIONS = {
       DOLCI: {
         CANNOLI: {
           NAME: 'Cannoli',
-          DESCRIPTION: ` La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuse et éclats de pistache.`,
+          DESCRIPTION: `La star des douceurs siciliennes. Gaufrette croustillante, ricotta onctueuse et éclats de pistache.`,
         },
         TIRAMISU: {
           NAME: 'Tiramisù',
@@ -758,7 +836,7 @@ export const TRANSLATIONS = {
         },
         GRAFFE: {
           NAME: 'Graffe della nonna',
-          DESCRIPTION: `Boules de pâte à pizza sucrée, frites à la perfection et servies avec le topping de votre choix. Une douceur réconfortante, croustillante et tendre, comme les faisait ma Nonna (mamì) le dimanche.`,
+          DESCRIPTION: `Boules de pâte à pizza sucrée, frites à la perfection et servies avec la garniture de votre choix. Une douceur réconfortante, croustillante et tendre, comme les faisait ma grand-mère le dimanche.`,
         },
       },
       BEVANDE: {

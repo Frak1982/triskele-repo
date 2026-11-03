@@ -42,8 +42,7 @@ export class SeoService {
     const lang = language as keyof typeof this.metaTags;
     const meta = this.metaTags[lang] || this.metaTags.it;
 
-    // Aggiorna il titolo della pagina
-    this.document.title = meta.title;
+    // Il titolo della pagina viene tradotto dalla strategia del router.
 
     // Aggiorna meta description
     this.updateMetaTag('description', meta.description);

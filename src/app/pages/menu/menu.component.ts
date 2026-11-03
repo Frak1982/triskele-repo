@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MENU_VARIANTS, MenuVariant } from './menu-variants';
+import { MenuDownloadService } from '../../services/menu-download.service';
+import { productImageSrcset } from '../../shared/responsive-image';
 
 interface MenuItem {
   id: number;
@@ -19,6 +22,21 @@ interface MenuItem {
   standalone: true,
   imports: [CommonModule, TranslateModule, ScrollToTopDirective],
   template: `
+    <ng-template #variants let-item>
+      @if (getVariants(item).length) {
+      <ul class="menu-variants">
+        @for (variant of getVariants(item); track variant.name) {
+        <li>
+          <div class="variant-heading">
+            <h4>{{ variant.name }}</h4>
+            <span class="variant-price">{{ formatPrice(variant.price) }}</span>
+          </div>
+          <p>{{ ('MENU_DETAILS.' + variant.descriptionKey) | translate }}</p>
+        </li>
+        }
+      </ul>
+      }
+    </ng-template>
     <div class="menu-page">
       <div class="menu-header flex-column justify-content-center">
         <div class="container">
@@ -26,7 +44,7 @@ interface MenuItem {
           <p>{{ 'MENU_PAGE.SUBTITLE' | translate }}</p>
         </div>
         <div class="view-all">
-          <a href="/assets/menu2026.pdf" class="view-all-btn" target="_blank">{{
+          <a [href]="menuDownload.url" [attr.download]="menuDownload.filename" class="view-all-btn">{{
             'FEATURED.VIEW_ALL' | translate
           }}</a>
         </div>
@@ -38,10 +56,12 @@ interface MenuItem {
             @for (category of categories; track category) {
             <button
               [class.active]="selectedCategory === category"
+              [attr.aria-label]="getCategoryLabel(category) | translate"
               (click)="selectCategory(category)"
               scrollToTop
             >
-              {{ getCategoryLabel(category) | translate }}
+              <span class="tab-label-full">{{ getCategoryLabel(category) | translate }}</span>
+              <span class="tab-label-short">{{ ('MENU_TABS.' + category) | translate }}</span>
             </button>
             }
           </div>
@@ -72,6 +92,9 @@ interface MenuItem {
                 >
                   <img
                     [src]="aranciniImages[aranciniIndex]"
+                    [attr.srcset]="imageSrcset(aranciniImages[aranciniIndex])"
+                    sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1199px) 450px, 410px"
+                    decoding="async"
                     [alt]="getItemName(item)"
                     style="width:100%;object-fit:cover;display:block;margin:0 auto;"
                     loading="lazy"
@@ -96,6 +119,7 @@ interface MenuItem {
                   <p class="menu-item-description">
                     {{ getItemDescription(item) }}
                   </p>
+                  <ng-container *ngTemplateOutlet="variants; context: { $implicit: item }"></ng-container>
                   <div class="menu-item-price">
                     {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{
                       item.price.toFixed(2)
@@ -111,6 +135,9 @@ interface MenuItem {
                 <div class="menu-item-image">
                   <img
                     [src]="item.image"
+                    [attr.srcset]="imageSrcset(item.image)"
+                    sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1199px) 450px, 410px"
+                    decoding="async"
                     [alt]="getItemName(item)"
                     loading="lazy"
                   />
@@ -125,6 +152,7 @@ interface MenuItem {
                   <p class="menu-item-description">
                     {{ getItemDescription(item) }}
                   </p>
+                  <ng-container *ngTemplateOutlet="variants; context: { $implicit: item }"></ng-container>
                   <div class="menu-item-price">
                     {{ 'MENU_PAGE.A_PARTIRE_DA' | translate }} €{{
                       item.price.toFixed(2)
@@ -153,6 +181,9 @@ interface MenuItem {
                 <div class="menu-item-image">
                   <img
                     [src]="item.image"
+                    [attr.srcset]="imageSrcset(item.image)"
+                    sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1199px) 450px, 410px"
+                    decoding="async"
                     [alt]="getItemName(item)"
                     loading="lazy"
                   />
@@ -193,6 +224,9 @@ interface MenuItem {
                 <div class="menu-item-image">
                   <img
                     [src]="item.image"
+                    [attr.srcset]="imageSrcset(item.image)"
+                    sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1199px) 450px, 410px"
+                    decoding="async"
                     [alt]="getItemName(item)"
                     loading="lazy"
                   />
@@ -233,6 +267,9 @@ interface MenuItem {
                 <div class="menu-item-image">
                   <img
                     [src]="item.image"
+                    [attr.srcset]="imageSrcset(item.image)"
+                    sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1199px) 450px, 410px"
+                    decoding="async"
                     [alt]="getItemName(item)"
                     loading="lazy"
                   />
@@ -257,6 +294,18 @@ interface MenuItem {
           </div>
           }
 
+          @if (selectedCategory === 'menuFisso') {
+          <section class="menu-formule" aria-labelledby="formule-title">
+            <h2 id="formule-title">{{ 'MENU_DETAILS.FORMULE_TITLE' | translate }}</h2>
+            <p>{{ 'MENU_DETAILS.FORMULE_MAIN' | translate }}</p>
+            <span class="formule-plus" aria-hidden="true">+</span>
+            <p>{{ 'MENU_DETAILS.FORMULE_DESSERT' | translate }}</p>
+            <span class="formule-plus" aria-hidden="true">+</span>
+            <p>{{ 'MENU_DETAILS.FORMULE_DRINK' | translate }}</p>
+            <strong class="formule-price">{{ formatPrice(13) }}</strong>
+          </section>
+          }
+
           <div class="menu-notice">
             <p>{{ 'MENU_PAGE.ALLERGIES_NOTICE' | translate }}</p>
           </div>
@@ -276,6 +325,99 @@ interface MenuItem {
   `,
   styles: [
     `
+      .menu-variants {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+      .menu-variants li {
+        padding: 14px 0;
+        border-top: 1px solid #e6dfd3;
+      }
+      .variant-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .variant-heading h4 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      .variant-price {
+        white-space: nowrap;
+        font-weight: 700;
+      }
+      .menu-variants p {
+        margin: 6px 0 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .menu-formule {
+        max-width: 540px;
+        margin: 40px auto;
+        padding: 32px 24px;
+        border: 1px solid var(--primary-color);
+        border-top: 4px solid var(--primary-color);
+        border-radius: var(--border-radius);
+        background: var(--secondary-color);
+        color: var(--bg-light);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+      }
+      .menu-formule h2 {
+        color: var(--primary-color);
+        font-family: var(--font-title);
+        font-weight: 700;
+      }
+      .menu-formule p { margin: 12px 0; }
+      .formule-plus {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+      }
+      .formule-price {
+        display: block;
+        margin-top: 20px;
+        font-size: 1.8rem;
+        color: var(--primary-color);
+      }
+      .tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 6px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tabs button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+      .tab-label-short { display: none; }
+      @media (max-width: 767px) {
+        .menu-tabs .container { padding-inline: 8px; }
+        .menu-tabs .tabs {
+          gap: 2px;
+          padding: 10px 0;
+          overflow-x: visible;
+          justify-content: center;
+        }
+        .menu-tabs .tabs button {
+          flex: 0 1 auto;
+          min-width: 0;
+          min-height: 48px;
+          padding: 10px 5px;
+          font-size: clamp(0.7rem, 3vw, 0.95rem);
+        }
+        .tab-label-full { display: none; }
+        .tab-label-short { display: inline; }
+      }
       .carousel-dots {
         display: flex;
         justify-content: center;
@@ -298,7 +440,8 @@ interface MenuItem {
   ],
 })
 export class MenuComponent implements OnInit {
-  categories = ['tavolaCalda', 'primi', 'dolci', 'bevande'];
+  readonly imageSrcset = productImageSrcset;
+  categories = ['tavolaCalda', 'primi', 'dolci', 'bevande', 'menuFisso'];
   selectedCategory = 'tavolaCalda';
 
   categoryNames = {
@@ -306,12 +449,14 @@ export class MenuComponent implements OnInit {
     primi: 'Primi',
     dolci: 'Dolci',
     bevande: 'Bevande',
+    menuFisso: 'Menu fisso',
   };
 
   constructor(
     private translateService: TranslateService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public readonly menuDownload: MenuDownloadService
   ) {}
 
   menuItems: MenuItem[] = [
@@ -321,9 +466,9 @@ export class MenuComponent implements OnInit {
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.ARANCINI',
       price: 5,
       images: [
-        '/assets/images/arancini.jpg',
-        '/assets/images/arancino.jpg',
-        '/assets/images/arancinopistacchio.jpg',
+        '/assets/images/arancini.webp',
+        '/assets/images/arancino.webp',
+        '/assets/images/arancinopistacchio.webp',
       ],
       featured: true,
       category: 'tavolaCalda',
@@ -331,29 +476,29 @@ export class MenuComponent implements OnInit {
     {
       id: 2,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.FOCACCIA',
-      price: 7.5,
-      image: '/assets/images/focaccia.jpg',
+      price: 9,
+      image: '/assets/images/focaccia.webp',
       category: 'tavolaCalda',
     },
     {
       id: 3,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_FRITTA',
-      price: 7,
-      image: '/assets/images/pizzafritta1.jpg',
+      price: 8,
+      image: '/assets/images/pizzafritta1.webp',
       category: 'tavolaCalda',
     },
     {
       id: 4,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_TEGLIA',
-      price: 6,
-      image: '/assets/images/pizzateglia.jpg',
+      price: 6.8,
+      image: '/assets/images/pizzateglia.webp',
       category: 'tavolaCalda',
     },
     {
       id: 5,
       translationKey: 'MENU_ITEMS.TAVOLA_CALDA.PIZZA_PORTAFOGLIO',
       price: 7,
-      image: '/assets/images/pizzaportafoglio.jpg',
+      image: '/assets/images/pizzaportafoglio.webp',
       category: 'tavolaCalda',
     },
     // Primi Piatti
@@ -361,7 +506,7 @@ export class MenuComponent implements OnInit {
       id: 6,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE',
       price: 9.5,
-      image: '/assets/images/lasagnabolo.jpg',
+      image: '/assets/images/lasagnabolo.webp',
       featured: true,
       category: 'primi',
     },
@@ -369,7 +514,7 @@ export class MenuComponent implements OnInit {
       id: 7,
       translationKey: 'MENU_ITEMS.PRIMI.LASAGNE_VEGETARIANE',
       price: 9.5,
-      image: '/assets/images/lasagnavege.jpg',
+      image: '/assets/images/lasagnavege.webp',
       featured: true,
       category: 'primi',
     },
@@ -377,7 +522,7 @@ export class MenuComponent implements OnInit {
       id: 8,
       translationKey: 'MENU_ITEMS.PRIMI.PARMIGIANA',
       price: 8.5,
-      image: '/assets/images/parmigiana.jpg',
+      image: '/assets/images/parmigiana.webp',
       featured: true,
       category: 'primi',
     },
@@ -386,21 +531,21 @@ export class MenuComponent implements OnInit {
       id: 9,
       translationKey: 'MENU_ITEMS.DOLCI.CANNOLI',
       price: 5,
-      image: '/assets/images/cannoli1.jpg',
+      image: '/assets/images/cannoli1.webp',
       category: 'dolci',
     },
     {
       id: 10,
       translationKey: 'MENU_ITEMS.DOLCI.TIRAMISU',
       price: 5,
-      image: '/assets/images/tiramisu.jpg',
+      image: '/assets/images/tiramisu.webp',
       category: 'dolci',
     },
     {
       id: 11,
       translationKey: 'MENU_ITEMS.DOLCI.GRAFFE',
       price: 3.7,
-      image: '/assets/images/graffe.jpg',
+      image: '/assets/images/graffe.webp',
       category: 'dolci',
     },
     // Bevande
@@ -408,7 +553,7 @@ export class MenuComponent implements OnInit {
       id: 12,
       translationKey: 'MENU_ITEMS.BEVANDE.CAFFE',
       price: 1.8,
-      image: '/assets/images/caffe.jpg',
+      image: '/assets/images/caffe.webp',
       featured: true,
       category: 'bevande',
     },
@@ -416,11 +561,21 @@ export class MenuComponent implements OnInit {
       id: 13,
       translationKey: 'MENU_ITEMS.BEVANDE.TOMARCHIO',
       price: 3.5,
-      image: '/assets/images/tomarchio.png',
+      image: '/assets/images/tomarchio.webp',
       featured: true,
       category: 'bevande',
     },
   ];
+
+  getVariants(item: MenuItem): MenuVariant[] {
+    return MENU_VARIANTS[item.translationKey.split('.').pop() || ''] || [];
+  }
+
+  formatPrice(price: number): string {
+    return new Intl.NumberFormat(this.translateService.currentLang || 'fr', {
+      style: 'currency', currency: 'EUR',
+    }).format(price);
+  }
 
   selectCategory(category: string) {
     this.selectedCategory = category;
@@ -452,6 +607,7 @@ export class MenuComponent implements OnInit {
       primi: 'MENU_PAGE.CATEGORIES.PRIMI',
       dolci: 'MENU_PAGE.CATEGORIES.DOLCI',
       bevande: 'MENU_PAGE.CATEGORIES.BEVANDE',
+      menuFisso: 'MENU_DETAILS.FORMULE_TITLE',
     };
     return mapping[category] || category;
   }
