@@ -1,59 +1,60 @@
-# Triskele
+# Triskele Gastronomie
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
+Sito web multilingua per **Triskele Gastronomie**, attività di gastronomia italo-siciliana a Rennes, Francia. Il progetto presenta prodotti e specialità, un menu consultabile per categorie, informazioni sull'attività e un modulo contatti.
 
-## Development server
+**Stack:** Angular 19, TypeScript, Angular Router, Reactive Forms, ngx-translate, Angular Material/CDK, Bootstrap, RxJS.
 
-To start a local development server, run:
+## Funzionalità
 
-```bash
-ng serve
-```
+- Navigazione tra home, menu, chi siamo, contatti e informativa privacy.
+- Menu prodotti organizzato per categorie, con varianti e prezzi.
+- Interfaccia in francese, italiano e inglese, con selezione della lingua e rilevamento della lingua del browser.
+- Download del menu PDF nella lingua selezionata.
+- Modulo contatti con validazione Reactive Forms e integrazione Netlify Forms.
+- Metadati SEO e Open Graph aggiornati in base alla lingua.
+- Immagini WebP responsive con `srcset`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Architettura
 
-## Code scaffolding
+Il codice applicativo è in `src/app/`:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `pages/`: pagine principali, inclusi menu e contatti.
+- `components/`: componenti riutilizzabili, come header, footer e prodotti in evidenza.
+- `services/`: gestione SEO, scroll e download del menu.
+- `directives/`: comportamenti riutilizzabili.
+- `shared/`: utility, incluse quelle per le immagini responsive.
+- `translations.ts`: contenuti localizzati.
 
-```bash
-ng generate component component-name
-```
+L'app usa componenti standalone e le direttive di controllo del flusso `@if` e `@for`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Avvio in locale
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Prerequisiti: Node.js e npm compatibili con Angular 19.
 
 ```bash
-ng test
+npm ci
+npm start
 ```
 
-## Running end-to-end tests
+Apri `http://localhost:4200/`.
 
-For end-to-end (e2e) testing, run:
+## Build e test
 
 ```bash
-ng e2e
+npx ng build --configuration production
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Nota: il comando di build sopra usa la sintassi Angular 19; lo script `build` nel `package.json` deve ancora essere aggiornato. Nel repository esaminato non sono presenti test applicativi `.spec.ts`: il comando di test è configurato, ma non costituisce una suite di test verificata.
 
-## Additional Resources
+## Miglioramenti previsti
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Scomposizione del componente menu in componenti più piccoli.
+- Miglioramento dell'accessibilità dei controlli del carosello e della struttura delle intestazioni.
+- Rimozione dell'attesa artificiale dello spinner iniziale.
+- Introduzione di test per menu, form e servizi.
+- Valutazione del lazy loading delle pagine.
+
+## Contesto
+
+Progetto web per un'attività reale. Il repository documenta il codice front-end; le funzionalità che dipendono dall'hosting, come l'invio del form, vanno verificate nell'ambiente di pubblicazione.
