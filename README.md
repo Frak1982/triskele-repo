@@ -1,60 +1,60 @@
 # Triskele Gastronomie
 
-Sito web multilingua per **Triskele Gastronomie**, attività di gastronomia italo-siciliana a Rennes, Francia. Il progetto presenta prodotti e specialità, un menu consultabile per categorie, informazioni sull'attività e un modulo contatti.
+A multilingual website for **Triskele Gastronomie**, an Italian-Sicilian food business based in Rennes, France. The application showcases the business and its specialties, provides a categorized product menu, and offers contact information and a contact form.
 
-**Stack:** Angular 19, TypeScript, Angular Router, Reactive Forms, ngx-translate, Angular Material/CDK, Bootstrap, RxJS.
+**Tech stack:** Angular 19, TypeScript, Angular Router, Reactive Forms, ngx-translate, Angular Material/CDK, Bootstrap, and RxJS.
 
-## Funzionalità
+## Features
 
-- Navigazione tra home, menu, chi siamo, contatti e informativa privacy.
-- Menu prodotti organizzato per categorie, con varianti e prezzi.
-- Interfaccia in francese, italiano e inglese, con selezione della lingua e rilevamento della lingua del browser.
-- Download del menu PDF nella lingua selezionata.
-- Modulo contatti con validazione Reactive Forms e integrazione Netlify Forms.
-- Metadati SEO e Open Graph aggiornati in base alla lingua.
-- Immagini WebP responsive con `srcset`.
+- Pages for Home, Menu, About, Contact, and Privacy Policy.
+- Product menu organized by category, including variants and prices.
+- French, Italian, and English localization, with language switching and browser-language detection.
+- Language-specific PDF menu downloads.
+- Contact form built with Angular Reactive Forms and Netlify Forms integration.
+- Language-aware SEO and Open Graph metadata.
+- Responsive WebP images with `srcset`.
 
-## Architettura
+## Project structure
 
-Il codice applicativo è in `src/app/`:
+Application code lives in `src/app/`:
 
-- `pages/`: pagine principali, inclusi menu e contatti.
-- `components/`: componenti riutilizzabili, come header, footer e prodotti in evidenza.
-- `services/`: gestione SEO, scroll e download del menu.
-- `directives/`: comportamenti riutilizzabili.
-- `shared/`: utility, incluse quelle per le immagini responsive.
-- `translations.ts`: contenuti localizzati.
+- `pages/`: main pages, including Menu and Contact.
+- `components/`: reusable UI components such as the header, footer, and featured products.
+- `services/`: SEO metadata, scrolling, and menu download functionality.
+- `directives/`: reusable UI behavior.
+- `shared/`: shared utilities, including responsive image helpers.
+- `translations.ts`: localized content.
 
-L'app usa componenti standalone e le direttive di controllo del flusso `@if` e `@for`.
+The application uses Angular standalone components and the `@if` and `@for` template control-flow syntax.
 
-## Avvio in locale
+## Getting started
 
-Prerequisiti: Node.js e npm compatibili con Angular 19.
+**Prerequisites:** Node.js and npm versions compatible with Angular 19.
 
 ```bash
 npm ci
 npm start
 ```
 
-Apri `http://localhost:4200/`.
+Open `http://localhost:4200/`.
 
-## Build e test
+## Build and tests
 
 ```bash
 npx ng build --configuration production
 npm test
 ```
 
-Nota: il comando di build sopra usa la sintassi Angular 19; lo script `build` nel `package.json` deve ancora essere aggiornato. Nel repository esaminato non sono presenti test applicativi `.spec.ts`: il comando di test è configurato, ma non costituisce una suite di test verificata.
+The production build command above uses Angular 19 syntax. The `build` script in `package.json` has not yet been updated. Although the test runner is configured, no application `.spec.ts` test files were found during this review; automated test coverage has not been verified.
 
-## Miglioramenti previsti
+## Planned improvements
 
-- Scomposizione del componente menu in componenti più piccoli.
-- Miglioramento dell'accessibilità dei controlli del carosello e della struttura delle intestazioni.
-- Rimozione dell'attesa artificiale dello spinner iniziale.
-- Introduzione di test per menu, form e servizi.
-- Valutazione del lazy loading delle pagine.
+- Split the menu page into smaller, focused components.
+- Improve keyboard accessibility of carousel controls and heading semantics.
+- Remove the artificial delay from the initial loading indicator.
+- Add tests for menu behavior, form validation, and services.
+- Evaluate lazy loading for individual routes.
 
-## Contesto
+## About this project
 
-Progetto web per un'attività reale. Il repository documenta il codice front-end; le funzionalità che dipendono dall'hosting, come l'invio del form, vanno verificate nell'ambiente di pubblicazione.
+This is a front-end project for a real business. Hosting-dependent features, including form submissions, should be verified in the deployed environment.
