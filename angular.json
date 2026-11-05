@@ -22,11 +22,6 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "robots.txt",
-                "input": "public",
-                "output": "/"
-              },
-              {
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"

@@ -25,7 +25,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
       <div class="container">
         <div class="logo">
           <a routerLink="/" scrollToTop>
-            <img src="/assets/images/triskele.svg" [alt]="'UI.LOGO' | translate" loading="lazy" />
+            <img src="/assets/images/triskele.svg" alt="Triskele Logo" loading="lazy" />
             <span class="header-title">Triskele</span>
           </a>
         </div>
@@ -34,7 +34,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
           <button
             class="mobile-menu-btn"
             (click)="toggleMenu()"
-            [attr.aria-label]="'UI.NAVIGATION' | translate"
+            aria-label="Menu"
           >
             <span></span><span></span><span></span>
           </button>
@@ -80,7 +80,6 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             <li class="language-dropdown">
               <button
                 class="lang-btn"
-                [attr.aria-label]="'UI.LANGUAGE' | translate"
                 [class]="'flag-' + currentLang"
                 (click)="toggleLangMenu()"
               ></button>

@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     HeroComponent,
     FeaturedProductsComponent,
+    // TestimonialsComponent,
     TranslateModule,
   ],
   template: `
@@ -53,6 +54,9 @@ import { TranslateModule } from '@ngx-translate/core';
       <app-featured-products></app-featured-products>
     </section>
 
+    <!-- <section class="testimonials">
+      <app-testimonials></app-testimonials>
+    </section> -->
 
     <!-- <section class="cta">
       <div class="container">

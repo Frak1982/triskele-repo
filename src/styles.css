@@ -1,7 +1,7 @@
 /* ====================
    IMPORTAZIONE FONTS
    ==================== */
-@import "./assets/fonts/fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 /* ====================
    VARIABILI GLOBALI
@@ -677,7 +677,7 @@ app-menu .menu-header::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/images/pizzateglia.webp");
+  background-image: url("/assets/images/pizzateglia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -722,32 +722,21 @@ app-menu .menu-tabs {
 app-menu .tabs {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 15px 10px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-app-menu .tabs::-webkit-scrollbar {
-  display: none;
+  /* overflow-x: auto; */
+  padding: 15px 0;
 }
 
 app-menu .tabs button {
-  flex: 0 0 auto;
   border: none;
   background-color: transparent;
-  padding: 10px 14px;
-  margin: 0;
-  font-size: 0.9rem;
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--secondary-color);
   cursor: pointer;
   transition: var(--transition);
   border-radius: 30px;
-  white-space: nowrap;
 }
 
 app-menu .tabs button.active {
@@ -957,7 +946,7 @@ app-hero .overlay {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   /* Utilizzo solo della parte circolare centrale del logo */
-  background-image: url("/assets/images/triskele.webp");
+  background-image: url("/assets/images/triskele.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 105% auto; /* Ripristinato al valore originale per far prendere tutto lo spazio */
@@ -2129,20 +2118,13 @@ body {
    SUB HERO CONTAINER
    ==================== */
 .sub-hero-container {
-  background-image: url("/assets/images/pizzateglia.webp");
+  background-image: url("/assets/images/pizzateglia.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   min-height: 400px;
   position: relative;
-}
-
-@media (max-width: 767px) {
-  .sub-hero-container,
-  app-menu .menu-header::before {
-    background-image: url("/assets/images/pizzateglia-mobile.webp");
-  }
 }
 
 @media (min-width: 768px) {

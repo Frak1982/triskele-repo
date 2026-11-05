@@ -16,7 +16,7 @@ import { ScrollToTopDirective } from '../../directives/scroll-to-top.directive';
             <h1 class="hero-title">{{ 'HERO.TITLE' | translate }}</h1>
             <img
               src="assets/images/triskele.svg"
-              [alt]="'UI.LOGO' | translate"
+              alt="Triskele Logo"
               class="hero-logo"
               loading="lazy"
             />
