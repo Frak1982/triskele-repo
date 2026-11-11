@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://triskelegastronomie.com/sitemap.xml
