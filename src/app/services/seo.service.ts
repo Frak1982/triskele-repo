@@ -42,7 +42,17 @@ export class SeoService {
     const lang = language as keyof typeof this.metaTags;
     const meta = this.metaTags[lang] || this.metaTags.it;
 
-    // Il titolo della pagina viene tradotto dalla strategia del router.
+    // Mantieni il titolo coerente con la lingua visualizzata.
+    this.document.title = meta.title;
+    const canonicalUrl = `https://triskelegastronomie.com/?lang=${lang in this.metaTags ? lang : 'fr'}`;
+    let canonical = this.document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = this.document.createElement('link');
+      canonical.rel = 'canonical';
+      this.document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+    this.updateMetaProperty('og:url', canonicalUrl);
 
     // Aggiorna meta description
     this.updateMetaTag('description', meta.description);
