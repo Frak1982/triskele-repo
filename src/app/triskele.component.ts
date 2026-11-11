@@ -100,7 +100,10 @@ export class TriskeleComponent implements OnInit {
     this.translate.setDefaultLang('fr');
 
     // Rileva la lingua del browser e imposta la lingua dell'app
-    const browserLang = (this.translate.getBrowserLang() || 'fr').substring(0, 2);
+    const requestedLang = new URLSearchParams(window.location.search).get('lang');
+    const browserLang = requestedLang && ['fr', 'it', 'en'].includes(requestedLang)
+      ? requestedLang
+      : (this.translate.getBrowserLang() || 'fr').substring(0, 2);
     const langToUse = ['fr', 'it', 'en'].includes(browserLang)
       ? (browserLang as 'fr' | 'it' | 'en')
       : 'fr';
@@ -119,6 +122,9 @@ export class TriskeleComponent implements OnInit {
 
   useLanguage(language: 'fr' | 'it' | 'en'): void {
     this.currentLang = language;
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', language);
+    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
     this.setStaticTranslations(language);
 
     // Aggiorna i meta tag SEO per la nuova lingua
